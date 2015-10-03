@@ -1,0 +1,284 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+/*!
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Puwadon Sricharoen
+*/
+@charset "UTF-8";
+@font-face {
+  font-family: 'oswald';
+  src: url('../font/oswald.eot');
+  src: url('../font/oswald.eot?#iefix') format('embedded-opentype'), url('../font/oswald.woff') format('woff'), url('../font/oswald.ttf') format('truetype'), url('../font/oswald.svg#oswald') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'supermarketregular';
+  src: url('../font/supermarket-webfont.eot');
+  src: url('../font/supermarket-webfont.eot?#iefix') format('embedded-opentype'), url('../font/supermarket-webfont.woff2') format('woff2'), url('../font/supermarket-webfont.woff') format('woff'), url('../font/supermarket-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'THSarabunNewBold';
+  src: url('../font/thsarabunnewbold.eot');
+  src: url('../font/thsarabunnewbold.eot') format('embedded-opentype'), url('../font/thsarabunnewbold.woff') format('woff'), url('../font/thsarabunnewbold.ttf') format('truetype'), url('../font/thsarabunnewbold.svg#THSarabunNewBold') format('svg');
+}
+/*.BoxShadowHelper(@level: 1){
+    & when (@level = 1) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 2) {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 3) {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 4) {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    & when (@level = 5) {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+}*/
+html {
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+a[href],
+button {
+  -ms-touch-action: none;
+  /* IE10 */
+  touch-action: none;
+  /* IE11 */
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ffffff;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+.bg-full-screen {
+  background: url('../image/cover.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.animated {
+  -webkit-transition: height 0.2s;
+  -moz-transition: height 0.2s;
+  transition: height 0.2s;
+}
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+.animated {
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+.header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 50px;
+  float: left;
+  display: inline-block;
+  color: #555555;
+  background: rgba(255, 255, 255, 0.9);
+}
+.header .logo {
+  float: left;
+  padding: 14px 1%;
+  height: 22px;
+  display: inline-block;
+  font-family: 'oswald';
+  font-size: 1.2em;
+}
+.header .account {
+  float: right;
+  padding: 12px 1%;
+  height: 26px;
+  display: inline-block;
+}
+.header .account .avatar {
+  float: right;
+  margin-left: 10px;
+}
+.header .account .avatar img {
+  height: 26px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.header .account .name {
+  float: left;
+  padding-top: 5px;
+  font-size: 0.9em;
+}
+.page-container {
+  width: 60%;
+  margin: 0% 20%;
+  margin-top: 5%;
+  float: left;
+  display: inline-block;
+}
+.page-container h1 {
+  font-size: 3em;
+  line-height: 1.5em;
+  border-bottom: 1px solid #AAAAAA;
+}
+.page-container p.info {
+  font-size: 1em;
+  line-height: 1.5em;
+}
+.page-container .description {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  line-height: 1.5em;
+  font-size: 1em;
+}
+.page {
+  width: 60%;
+  margin: 0% 20%;
+  margin-top: 20%;
+  float: left;
+  display: inline-block;
+}
+.page .logo {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-family: 'oswald';
+  font-size: 2em;
+  letter-spacing: 0.03em;
+  color: #555555;
+}
+.page .search-form {
+  margin-top: 5%;
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #AAAAAA;
+}
+.page .search-form .input-text {
+  width: 92%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  border: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #FFFFFF;
+  outline: 0;
+}
+.page .search-form .button-submit {
+  width: 8%;
+  padding: 1% 0%;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  color: #000000;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+.page .search-form .button-submit:hover {
+  background: #F0F0F0;
+  color: #777777;
+  cursor: pointer;
+}
+.result {
+  margin-top: 3%;
+}
+.result .search-form {
+  margin-top: 3%;
+}
+.result-list {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-top: 2%;
+}
+.result-list .result-items {
+  width: 100%;
+  padding: 2% 0%;
+  float: left;
+  display: inline-block;
+  background: #FFFFFF;
+  line-height: 1.5em;
+  font-size: 1em;
+  margin-bottom: 0.5%;
+  border-bottom: 1px dotted #EEEEEE;
+}
+.result-list .result-items .title {
+  font-weight: bold;
+}
+.result-list .result-items .location {
+  color: #555555;
+  font-size: 0.8em;
+}
+.result-list .result-items .location .timeupdate {
+  font-style: italic;
+}
+.result-list .result-items .description {
+  color: #AAAAAA;
+  font-size: 0.8em;
+}
+.web-analytics {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  width: 98%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  font-size: 0.7em;
+  background: rgba(255, 255, 255, 0.5);
+  color: #AAAAAA;
+}
+.web-analytics .left {
+  float: left;
+}
+.web-analytics .right {
+  float: right;
+}
+/**** OTHER DEVICE AND SCREEN ****/
