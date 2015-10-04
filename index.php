@@ -45,7 +45,7 @@ include'facebook.php';
 		<div class="button-submit"><i class="fa fa-search"></i></div>
 	</div>
 	<div class="menu">
-		<a href="#">เพิ่มธุรกิจของคุณ</a>
+		<a href="page-editor.php">เพิ่มธุรกิจของคุณ</a>
 	</div>
 </div>
 <div class="web-analytics">

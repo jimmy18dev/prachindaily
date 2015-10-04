@@ -24,14 +24,17 @@
 	// Model ////////////////////////////
 	include_once'model/me.model.php';
 	include_once'model/member.model.php';
+	include_once'model/page.model.php';
 
 	// Controller ///////////////////////
 	include_once'controller/me.controller.php';
 	include_once'controller/member.controller.php';
+	include_once'controller/page.controller.php';
 
 	// Object of Controller
 	$me 			= new MeController;
 	$member 		= new MemberController;
+	$page 			= new PageController;
 
 	// Device access detact process
 	//include'device.access.php';
