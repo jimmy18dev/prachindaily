@@ -60,8 +60,7 @@
 	}
 
 	// Define member data
-	define('MEMBER_ID',			$me->id);
+	define('MEMBER_ID',			$me->facebook_id);
 	define('MEMBER_TOKEN',		$me->token);
-	define('SITENAME_TH',		$meta['site_name_th']);
 	define('MEMBER_TYPE',		$me->type);
 ?>

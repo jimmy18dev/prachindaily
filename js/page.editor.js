@@ -1,7 +1,6 @@
 $(document).ready(function(){
     // Textarea Autosize
-    // $('.normal').autosize();
-    // $('.animated').autosize({append: "\n"});
+    $('.animated').autosize({append:"\n"});
 
     var $body = window.document.body;
     var optionsActivity = {
@@ -19,7 +18,7 @@ $(document).ready(function(){
 
             if(percent == 100){
                 // $('#loading-bar').fadeOut();
-                $('#loading-message').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังส่งภาพสลิปโอนเงิน...');
+                $('#loading-message').html('<i class="fa fa-circle-o-notch fa-spin"></i>กำลังส่งข้อมูล...');
             }
 
             console.clear();
@@ -36,7 +35,7 @@ $(document).ready(function(){
             console.log(xhr.responseText);
             console.log('complete => Success');
 
-            $('#loading-message').html('<i class="fa fa-check"></i> ส่งภาพสำเร็จ');
+            $('#loading-message').html('<span class="success"><i class="fa fa-check"></i>สำเร็จ</span>');
 
             setTimeout(function(){
                 window.location = 'me.php';

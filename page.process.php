@@ -1,20 +1,39 @@
 <?php
 require_once'config/autoload.php';
 
-$page_id = $page->Create(array(
-    'people_id' => 1000,
-    'name' => $_POST['name'],
-    'description' => $_POST['description'],
-    'address' => $_POST['address'],
-    'phone' => $_POST['phone'],
-    'guide' => $_POST['guide'],
-    'latitude' => $_POST['latitude'],
-    'longitude' => $_POST['longitude'],
-    'district_id' => $_POST['district_id'],
-    'city_id' => $_POST['city_id'],
-    'provice_id' => $_POST['provice_id'],
-    'type' => 'unknow',
-));
+if(empty($_POST['page_id'])){
+    $page_id = $page->Create(array(
+        'people_id' => MEMBER_ID,
+        'page_id' => $_POST['page_id'],
+        'name' => $_POST['name'],
+        'description' => $_POST['description'],
+        'address' => $_POST['address'],
+        'phone' => $_POST['phone'],
+        'guide' => $_POST['guide'],
+        'latitude' => $_POST['latitude'],
+        'longitude' => $_POST['longitude'],
+        'district_id' => $_POST['district_id'],
+        'city_id' => $_POST['city_id'],
+        'provice_id' => $_POST['provice_id'],
+        'type' => 'unknow',
+    ));
+}
+else{
+    $page_id = $page->Update(array(
+        'people_id' => MEMBER_ID,
+        'page_id' => $_POST['page_id'],
+        'name' => $_POST['name'],
+        'description' => $_POST['description'],
+        'address' => $_POST['address'],
+        'phone' => $_POST['phone'],
+        'guide' => $_POST['guide'],
+        'latitude' => $_POST['latitude'],
+        'longitude' => $_POST['longitude'],
+        'district_id' => $_POST['district_id'],
+        'city_id' => $_POST['city_id'],
+        'provice_id' => $_POST['provice_id'],
+    ));
+}
 
 if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest' && empty($_POST['post_id'])){
 

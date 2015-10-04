@@ -2,6 +2,9 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
+$page->Get(array('page_id' => $_GET['id']));
+
 ?>
 
 <!DOCTYPE html>
@@ -41,16 +44,21 @@ include'facebook.php';
 <?php include'header.php';?>
 
 <div class="page-container">
-	<h1>นำขบวนหมูกะทะเกาหลี</h1>
-	<div class="info">อำเภอเมืองปราจีนุบรี จังหวัดปราจีนบุรี</div>
-	<div class="description">
-		ความภูมิใจไม่จำเป็นต้องเกิดจากผู้อื่นเสมอไป แต่เราก็สามารถสร้างความภูมิใจในตัวเองขึ้นมาจากความสำเร็จในทุกๆ วันของเรา ความภูมิใจนอกจากจะก่อให้เกิดความสุข และกำลังใจแล้ว ยังเป็นแรงผลักดันที่ยิ่งใหญ่ ที่จะทำให้เราอยากที่จะพัฒนาตัวเอง และมุ่งมั่นเดินต่อไปสู่จุดหมายที่วางไว้อย่างมั่นคง
-	</div>
+	<h1><?php echo $page->name;?></h1>
+	<p class="location"><i class="fa fa-map-marker"></i>อำเภอเมืองปราจีนุบรี จังหวัดปราจีนบุรี</p>
+	<div class="description"><?php echo $page->description;?></div>
+
+	<p class="phone"><i class="fa fa-phone"></i><?php echo $page->phone;?></p>
+	<p class="guide"><i class="fa fa-map"></i><?php echo $page->guide;?></p>
+	<p class="address"><i class="fa fa-map-pin"></i><?php echo $page->address;?></p>
+
 	<div class="credit">
 		<div class="thank"><i class="fa fa-heart-o"></i>Thank</div>
-		<div class="poster">ข้อมูลโดยคุณ Puwadon Sricharoen</div>
+		<div class="poster">ข้อมูลโดยคุณ <span class="poster-name">Puwadon Sricharoen</span></div>
 	</div>
 </div>
+
+<?php include'footer.php';?>
 
 <div class="web-analytics">
 	<div class="left">สมาชิก 34,020 คน</div>

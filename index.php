@@ -41,8 +41,10 @@ include'facebook.php';
 
 <div class="page">
 	<div class="search-form">
-		<input type="text" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." autofocus>
-		<div class="button-submit"><i class="fa fa-search"></i></div>
+		<form action="search.php" target="_parent" method="get">
+		<input type="text" name="q" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." autofocus>
+		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
+		</form>
 	</div>
 	<div class="menu">
 		<a href="page-editor.php">เพิ่มธุรกิจของคุณ</a>

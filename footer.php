@@ -1,6 +1,6 @@
 <footer class="footer">
 	<div class="menu">
-		<div class="menu-items">Work</div>
+		<div class="menu-items menu-active">Work</div>
 		<div class="menu-items">Shopping</div>
 		<div class="menu-items">Awesome</div>
 		<div class="menu-items">Project</div>

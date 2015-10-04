@@ -43,23 +43,7 @@ include'facebook.php';
 <div class="page result">
 	<div class="topic">ข้อมูลของฉัน</div>
 	<div class="result-list">
-		<?php for($i=0;$i<20;$i++){?>
-		<div class="result-items">
-			<div class="title"><span class="status pending"><i class="fa fa-hourglass-end"></i></span>ร้านแป้งปั้น ขนมปัง - ปราจีนริเวอร์</div>
-			<div class="location">อำเภอเมือง · ปราจีนบุรี · 0801051940 · <span class="timeupdate">อัพเดท 4 มกราคม 2558</span></div>
-			<div class="description">ร้านเบเกอรี่ เค้ก ยอดนิยม พร้อมรูป รีวิว ส่วนลด ในจังหวัดปราจีนบุรี - Wongnai. ... ขนมอร่อย , อาหารหลากหลาย , ที่นั่งสบาย ร้านตกแต่งโทนสีขาว-เทา แบบ Modern Café </div>
-		</div>
-		<div class="result-items">
-			<div class="title"><span class="status success"><i class="fa fa-check"></i></span>ร้านแป้งปั้น ขนมปัง - ปราจีนริเวอร์</div>
-			<div class="location">อำเภอเมือง · ปราจีนบุรี · 0801051940 · <span class="timeupdate">อัพเดท 4 มกราคม 2558</span></div>
-			<div class="description">ร้านเบเกอรี่ เค้ก ยอดนิยม พร้อมรูป รีวิว ส่วนลด ในจังหวัดปราจีนบุรี - Wongnai. ... ขนมอร่อย , อาหารหลากหลาย , ที่นั่งสบาย ร้านตกแต่งโทนสีขาว-เทา แบบ Modern Café </div>
-		</div>
-		<div class="result-items">
-			<div class="title"><span class="status fail"><i class="fa fa-exclamation-circle"></i></span>ร้านแป้งปั้น ขนมปัง - ปราจีนริเวอร์</div>
-			<div class="location">อำเภอเมือง · ปราจีนบุรี · 0801051940 · <span class="timeupdate">อัพเดท 4 มกราคม 2558</span></div>
-			<div class="description">ร้านเบเกอรี่ เค้ก ยอดนิยม พร้อมรูป รีวิว ส่วนลด ในจังหวัดปราจีนบุรี - Wongnai. ... ขนมอร่อย , อาหารหลากหลาย , ที่นั่งสบาย ร้านตกแต่งโทนสีขาว-เทา แบบ Modern Café </div>
-		</div>
-		<?php }?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
 	</div>
 	<div class="pagination">
 		<div class="pagination-items pagination-active">1</div>

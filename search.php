@@ -42,25 +42,22 @@ include'facebook.php';
 
 <div class="page result">
 	<div class="search-form">
-		<input type="text" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ...">
-		<div class="button-submit"><i class="fa fa-search"></i></div>
+		<form action="search.php" target="_parent" method="get">
+		<input type="text" name="q" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." value="<?php echo $_GET['q'];?>">
+		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
+		</form>
 	</div>
 	<div class="result-list">
-
-		<?php for($i=0;$i<20;$i++){?>
-		<div class="result-items">
-			<div class="title">ร้านแป้งปั้น ขนมปัง - ปราจีนริเวอร์</div>
-			<div class="location">อำเภอเมืองปราจีนบุรี ปราจีนบุรี 0801051940 · <span class="timeupdate">อัพเดท 4 มกราคม 2558</span></div>
-			<div class="description">ร้านเบเกอรี่ เค้ก ยอดนิยม พร้อมรูป รีวิว ส่วนลด ในจังหวัดปราจีนบุรี - Wongnai. ... ขนมอร่อย , อาหารหลากหลาย , ที่นั่งสบาย ร้านตกแต่งโทนสีขาว-เทา แบบ Modern Café </div>
-		</div>
-		<?php }?>
+		<?php
+		$total_feed = $page->Search(array(
+			'keyword' 	=> $_GET['q'],
+			'page' => $_GET['page'],
+		));
+		?>
 	</div>
 	<div class="pagination">
-		<div class="pagination-items pagination-active">1</div>
-		<div class="pagination-items">2</div>
-		<div class="pagination-items">3</div>
-		<div class="pagination-items">4</div>
-		<div class="pagination-items">5</div>
+		<div class="found">ค้นหาพบ <?php echo $total_feed;?> รายการ</div>
+		<?php $page->Pagination($total_feed,$_GET['page'],$_GET['q'],'search');?>
 	</div>
 </div>
 
