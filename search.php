@@ -55,7 +55,27 @@
 		</div>
 		<?php }?>
 	</div>
+	<div class="pagination">
+		<div class="pagination-items pagination-active">1</div>
+		<div class="pagination-items">2</div>
+		<div class="pagination-items">3</div>
+		<div class="pagination-items">4</div>
+		<div class="pagination-items">5</div>
+	</div>
 </div>
+
+<footer class="footer">
+	<div class="menu">
+		<div class="menu-items">Work</div>
+		<div class="menu-items">Shopping</div>
+		<div class="menu-items">Awesome</div>
+		<div class="menu-items">Project</div>
+	</div>
+
+	<p>Show and tell for designers</p>
+	<p>What are you working on? Dribbble is a community of designers sharing screenshots of their work, process, and projects.</p>
+	<p>Copyright © 2009–2015 Dribbble LLC. All screenshots © their respective owners. Shipped from Salem, Mass. USA.</p>
+</footer>
 
 <div class="web-analytics">
 	<div class="left">สมาชิก 34,020 คน</div>

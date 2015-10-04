@@ -1,7 +1,7 @@
 <?php
-//require_once'config/autoload.php';
-//include'sdk/facebook-sdk/autoload.php';
-//include'facebook.php';
+require_once'config/autoload.php';
+include'sdk/facebook-sdk/autoload.php';
+include'facebook.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,11 +37,15 @@
 </head>
 
 <body>
+<?php include'header.php';?>
+
 <div class="page">
-	<div class="logo">Prachindaily</div>
 	<div class="search-form">
-		<input type="text" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ...">
+		<input type="text" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." autofocus>
 		<div class="button-submit"><i class="fa fa-search"></i></div>
+	</div>
+	<div class="menu">
+		<a href="#">เพิ่มธุรกิจของคุณ</a>
 	</div>
 </div>
 <div class="web-analytics">
