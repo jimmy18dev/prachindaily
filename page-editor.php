@@ -60,15 +60,15 @@ $page->Get(array('page_id' => $_GET['id']));
 			</div>
 		</div>
 		<div class="editor-items">
-			<div class="caption">ที่อยู่</div>
-			<div class="input">
-				<textarea name="address" class="input-textarea animated"><?php echo $page->address;?></textarea>
-			</div>
-		</div>
-		<div class="editor-items">
 			<div class="caption">เบอร์โทรศัพท์</div>
 			<div class="input">
 				<input type="text" name="phone" class="input-text" value="<?php echo $page->phone;?>">
+			</div>
+		</div>
+		<div class="editor-items">
+			<div class="caption">ที่อยู่</div>
+			<div class="input">
+				<textarea name="address" class="input-textarea animated"><?php echo $page->address;?></textarea>
 			</div>
 		</div>
 		<div class="editor-items">
@@ -77,11 +77,25 @@ $page->Get(array('page_id' => $_GET['id']));
 				<textarea name="guide" class="input-textarea animated"><?php echo $page->guide;?></textarea>
 			</div>
 		</div>
+		<div class="editor-items">
+			<div class="select">
+				<div class="caption">ตำบล</div>
+				<select name="district_id" id="" class="input-select">
+					<option value="">Select</option>
+				</select>
+			</div>
+			<div class="select">
+				<div class="caption">อำเภอ</div>
+				<select name="city_id" id="" class="input-select">
+					<option value="">Select</option>
+				</select>
+			</div>
+		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
 		<div class="submit">
 			<button type="submit"class="submit-button">บันทึก</button>
 		</div>
-
+		<input type="hidden" name="provice_id" value="">
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>

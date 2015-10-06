@@ -25,16 +25,19 @@
 	include_once'model/me.model.php';
 	include_once'model/member.model.php';
 	include_once'model/page.model.php';
+	include_once'model/location.model.php';
 
 	// Controller ///////////////////////
 	include_once'controller/me.controller.php';
 	include_once'controller/member.controller.php';
 	include_once'controller/page.controller.php';
+	include_once'controller/location.controller.php';
 
 	// Object of Controller
 	$me 			= new MeController;
 	$member 		= new MemberController;
 	$page 			= new PageController;
+	$location = new LocationController;
 
 	// Device access detact process
 	//include'device.access.php';
