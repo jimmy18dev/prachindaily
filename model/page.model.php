@@ -17,6 +17,21 @@ class PageModel extends Database{
 		return $dataset;
 	}
 
+	public function SaveSearchLogProcess($param){
+		parent::query('INSERT INTO log_search(lo_people_id,lo_keyword,lo_ip,lo_result,lo_execute_time,lo_create_time,lo_type) VALUE(:people_id,:keyword,:ip,:result,:execute_time,:create_time,:type)');
+
+		parent::bind(':people_id', 		$param['people_id']);
+		parent::bind(':keyword', 		$param['keyword']);
+		parent::bind(':result', 		$param['result']);
+		parent::bind(':execute_time', 	$param['execute_time']);
+		parent::bind(':create_time',	date('Y-m-d H:i:s'));
+		parent::bind(':ip',				parent::GetIpAddress());
+		parent::bind(':type', 			$param['type']);
+
+		parent::execute();
+		return parent::lastInsertId();
+	}
+
 	public function MyPageProcess($param){
 		parent::query('SELECT * FROM base_page WHERE pa_people_id = :people_id');
 		parent::bind(':people_id', 		$param['people_id']);

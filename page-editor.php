@@ -78,24 +78,17 @@ $page->Get(array('page_id' => $_GET['id']));
 			</div>
 		</div>
 		<div class="editor-items">
-			<div class="select">
-				<div class="caption">ตำบล</div>
-				<select name="district_id" id="" class="input-select">
-					<option value="">Select</option>
-				</select>
-			</div>
-			<div class="select">
-				<div class="caption">อำเภอ</div>
-				<select name="city_id" id="" class="input-select">
-					<option value="">Select</option>
-				</select>
-			</div>
+			<div class="caption">อำเภอ</div>
+			<select name="city_id" id="" class="input-select">
+				<option value="">เลือกอำเภอ...</option>
+				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->city_id));?>
+			</select>
 		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
 		<div class="submit">
 			<button type="submit"class="submit-button">บันทึก</button>
 		</div>
-		<input type="hidden" name="provice_id" value="">
+		<input type="hidden" name="province_id" value="16">
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>

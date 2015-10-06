@@ -69,3 +69,14 @@ include'facebook.php';
 </div>
 </body>
 </html>
+
+<?php
+// Save Search log
+$page->SaveSearchLog(array(
+	'people_id' 	=> MEMBER_ID,
+	'keyword' 		=> $_GET['q'],
+	'result' 		=> $total_feed,
+	'execute_time' 	=> round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"],4),
+	'type' 			=> 'normal',
+));
+?>

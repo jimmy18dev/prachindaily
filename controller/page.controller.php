@@ -33,7 +33,7 @@ class PageController extends PageModel{
 	}
 
 	public function Search($param){
-		$per_page = 3;
+		$per_page = 30;
 		$current_page = $param['page'];
 
 		if(empty($param['page']))
@@ -48,8 +48,12 @@ class PageController extends PageModel{
 		return $dataset['total'];
 	}
 
+	public function SaveSearchLog($param){
+		parent::SaveSearchLogProcess($param);
+	}
+
 	public function Pagination($total_feed,$current_page,$q,$mode){
-		$per_page 	= 3;
+		$per_page 	= 30;
 		$total_page = ceil($total_feed/$per_page);
 		$step_down 	= 3;
 		$step_up 	= 2;
@@ -68,10 +72,10 @@ class PageController extends PageModel{
 		if($total_page > 1){
 			for($i=1;$i<=$total_page;$i++){
 				if($i > $current_page-$step_down && $i<=$current_page){
-					echo'<a href="'.$url.$i.'"><div class="pagination-items '.($current_page==$i?'pagination-active':'').'">('.$i.')</div></a>';
+					echo'<a href="'.$url.$i.'"><div class="pagination-items '.($current_page==$i?'pagination-active':'').'">'.$i.'</div></a>';
 				}
 				else if(($i > $current_page) && ($i <= $current_page+$step_up)){
-					echo'<a href="'.$url.$i.'"><div class="pagination-items '.($current_page==$i?'pagination-active':'').'">['.$i.']</div></a>';
+					echo'<a href="'.$url.$i.'"><div class="pagination-items '.($current_page==$i?'pagination-active':'').'">'.$i.'</div></a>';
 				}
 			}
 		}

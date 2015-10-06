@@ -14,7 +14,7 @@ if(empty($_POST['page_id'])){
         'longitude' => $_POST['longitude'],
         'district_id' => $_POST['district_id'],
         'city_id' => $_POST['city_id'],
-        'provice_id' => $_POST['provice_id'],
+        'province_id' => $_POST['province_id'],
         'type' => 'unknow',
     ));
 }

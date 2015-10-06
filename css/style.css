@@ -196,13 +196,36 @@ Copyright (c) 2015 Daniel Eden
   line-height: 1.5em;
   font-weight: bold;
 }
+.page-container h2 {
+  font-weight: bold;
+  color: #000000;
+  margin-top: 4%;
+  font-size: 1.1em;
+}
 .page-container p {
-  font-size: 0.9em;
-  line-height: 1.8em;
+  font-size: 1em;
+  line-height: 1.9em;
   color: #555555;
 }
 .page-container p i {
   margin-right: 10px;
+}
+.page-container p strong {
+  font-weight: bold;
+  color: #000000;
+}
+.page-container p a {
+  color: #57ad68;
+  text-decoration: none;
+}
+.page-container p a:hover {
+  text-decoration: underline;
+}
+.page-container p.thank {
+  padding: 4% 0%;
+  text-align: center;
+  font-style: italic;
+  color: #AAAAAA;
 }
 .page-container .description {
   width: 100%;
@@ -251,13 +274,9 @@ Copyright (c) 2015 Daniel Eden
   float: left;
   display: inline-block;
 }
-.page-container .page-editor .editor-items .select {
-  width: 49%;
-  float: left;
-  display: inline-block;
-}
-.page-container .page-editor .editor-items .select .input-select {
+.page-container .page-editor .editor-items .input-select {
   width: 100%;
+  padding: 1%;
   float: left;
   display: inline-block;
   border: 1px solid #EEEEEE;
@@ -265,18 +284,14 @@ Copyright (c) 2015 Daniel Eden
   font-size: 1em;
   line-height: 2em;
 }
-.page-container .page-editor .editor-items .select:nth-child(even) {
-  float: right;
-  margin-left: 2%;
-}
 .page-container .page-editor .editor-items .caption {
   width: 100%;
   padding: 1% 0%;
   float: left;
   display: inline-block;
-  font-size: 0.9em;
+  font-size: 0.8em;
   line-height: 1.5em;
-  color: #555555;
+  color: #AAAAAA;
 }
 .page-container .page-editor .editor-items .input {
   width: 100%;
@@ -285,8 +300,9 @@ Copyright (c) 2015 Daniel Eden
 }
 .page-container .page-editor .editor-items .input .input-text {
   font-family: 'Open Sans', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
   width: 100%;
+  padding: 1%;
   float: left;
   display: inline-block;
   border: 1px solid #EEEEEE;
@@ -298,6 +314,7 @@ Copyright (c) 2015 Daniel Eden
   font-size: 1em;
   line-height: 1.5em;
   width: 100%;
+  padding: 1%;
   height: 100px;
   float: left;
   display: inline-block;
@@ -483,7 +500,7 @@ Copyright (c) 2015 Daniel Eden
 }
 .result-list .result-items .title .status {
   font-size: 0.8em;
-  margin-right: 10px;
+  margin-left: 10px;
   color: #AAAAAA;
 }
 .result-list .result-items .title .fail {

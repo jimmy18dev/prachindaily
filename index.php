@@ -51,7 +51,9 @@ include'facebook.php';
 	</div>
 </div>
 <div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
+	<div class="left">สมาชิก 34,020 คน / </div>
+	<div class="left">Process Time <?php echo round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"],4);?>s / </div>
+	<div class="left">This page loaded in <?php echo round(microtime(true)-StTime,4);?>s</div>
 	<div class="right">ค้นหา 324,353 ครั้ง</div>
 </div>
 </body>

@@ -37,7 +37,7 @@
 	$me 			= new MeController;
 	$member 		= new MemberController;
 	$page 			= new PageController;
-	$location = new LocationController;
+	$location 		= new LocationController;
 
 	// Device access detact process
 	//include'device.access.php';
