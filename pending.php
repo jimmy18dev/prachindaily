@@ -21,10 +21,10 @@ include'facebook.php';
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php
-//include'favicon.php';
+include'favicon.php';
 ?>
 
-<title>Pending</title>
+<title>Pendiing Request</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>

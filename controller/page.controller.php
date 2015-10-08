@@ -4,6 +4,7 @@ class PageController extends PageModel{
 	public $id;
 	public $name;
 	public $description;
+	public $description_metatag;
 	public $phone;
 	public $address;
 	public $guide;
@@ -42,6 +43,7 @@ class PageController extends PageModel{
 		$this->id = $data['pa_id'];
 		$this->name = $data['pa_name'];
 		$this->description = $data['pa_description'];
+		$this->description_metatag = $this->ConvertStringtoMetatag($data['pa_description']);
 		$this->phone = $data['pa_phone'];
 		$this->address = $data['pa_address'];
 		$this->guide = $data['pa_guide'];
@@ -160,6 +162,19 @@ class PageController extends PageModel{
         unset($data);
     }
 
+    public function ConvertStringtoMetatag($text){
+		$text = strip_tags($text);
+		$text = str_replace(array("\t","\n"),"",$text);
+		$text = str_replace(array('\"'),'',$text);
+
+		if(strlen($text) > 200){
+			return mb_substr($text,0,120,"UTF-8").'...';
+		}
+		else{
+			return $text;
+		}
+		
+	}
 
     public function UpdateAnalytics($param){
     	if($param['type'] == "view"){

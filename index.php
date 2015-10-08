@@ -22,11 +22,25 @@ $current_page = "index";
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
-<?php
-//include'favicon.php';
-?>
+<?php include'favicon.php';?>
 
-<title>Homepage</title>
+<title>ค้นหา ร้านอาหาร ที่พัก เบอร์โทรศัพท์ ปราจีนบุรี - ปราจีนเดลี่</title>
+
+<!-- Meta Tag Main -->
+<meta name="description" 			content="ปราจีนเดลี่ เว็บอันดับหนึ่งของปราจีนบุรี ที่คุณสามารถค้นหา ร้านอาหาร ที่พัก ที่ท่องเที่ยว หอพักและเบอร์โทรศัพท์สถานที่ในจังหวัดปราจีนบุรี"/>
+<meta property="og:title" 			content="ค้นหา ร้านอาหาร ที่พัก เบอร์โทรศัพท์ ปราจีนบุรี - ปราจีนเดลี่"/>
+<meta property="og:description" 	content="ปราจีนเดลี่ เว็บอันดับหนึ่งของปราจีนบุรี ที่คุณสามารถค้นหา ร้านอาหาร ที่พัก ที่ท่องเที่ยว หอพักและเบอร์โทรศัพท์สถานที่ในจังหวัดปราจีนบุรี"/>
+<meta property="og:url" 			content="<?php echo $meta['domain'];?>"/>
+<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
+<meta property="og:type" 			content="website"/>
+<meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:app_id" 			content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:admins" 			content="<?php echo $meta['fb_admins'];?>"/>
+<meta name="author" 				content="<?php echo $meta['author'];?>">
+<meta name="generator" 				content="<?php echo $meta['generator'];?>"/>
+<meta itemprop="name" 				content="ค้นหา ร้านอาหาร ที่พัก เบอร์โทรศัพท์ ปราจีนบุรี - ปราจีนเดลี่">
+<meta itemprop="description" 		content="ปราจีนเดลี่ เว็บอันดับหนึ่งของปราจีนบุรี ที่คุณสามารถค้นหา ร้านอาหาร ที่พัก ที่ท่องเที่ยว หอพักและเบอร์โทรศัพท์สถานที่ในจังหวัดปราจีนบุรี">
+<meta itemprop="image" 				content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>

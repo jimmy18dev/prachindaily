@@ -77,4 +77,6 @@
 	define('MEMBER_TYPE',		$me->type);
 
 	$site->GetSiteInfo();
+
+	
 ?>

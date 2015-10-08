@@ -24,10 +24,28 @@ $current_page = "contact";
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php
-//include'favicon.php';
+include'favicon.php';
+$meta_title = 'ติดต่อทีมงานปราจีนเดลี่ - ปราจีนเดลี่';
+$meta_description = 'หากต้องการติดต่อทีมงานปราจีนเดลี่ กรุณาใช้ช่องทางด้านล่าง เนื่องจากเรามีทีมงานหลายท่านจึงไม่มีนโยบายการให้เบอร์โทรศัพท์ส่วนตัวของท่านใดท่านหนึ่ง';
 ?>
 
-<title>Homepage</title>
+<title><?php echo $meta_title;?></title>
+
+<!-- Meta Tag Main -->
+<meta name="description" 			content="<?php echo $meta_description;?>"/>
+<meta property="og:title" 			content="<?php echo $meta_title;?>"/>
+<meta property="og:description" 	content="<?php echo $meta_description;?>"/>
+<meta property="og:url" 			content="<?php echo $meta['domain'];?>/contact.php"/>
+<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
+<meta property="og:type" 			content="website"/>
+<meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:app_id" 			content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:admins" 			content="<?php echo $meta['fb_admins'];?>"/>
+<meta name="author" 				content="<?php echo $meta['author'];?>">
+<meta name="generator" 				content="<?php echo $meta['generator'];?>"/>
+<meta itemprop="name" 				content="<?php echo $meta_title;?>">
+<meta itemprop="description" 		content="<?php echo $meta_description;?>">
+<meta itemprop="image" 				content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>

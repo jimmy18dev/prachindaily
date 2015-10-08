@@ -56,5 +56,6 @@
 		'author' 		=> 'ปราจีนเดลี่',
 		'generator' 	=> 'DailyPoint (1.0)',
 		'keywords' 		=> 'ปราจีนเดลี่',
+		'domain' 		=> 'http://'.$_SERVER['SERVER_NAME'],
 	);
 ?>

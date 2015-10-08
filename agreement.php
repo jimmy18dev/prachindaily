@@ -24,10 +24,28 @@ $current_page = "agreement";
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
 <?php
-//include'favicon.php';
+include'favicon.php';
+$meta_title = 'ข้อตกลงในการใช้บริการ - ปราจีนเดลี่';
+$meta_description = 'ทำความเข้าใจเพื่อประโยชน์สูงสุดของท่านเอง หากมีการกระทำผิดข้อตกการใช้บริการ ทางทีมงานจะใช้การแนะนำหรือตักเตือนเพื่อให้การใช้งานเป็นไปได้อย่างสะดวก';
 ?>
 
-<title>Homepage</title>
+<title><?php echo $meta_title;?></title>
+
+<!-- Meta Tag Main -->
+<meta name="description" 			content="<?php echo $meta_description;?>"/>
+<meta property="og:title" 			content="<?php echo $meta_title;?>"/>
+<meta property="og:description" 	content="<?php echo $meta_description;?>"/>
+<meta property="og:url" 			content="<?php echo $meta['domain'];?>/agreement.php"/>
+<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
+<meta property="og:type" 			content="website"/>
+<meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:app_id" 			content="<?php echo $meta['fb_app_id'];?>"/>
+<meta property="fb:admins" 			content="<?php echo $meta['fb_admins'];?>"/>
+<meta name="author" 				content="<?php echo $meta['author'];?>">
+<meta name="generator" 				content="<?php echo $meta['generator'];?>"/>
+<meta itemprop="name" 				content="<?php echo $meta_title;?>">
+<meta itemprop="description" 		content="<?php echo $meta_description;?>">
+<meta itemprop="image" 				content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
