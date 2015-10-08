@@ -4,7 +4,7 @@ include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
 
 $page->Get(array('page_id' => $_GET['id']));
-
+$current_page = "partner";
 ?>
 
 <!DOCTYPE html>
@@ -44,9 +44,12 @@ $page->Get(array('page_id' => $_GET['id']));
 <?php include'header.php';?>
 
 <div class="page-container">
-	<h1>สร้างธุรกิจของคุณบนโลกออนไลน์กับปราจีนเดลี่</h1>
-	<p class="location"><i class="fa fa-diamond"></i>ปราจีนเดลี่จะช่วยสร้างความน่าเชื่อถือให้กับธุรกิจของคุณ</p>
-	<div class="description">
+	<header>
+		<h1>สร้างธุรกิจของคุณบนโลกออนไลน์กับปราจีนเดลี่</h1>
+		<p class="info"><i class="fa fa-diamond"></i> ปราจีนเดลี่จะช่วยสร้างความน่าเชื่อถือให้กับธุรกิจของคุณ</p>
+	</header>
+	
+	<div class="entry-content">
 		<p><strong>ปราจีนเดลี่</strong>เป็นแหล่งข้อมูลข่าวสารที่มีคนติดตามมากที่สุดในจังหวัดปราจีนบุรี ซึ่งก่อตั้งมาตั้งแต่ปี พ.ศ. 2556 จากช่วงเหตุการณ์น้ำท่วมปราจีนบุรีครั้งใหญ่ ซึ่งเราพยายามเป็นแหล่งข้อมูลข่าวสารให้คนปราจีนบุรีตลอดมา</p>
 		<p>โครงการต่อไปที่เรากำลังพัฒนาคือ การช่วยผลักดันอาชีพชุมชนและพัฒนาเศรษฐกิจของจังหวัดปราจีนบุรี โดยเน้นไปที่ธุรกิจในระดับ <strong>SMEs</strong> ซึ่งเราเล็งเห็นว่าจังหวัดปราจีนบุรีมีสินค้าและบริการที่มีคุณภาพดี แต่ยังขาดการประชาสัมพันธ์ที่มีประสิทธิภาพและความเข้าใจในความต้องการของลูกค้า จึงทำให้หลายธุรกิจต้องปิดตัวลง</p>
 		<h2>หากคุณเป็นเจ้าของธุรกิจ เราขอเชิญคุณเข้ามาร่วมกันเรา</h2>
@@ -57,20 +60,21 @@ $page->Get(array('page_id' => $_GET['id']));
 		<p>4. คุณสามารถทดลองค้นหาธุรกิจของคุณ ข้อมูลก็จะแสดงมาที่หน้าเว็บของปราจีนเดลี่</p>
 		<br>
 		<p>ในช่วงเริ่มต้นโครงการ เราจะรวบรวมข้อมูลจากธุรกิจหลากแหล่งในปราจีนบุรี และเปิดให้ผู้ใช้ทั่วไปเข้าใช้บริการค้นหา หลังจากนี้ เราจะเพิ่มความสามารถให้ตรงความต้องการของผู้ใช้มากยิ่งขึ้น</p>
-		<p class="thank">เราขอขอบคุณ ที่ท่านเข้ามาร่วมเป็นส่วนหนึ่งในโครงการของเรา ขอบคุณค่ะ</p>
+		<p class="thank">เราขอขอบคุณ ที่ท่านเข้าร่วมเป็นส่วนหนึ่งในโครงการของเรา ขอบคุณค่ะ</p>
+
+		<p class="poster">ข้อมูลโดยคุณ <span class="poster-name">ทีมงานปราจีนเดลี่</span> · อัพเดทเมื่อ 12 ธันวาคม 2558</p>
 	</div>
 
-	<div class="credit">
-		<div class="thank"><i class="fa fa-clock-o"></i>อัพเดทเมื่อ 12 ธันวาคม 2558</div>
-		<div class="poster">ข้อมูลโดยคุณ <span class="poster-name">ทีมงานปราจีนเดลี่</span></div>
+	<div class="menu">
+		<?php if(MEMBER_ONLINE){?>
+		<a href="page-editor.php" target="_parent">เพิ่มธุรกิจของคุณ</a>
+		<?php }else{?>
+		<a href="partner.php" target="_parent" class="facebook-loing"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</a>
+		<?php }?>
 	</div>
 </div>
 
 <?php include'footer.php';?>
-
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 </body>
 </html>

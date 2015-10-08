@@ -7,6 +7,34 @@ class PageController extends PageModel{
 	public $phone;
 	public $address;
 	public $guide;
+	public $latitude;
+	public $longitude;
+	public $district_id;
+	public $district_name;
+	public $amphur_id;
+	public $amphur_name;
+	public $province_id;
+	public $province_name;
+	public $create_time;
+	public $Update_time;
+	public $visit_time;
+	public $create_time_facebook_format;
+	public $update_time_facebook_format;
+	public $visit_time_facebook_format;
+	public $create_time_thai_format;
+	public $update_time_thai_format;
+	public $visit_time_thai_format;
+	public $score;
+	public $view;
+	public $read;
+	public $success;
+	public $type;
+	public $status;
+
+	// Poster or Owner
+	public $poster_id;
+	public $poster_name;
+	public $poster_type;
 
 	public function Get($param){
 		$data = parent::GetProcess($param);
@@ -17,6 +45,34 @@ class PageController extends PageModel{
 		$this->phone = $data['pa_phone'];
 		$this->address = $data['pa_address'];
 		$this->guide = $data['pa_guide'];
+		$this->latitude = $data['pa_latitude'];
+		$this->longitude = $data['pa_longitude'];
+		$this->district_id = $data['district_id'];
+		$this->district_name = $data['district_name'];
+		$this->amphur_id = $data['amphur_id'];
+		$this->amphur_name = $data['amphur_name'];
+		$this->province_id = $data['province_id'];
+		$this->province_name = $data['province_name'];
+		$this->create_time = $data['pa_create_time'];
+		$this->Update_time = $data['pa_update_time'];
+		$this->visit_time = $data['pa_visit_time'];
+		$this->create_time_facebook_format = $data['create_time_facebook_format'];
+		$this->update_time_facebook_format = $data['update_time_facebook_format'];
+		$this->visit_time_facebook_format = $data['visit_time_facebook_format'];
+		$this->create_time_thai_format = $data['create_time_thai_format'];
+		$this->update_time_thai_format = $data['update_time_thai_format'];
+		$this->visit_time_thai_format = $data['visit_time_thai_format'];
+		$this->score = $data['pa_score'];
+		$this->view = $data['pa_view'];
+		$this->read = $data['pa_read'];
+		$this->success = $data['pa_success'];
+		$this->type = $data['pa_type'];
+		$this->status = $data['pa_status'];
+
+		// Poster or Owner
+		$this->poster_id = $data['pe_id'];
+		$this->poster_name = $data['pe_fname'].' '.$data['pe_lname'];
+		$this->poster_type = $data['pe_type'];
 	}
 
 	public function Create($param){
@@ -30,6 +86,14 @@ class PageController extends PageModel{
 	public function MyPage($param){
 		$dataset = parent::MyPageProcess($param);
 		$this->RenderPage('mypage',$dataset,'null');
+	}
+
+	public function PendingPage($param){
+		$dataset = parent::PendingPageProcess($param);
+		$this->RenderPage('pendingpage',$dataset,'null');
+	}
+	public function PendingCount($param){
+		return parent::PendingCountProcess($param);
 	}
 
 	public function Search($param){
@@ -89,8 +153,33 @@ class PageController extends PageModel{
         	else if($mode == "page" && !empty($var['pa_id'])){
         		include'template/page/page.items.php';
         	}
+        	else if($mode == "pendingpage" && !empty($var['pa_id'])){
+        		include'template/page/pending.items.php';
+        	}
         }
         unset($data);
+    }
+
+
+    public function UpdateAnalytics($param){
+    	if($param['type'] == "view"){
+    		parent::UpdateViewProcess($param);
+    	}
+    	else if($param['type'] == "read"){
+    		parent::UpdateReadProcess($param);
+    	}
+    	else if($param['type'] == "success"){
+    		parent::UpdateSuccessProcess($param);
+    	}
+    }
+
+    public function Delete($param){
+    	parent::DeleteProcess($param);
+    }
+
+    // Administrator
+    public function UpdateStatus($param){
+    	parent::UpdateStatusProcess($param);
     }
 }
 ?>

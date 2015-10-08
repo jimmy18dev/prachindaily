@@ -2,6 +2,11 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+if(!MEMBER_ONLINE){
+	header("Location: partner.php");
+	die();
+}
+
 $page->Get(array('page_id' => $_GET['id']));
 ?>
 
@@ -81,12 +86,13 @@ $page->Get(array('page_id' => $_GET['id']));
 			<div class="caption">อำเภอ</div>
 			<select name="city_id" id="" class="input-select">
 				<option value="">เลือกอำเภอ...</option>
-				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->city_id));?>
+				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
 			</select>
 		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
+		<div class="score">คุณภาพของข้อมูล <span class="value">98%</span></div>
 		<div class="submit">
-			<button type="submit"class="submit-button">บันทึก</button>
+			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>
 		</div>
 		<input type="hidden" name="province_id" value="16">
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
@@ -102,11 +108,7 @@ $page->Get(array('page_id' => $_GET['id']));
 </div>
 
 <?php include'footer.php';?>
-
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 
 <script type="text/javascript" src="js/page.editor.js"></script>
 

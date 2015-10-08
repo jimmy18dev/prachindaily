@@ -2,6 +2,8 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
+$current_page = "index";
 ?>
 
 <!DOCTYPE html>
@@ -47,14 +49,24 @@ include'facebook.php';
 		</form>
 	</div>
 	<div class="menu">
-		<a href="page-editor.php">เพิ่มธุรกิจของคุณ</a>
+		<?php if(MEMBER_ONLINE){?>
+		<a href="page-editor.php" target="_parent">สร้างธุรกิจของคุณ</a>
+		<?php }else{?>
+		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ</a>
+		<?php }?>
+	</div>
+
+	<div class="link">
+		<a href="partner.php" target="_parent">ฝากร้าน</a>
+		<a href="agreement.php" target="_parent">ข้อตกลง</a>
+		<a href="stat.php" target="_parent">สถิติ</a>
+		<a href="contact.php" target="_parent">ติดต่อเรา</a>
+
+		<?php if(MEMBER_TYPE == "administrator"){?>
+		<a href="pending.php" target="_parent" class="<?php echo ($page->PendingCount(array('id' => 0))>0?'active':'');?>">Pending (<?php echo $page->PendingCount(array('id' => 0));?>)</a>
+		<?php }?>
 	</div>
 </div>
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน / </div>
-	<div class="left">Process Time <?php echo round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"],4);?>s / </div>
-	<div class="left">This page loaded in <?php echo round(microtime(true)-StTime,4);?>s</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 </body>
 </html>

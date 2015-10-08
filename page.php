@@ -4,7 +4,17 @@ include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
 
 $page->Get(array('page_id' => $_GET['id']));
+$page->UpdateAnalytics(array('page_id' => $page->id,'type'=>'view'));
 
+// Location
+if(empty($page->amphur_name)){
+	$location = 'จังหวัด'.$page->province_name;
+}
+else{
+	$location = 'อำเภอ'.$page->amphur_name.' จังหวัด'.$page->province_name;
+}
+
+$timeupdate = 'อัพเดท '.$page->update_time_facebook_format;
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +37,7 @@ $page->Get(array('page_id' => $_GET['id']));
 //include'favicon.php';
 ?>
 
-<title>Homepage</title>
+<title><?php echo $page->name.' - '.$location;?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -36,6 +46,8 @@ $page->Get(array('page_id' => $_GET['id']));
 
 <!-- JS Lib -->
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/page.service.js"></script>
+<script type="text/javascript" src="js/page.app.js"></script>
 
 </head>
 
@@ -43,26 +55,49 @@ $page->Get(array('page_id' => $_GET['id']));
 
 <?php include'header.php';?>
 
-<div class="page-container">
-	<h1><?php echo $page->name;?></h1>
-	<p class="location"><i class="fa fa-map-marker"></i>อำเภอเมืองปราจีนุบรี จังหวัดปราจีนบุรี</p>
-	<div class="description"><?php echo $page->description;?></div>
+<article class="page-container">
+	<header>
+		<h1><?php echo $page->name;?></h1>
+		<p class="info">
+			<span class="location"><?php echo $location;?></span>
+			 · <span class="timeupdate" title="<?php echo $page->update_time_thai_format;?>"><?php echo $timeupdate;?></span>
+			 · <span class="edit"><a href="page-editor.php?id=<?php echo $page->id;?>">แก้ไข</a></span>
+		</p>
+	</header>
 
-	<p class="phone"><i class="fa fa-phone"></i><?php echo $page->phone;?></p>
-	<p class="guide"><i class="fa fa-map"></i><?php echo $page->guide;?></p>
-	<p class="address"><i class="fa fa-map-pin"></i><?php echo $page->address;?></p>
+	<div class="entry-content">
+		<?php echo $page->description;?>
 
-	<div class="credit">
-		<div class="thank"><i class="fa fa-heart-o"></i>Thank</div>
-		<div class="poster">ข้อมูลโดยคุณ <span class="poster-name">Puwadon Sricharoen</span></div>
+		<div class="infomation">
+			<?php if(!empty($page->phone)){?>
+			<div class="items">
+				<div class="icon"><i class="fa fa-phone"></i></div>
+				<div class="text"><?php echo $page->phone;?></div>
+			</div>
+			<?php }?>
+
+			<?php if(!empty($page->guide)){?>
+			<div class="items">
+				<div class="icon"><i class="fa fa-map"></i></div>
+				<div class="text"><?php echo $page->guide;?></div>
+			</div>
+			<?php }?>
+
+			<?php if(!empty($page->address)){?>
+			<div class="items">
+				<div class="icon"><i class="fa fa-map-pin"></i></div>
+				<div class="text"><?php echo $page->address;?></div>
+			</div>
+			<?php }?>
+		</div>
+
+		<p class="poster">ข้อมูลโดยคุณ <span class="poster-name"><?php echo $page->poster_name;?></span></p>
 	</div>
-</div>
+
+	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
+</article>
 
 <?php include'footer.php';?>
-
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 </body>
 </html>

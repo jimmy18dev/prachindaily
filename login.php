@@ -49,9 +49,6 @@ include'facebook.php';
 		<p class="note">กรุณากดยอมรับการขออีเมลด้วยค่ะ ขอบคุณค่ะ</p>
 	</div>
 </div>
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 </body>
 </html>

@@ -13,52 +13,25 @@
     font-style: normal;
 }
 
-// Font supermarket
-// http://www.f0nt.com/release/supermarket/
-@font-face {
-    font-family: 'supermarketregular';
-    src: url('../font/supermarket-webfont.eot');
-    src: url('../font/supermarket-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../font/supermarket-webfont.woff2') format('woff2'),
-         url('../font/supermarket-webfont.woff') format('woff'),
-         url('../font/supermarket-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'THSarabunNewBold';
-    src: url('../font/thsarabunnewbold.eot');
-    src: url('../font/thsarabunnewbold.eot') format('embedded-opentype'),
-         url('../font/thsarabunnewbold.woff') format('woff'),
-         url('../font/thsarabunnewbold.ttf') format('truetype'),
-         url('../font/thsarabunnewbold.svg#THSarabunNewBold') format('svg');
-}
-
 // FONT STYLE
 @FontLogo: 'oswald';
 // Google Font
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-@fontStyle2: 'supermarketregular';
 @FontPrimary: 'Open Sans', sans-serif;
 
 // Default Color
-@DarkPrimaryColor   :#17a98c;
-@PrimaryColor       :#1abc9c;
-@lightPrimaryColor  :#8cddcd;
+@PrimaryColor       :#17a98c;
+@SecondaryColor     :#1abc9c;
+@ThirdColor         :#8cddcd;
 
-@accentColor        :#ff4081;
-@accentColor2       :#3498db;
+@AccentColor        :#ff4081;
+@AccentColor        :#3498db;
 
-@textPrimaryColor   :#000000;
-@primaryTextColor   :#555555;
-@secondaryTextColor :#AAAAAA;
-@thirdTextColor     :#EEEEEE;
-@lightTextColor     :#FFFFFF;
-@cancelTextColor    :#ea6153;
-@acceptTextColor    :#acd373;
+@TextPrimaryColor   :#000000;
+@TextSecondaryColor :#AAAAAA;
+@TextThirdColor     :#EEEEEE;
 
-@backgroundColor    :#FFFFFF;
+@BackgroundColor    :#FFFFFF;
 /////////////////////////////////////
 
 .transitionAnimation(@s){
@@ -82,26 +55,6 @@
     transform: scale(@v);
 }
 
-// box-shadow
-// Shadow material design
-/*.BoxShadowHelper(@level: 1){
-    & when (@level = 1) {
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    }
-    & when (@level = 2) {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    }
-    & when (@level = 3) {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-    & when (@level = 4) {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-    & when (@level = 5) {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    }
-}*/
-
 .shadow(@v){
   box-shadow: 0px 1px 3px rgba(0, 0, 0, @v);
 }
@@ -124,17 +77,9 @@ a[href], button {
 
 body{
   font-family: @FontPrimary;
-  background: @backgroundColor;
+  background: @BackgroundColor;
   overflow-y:scroll;
   overflow-x:hidden;
-}
-
-.bg-full-screen{
-    background: url('../image/cover.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 }
 
 // Animation of Textarea

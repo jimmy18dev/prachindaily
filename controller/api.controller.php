@@ -47,6 +47,40 @@ class APIController{
 	    echo json_encode($data);
 	}
 
+	// Page Location Analytics
+	public function ExportLocationInfoJson($message,$dataset){
+		foreach($dataset as $subArray){
+			$datasets[] = array(
+				'name' 		=> $subArray['amphur'],
+				'y' 		=> floatval($subArray['percent']),
+			);
+		}
+
+		$data = array(
+			"apiVersion" => "1.0",
+			"data" => array(
+				"update" => time(),
+				"message" => $message,
+				"execute" => round(microtime(true)-StTime,4)."s",
+				"totalFeeds" => floatval(count($dataset)),
+				"items" => $datasets,
+			),
+		);
+
+	    // JSON Encode and Echo.
+	    echo json_encode($data);
+	}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -81,28 +115,7 @@ class APIController{
 		echo json_encode($data);
 	}
 
-	public function ExportDeviceInfoJson($message,$dataset){
-		foreach($dataset as $subArray){
-			$datasets[] = array(
-				'name' 		=> $subArray['device'],
-				'y' 		=> floatval($subArray['percent']),
-			);
-		}
 
-		$data = array(
-			"apiVersion" => "1.0",
-			"data" => array(
-				"update" => time(),
-				"message" => $message,
-				"execute" => round(microtime(true)-StTime,4)."s",
-				"totalFeeds" => floatval(count($dataset)),
-				"items" => $datasets,
-			),
-		);
-
-	    // JSON Encode and Echo.
-	    echo json_encode($data);
-	}
 
 	public function ExportPeopleAccessInfoJson($message,$dataset){
 		$week_ago 	= array(0,0,0,0,0,0,0);

@@ -1,9 +1,10 @@
 <footer class="footer">
 	<div class="menu">
-		<div class="menu-items menu-active">Work</div>
-		<div class="menu-items">Shopping</div>
-		<div class="menu-items">Awesome</div>
-		<div class="menu-items">Project</div>
+		<div class="menu-items <?php echo ($current_page == "index"?'menu-active':'');?>"><a href="index.php">ค้นหาข้อมูล</a></div>
+		<div class="menu-items <?php echo ($current_page == "partner"?'menu-active':'');?>"><a href="partner.php">ฝากร้าน</a></div>
+		<div class="menu-items <?php echo ($current_page == "agreement"?'menu-active':'');?>"><a href="agreement.php">ข้อตกลง</a></div>
+		<div class="menu-items <?php echo ($current_page == "stat"?'menu-active':'');?>"><a href="stat.php">สถิติ</a></div>
+		<div class="menu-items <?php echo ($current_page == "contact"?'menu-active':'');?>"><a href="contact.php">ติดต่อเรา</a></div>
 	</div>
 
 	<p>Show and tell for designers</p>

@@ -2,6 +2,11 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
+if(!MEMBER_ONLINE){
+	header("Location: login.php");
+	die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,6 +38,7 @@ include'facebook.php';
 
 <!-- JS Lib -->
 <script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/service/page.service.js"></script>
 
 </head>
 
@@ -41,24 +47,13 @@ include'facebook.php';
 <?php include'header.php';?>
 
 <div class="page result">
-	<div class="topic">ข้อมูลของฉัน</div>
+	<div class="topic">ธุรกิจของฉัน</div>
 	<div class="result-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
-	</div>
-	<div class="pagination">
-		<div class="pagination-items pagination-active">1</div>
-		<div class="pagination-items">2</div>
-		<div class="pagination-items">3</div>
-		<div class="pagination-items">4</div>
-		<div class="pagination-items">5</div>
 	</div>
 </div>
 
 <?php include'footer.php';?>
-
-<div class="web-analytics">
-	<div class="left">สมาชิก 34,020 คน</div>
-	<div class="right">ค้นหา 324,353 ครั้ง</div>
-</div>
+<?php include'analytics_bar.php';?>
 </body>
 </html>

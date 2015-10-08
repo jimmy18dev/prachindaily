@@ -11,35 +11,6 @@ Copyright (c) 2015 Puwadon Sricharoen
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'supermarketregular';
-  src: url('../font/supermarket-webfont.eot');
-  src: url('../font/supermarket-webfont.eot?#iefix') format('embedded-opentype'), url('../font/supermarket-webfont.woff2') format('woff2'), url('../font/supermarket-webfont.woff') format('woff'), url('../font/supermarket-webfont.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'THSarabunNewBold';
-  src: url('../font/thsarabunnewbold.eot');
-  src: url('../font/thsarabunnewbold.eot') format('embedded-opentype'), url('../font/thsarabunnewbold.woff') format('woff'), url('../font/thsarabunnewbold.ttf') format('truetype'), url('../font/thsarabunnewbold.svg#THSarabunNewBold') format('svg');
-}
-/*.BoxShadowHelper(@level: 1){
-    & when (@level = 1) {
-        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-    }
-    & when (@level = 2) {
-        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    }
-    & when (@level = 3) {
-        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-    }
-    & when (@level = 4) {
-        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    }
-    & when (@level = 5) {
-        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
-    }
-}*/
 html {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -56,13 +27,6 @@ body {
   background: #ffffff;
   overflow-y: scroll;
   overflow-x: hidden;
-}
-.bg-full-screen {
-  background: url('../image/cover.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 .animated {
   -webkit-transition: height 0.2s;
@@ -187,54 +151,80 @@ Copyright (c) 2015 Daniel Eden
   float: left;
   display: inline-block;
 }
-.page-container h1 {
+.page-container header {
   width: 100%;
-  padding: 1% 0%;
   float: left;
   display: inline-block;
-  font-size: 1.7em;
-  line-height: 1.5em;
+  margin-bottom: 5%;
+}
+.page-container header h1 {
+  font-size: 2em;
+  line-height: 1.7em;
   font-weight: bold;
+}
+.page-container header p.info {
+  font-size: 0.9em;
+  color: #CCCCCC;
+  font-style: italic;
+  line-height: 1.8em;
+}
+.page-container header p.info .location {
+  color: #57ad68;
+}
+.page-container header p.info .phone {
+  color: #555555;
+}
+.page-container header p.info a {
+  color: #3F51B5;
+  text-decoration: none;
+}
+.page-container header p.info a:hover {
+  text-decoration: underline;
+}
+.page-container .entry-content {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1.8em;
+}
+.page-container .entry-content .infomation {
+  width: 100%;
+  margin: 5% 0%;
+  float: left;
+  display: inline-block;
+  line-height: 1.8em;
+}
+.page-container .entry-content .infomation .items {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.page-container .entry-content .infomation .items .icon {
+  width: 3%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+}
+.page-container .entry-content .infomation .items .text {
+  width: 97%;
+  float: right;
+  display: inline-block;
+}
+.page-container .entry-content p.poster {
+  margin-top: 5%;
+  color: #AAAAAA;
+  font-size: 0.9em;
+}
+.page-container .entry-content p.poster .poster-name {
+  font-weight: bold;
+  color: #3F51B5;
 }
 .page-container h2 {
   font-weight: bold;
   color: #000000;
   margin-top: 4%;
   font-size: 1.1em;
-}
-.page-container p {
-  font-size: 1em;
-  line-height: 1.9em;
-  color: #555555;
-}
-.page-container p i {
-  margin-right: 10px;
-}
-.page-container p strong {
-  font-weight: bold;
-  color: #000000;
-}
-.page-container p a {
-  color: #57ad68;
-  text-decoration: none;
-}
-.page-container p a:hover {
-  text-decoration: underline;
-}
-.page-container p.thank {
-  padding: 4% 0%;
-  text-align: center;
-  font-style: italic;
-  color: #AAAAAA;
-}
-.page-container .description {
-  width: 100%;
-  padding: 4% 0%;
-  float: left;
-  display: inline-block;
-  font-size: 1em;
-  line-height: 1.7em;
-  color: #555555;
 }
 .page-container .credit {
   width: 100%;
@@ -301,7 +291,7 @@ Copyright (c) 2015 Daniel Eden
 .page-container .page-editor .editor-items .input .input-text {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
-  width: 100%;
+  width: 98%;
   padding: 1%;
   float: left;
   display: inline-block;
@@ -313,7 +303,7 @@ Copyright (c) 2015 Daniel Eden
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;
   line-height: 1.5em;
-  width: 100%;
+  width: 98%;
   padding: 1%;
   height: 100px;
   float: left;
@@ -324,13 +314,15 @@ Copyright (c) 2015 Daniel Eden
 }
 .page-container .page-editor .agreement {
   width: 100%;
-  padding: 2% 0%;
+  padding: 3% 0%;
+  margin: 2% 0%;
   float: left;
   display: inline-block;
   font-size: 0.9em;
   line-height: 1.5em;
   text-align: center;
   color: #AAAAAA;
+  background: #FAFAFA;
 }
 .page-container .page-editor .agreement a {
   color: #555555;
@@ -340,26 +332,42 @@ Copyright (c) 2015 Daniel Eden
   color: #000000;
   text-decoration: underline;
 }
+.page-container .page-editor .score {
+  width: 100%;
+  padding: 5% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 1.5em;
+  color: #555555;
+}
+.page-container .page-editor .score .value {
+  color: #57ad68;
+}
 .page-container .page-editor .submit {
   width: 100%;
-  padding: 2% 0%;
+  padding: 5% 0%;
   float: left;
   display: inline-block;
 }
 .page-container .page-editor .submit .submit-button {
   float: right;
   display: inline-block;
-  border: 1px solid #AAAAAA;
-  color: #AAAAAA;
-  padding: 1% 3%;
-  font-size: 0.9em;
+  width: 100%;
+  padding: 2% 5%;
+  font-size: 1em;
   line-height: 1.5em;
-  border-radius: 20px;
-  background: #FFFFFF;
+  border-radius: 0px;
+  background: #57ad68;
+  color: #57ad68;
+  border: 0px;
+  color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif;
+}
+.page-container .page-editor .submit .submit-button i {
+  margin-right: 10px;
 }
 .page-container .page-editor .submit .submit-button:hover {
-  border: 1px solid #57ad68;
-  color: #57ad68;
   cursor: pointer;
 }
 .page {
@@ -454,6 +462,28 @@ Copyright (c) 2015 Daniel Eden
   color: #57ad68;
   border: 1px solid #57ad68;
 }
+.page .link {
+  width: 100%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+.page .link a {
+  padding: 1%;
+  color: #555555;
+  text-decoration: none;
+}
+.page .link a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.page .link a.active {
+  color: #F44336;
+  font-weight: bold;
+}
 .result {
   margin-top: 5%;
 }
@@ -490,6 +520,7 @@ Copyright (c) 2015 Daniel Eden
 }
 .result-list .result-items .title {
   font-weight: bold;
+  font-size: 1.2em;
 }
 .result-list .result-items .title a {
   color: #000000;
@@ -498,30 +529,66 @@ Copyright (c) 2015 Daniel Eden
 .result-list .result-items .title a:hover {
   text-decoration: underline;
 }
-.result-list .result-items .title .status {
-  font-size: 0.8em;
-  margin-left: 10px;
-  color: #AAAAAA;
-}
-.result-list .result-items .title .fail {
-  color: #ea6153;
-}
-.result-list .result-items .title .success {
-  color: #57ad68;
-}
 .result-list .result-items .info {
   font-size: 0.8em;
-  color: #AAAAAA;
+  color: #CCCCCC;
+  font-style: italic;
 }
 .result-list .result-items .info .location {
   color: #57ad68;
 }
-.result-list .result-items .info .timeupdate {
-  font-style: italic;
+.result-list .result-items .info .phone {
+  color: #555555;
+}
+.result-list .result-items .info a {
+  color: #3F51B5;
+  text-decoration: none;
+}
+.result-list .result-items .info a:hover {
+  text-decoration: underline;
+}
+.result-list .result-items .info .fail {
+  color: #ea6153;
+}
+.result-list .result-items .info .success {
+  color: #57ad68;
+}
+.result-list .result-items .info .delete:hover {
+  cursor: pointer;
+  color: #F44336;
 }
 .result-list .result-items .description {
   color: #777777;
   font-size: 0.8em;
+}
+.result-list .result-items .description .phone i {
+  margin-right: 5px;
+}
+.result-list .result-items .analytic {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-size: 0.8em;
+  line-height: 1.7em;
+  color: #CCCCCC;
+}
+.result-list .result-items .control {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+.result-list .result-items .control .button {
+  float: right;
+  display: inline-block;
+  color: #CCCCCC;
+  padding: 2% 2.5%;
+}
+.result-list .result-items .control .button:hover {
+  background: #FAFAFA;
+  cursor: pointer;
+}
+.result-list .result-items .control .success {
+  color: #3F51B5;
 }
 .pagination {
   width: 100%;
@@ -581,12 +648,20 @@ Copyright (c) 2015 Daniel Eden
   margin-right: 2%;
   line-height: 1.5em;
 }
-.footer .menu .menu-items:hover {
+.footer .menu .menu-items a {
+  color: #AAAAAA;
+  text-decoration: none;
+}
+.footer .menu .menu-items a:hover {
   color: #000000;
+  text-decoration: underline;
 }
 .footer .menu .menu-active {
   color: #000000;
   font-weight: bold;
+}
+.footer .menu .menu-active a {
+  color: #000000;
 }
 .footer p {
   line-height: 1.5em;
@@ -652,8 +727,14 @@ Copyright (c) 2015 Daniel Eden
 }
 .web-analytics .left {
   float: left;
+  margin-right: 10px;
 }
 .web-analytics .right {
   float: right;
+  margin-left: 10px;
+}
+.web-analytics span,
+.web-analytics i {
+  color: #57ad68;
 }
 /**** OTHER DEVICE AND SCREEN ****/
