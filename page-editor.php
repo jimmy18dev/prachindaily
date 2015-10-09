@@ -53,42 +53,46 @@ $page->Get(array('page_id' => $_GET['id']));
 		<div class="editor-items">
 			<div class="caption">ชื่อร้านชื่อสถานที่</div>
 			<div class="input">
-				<input type="text" name="name" class="input-text" value="<?php echo $page->name;?>">
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">รายละเอียด</div>
-			<div class="input">
-				<textarea name="description" class="input-textarea animated"><?php echo $page->description;?></textarea>
+				<input type="text" id="name" name="name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();">
+				<span class="length" id="name-length"></span>
 			</div>
 		</div>
 		<div class="editor-items">
 			<div class="caption">เบอร์โทรศัพท์</div>
 			<div class="input">
-				<input type="text" name="phone" class="input-text" value="<?php echo $page->phone;?>">
+				<input type="text" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();">
+			</div>
+		</div>
+		<div class="editor-items">
+			<div class="caption">อำเภอ</div>
+			<select name="city_id" id="city_id" class="input-select" onblur="javascript:Score();">
+				<option value="">เลือกอำเภอ...</option>
+				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
+			</select>
+		</div>
+		<div class="editor-items">
+			<div class="caption">รายละเอียด</div>
+			<div class="input">
+				<textarea name="description" id="description" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
+				<span class="length" id="description-length"></span>
 			</div>
 		</div>
 		<div class="editor-items">
 			<div class="caption">ที่อยู่</div>
 			<div class="input">
-				<textarea name="address" class="input-textarea animated"><?php echo $page->address;?></textarea>
+				<textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea>
+				<span class="length" id="address-length"></span>
 			</div>
 		</div>
 		<div class="editor-items">
 			<div class="caption">อธิบายเส้นทางไปร้านหรือสถานที่นี้</div>
 			<div class="input">
-				<textarea name="guide" class="input-textarea animated"><?php echo $page->guide;?></textarea>
+				<textarea name="guide" id="guide" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->guide;?></textarea>
+				<span class="length" id="guide-length"></span>
 			</div>
 		</div>
-		<div class="editor-items">
-			<div class="caption">อำเภอ</div>
-			<select name="city_id" id="" class="input-select">
-				<option value="">เลือกอำเภอ...</option>
-				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
-			</select>
-		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
-		<!-- <div class="score">คุณภาพของข้อมูล <span class="value">98%</span></div> -->
+		<div class="score">คุณภาพของข้อมูล <span class="value" id="score"><?php echo $page->score;?>%</span></div>
 		<div class="submit">
 			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>
 		</div>
@@ -109,6 +113,7 @@ $page->Get(array('page_id' => $_GET['id']));
 <?php include'analytics_bar.php';?>
 
 <script type="text/javascript" src="js/page.editor.js"></script>
+<script type="text/javascript" src="js/page.score.js"></script>
 
 </body>
 </html>

@@ -450,6 +450,15 @@ Copyright (c) 2015 Daniel Eden
   resize: none;
   outline: 0;
 }
+.page-container .page-editor .editor-items .input .length {
+  font-size: 0.5em;
+  width: 100%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  line-height: 2em;
+  color: #cccccc;
+}
 .page-container .page-editor .editor-items .input-select {
   width: 100%;
   padding: 1%;
@@ -543,6 +552,9 @@ Copyright (c) 2015 Daniel Eden
   font-size: 1em;
   margin-bottom: 0.5%;
   border-bottom: 1px dotted #cccccc;
+}
+.page-container .result-list .result-items .highlight {
+  color: #f44336;
 }
 .page-container .result-list .result-items .title {
   font-weight: bold;

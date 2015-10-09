@@ -69,6 +69,7 @@ class PageController extends PageModel{
 		$this->score = $data['pa_score'];
 		$this->view = $data['pa_view'];
 		$this->read = $data['pa_read'];
+		$this->score = $data['pa_score'];
 		$this->success = $data['pa_success'];
 		$this->type = $data['pa_type'];
 		$this->status = $data['pa_status'];
@@ -169,8 +170,8 @@ class PageController extends PageModel{
 		$text = str_replace(array("\t","\n"),"",$text);
 		$text = str_replace(array('\"'),'',$text);
 
-		if(strlen($text) > 200){
-			return mb_substr($text,0,120,"UTF-8").'...';
+		if(mb_strlen($text) > 200){
+			return mb_substr($text,0,120,'utf-8').'...';
 		}
 		else{
 			return $text;
@@ -188,6 +189,82 @@ class PageController extends PageModel{
     	else if($param['type'] == "success"){
     		parent::UpdateSuccessProcess($param);
     	}
+    }
+
+    public function Score($param){
+    	$name_score 			= 0; // 15
+    	$description_score 		= 0; // 20
+    	$phone_score 			= 0; // 15
+    	$address_score 			= 0; // 20
+    	$guide_score 			= 0; // 20
+    	$location_score 		= 0; // 10
+    	$total 					= 0;
+
+    	if(!empty($param['name'])){
+    		$name_score = 5;
+
+    		if(mb_strlen($param['name'],'utf-8') > 20)
+    			$name_score = 15;
+    		else if(mb_strlen($param['name'],'utf-8') > 15)
+    			$name_score = 12;
+    		else if(mb_strlen($param['name'],'utf-8') > 10)
+    			$name_score = 7;
+
+    		echo $name_score.': Name('.mb_strlen($param['name']).')...'.$param['name'].'<br>';
+    	}
+    	if(!empty($param['description'])){
+    		$description_score = 5;
+    		if(mb_strlen($param['description'],'utf-8') > 120)
+    			$description_score = 20;
+    		else if(mb_strlen($param['description'],'utf-8') > 80)
+    			$description_score = 18;
+    		else if(mb_strlen($param['description'],'utf-8') > 50)
+    			$description_score = 14;
+    		else if(mb_strlen($param['description'],'utf-8') > 30)
+    			$description_score = 8;
+
+    		echo $description_score.': Description('.mb_strlen($param['description']).')<br>';
+    	}
+    	if(!empty($param['address'])){
+    		$address_score = 5;
+    		if(mb_strlen($param['address'],'utf-8') > 40)
+    			$address_score = 20;
+    		else if(mb_strlen($param['address'],'utf-8') > 30)
+    			$address_score = 17;
+    		else if(mb_strlen($param['address'],'utf-8') > 20)
+    			$address_score = 12;
+    		else if(mb_strlen($param['address'],'utf-8') > 10)
+    			$address_score = 8;
+
+    		echo $address_score.': Address<br>';
+    	}
+    	if(!empty($param['guide'])){
+    		$guide_score = 5;
+    		if(mb_strlen($param['guide'],'utf-8') > 50)
+    			$guide_score = 20;
+    		else if(mb_strlen($param['guide'],'utf-8') > 30)
+    			$guide_score = 16;
+    		else if(mb_strlen($param['guide'],'utf-8') > 20)
+    			$guide_score = 12;
+    		else if(mb_strlen($param['guide'],'utf-8') > 10)
+    			$guide_score = 7;
+
+    		echo $guide_score.': Guide<br>';
+    	}
+    	if(!empty($param['phone'])){
+    		if(mb_strlen($param['phone'],'utf-8') > 18)
+    			$phone_score = 15;
+    		else if(mb_strlen($param['phone'],'utf-8') > 9)
+    			$phone_score = 13;
+
+    		echo $phone_score.': Phone<br>';
+    	}
+    	if(!empty($param['location'])){
+    		$location_score = 10;
+    		echo $location_score.': Location<br>';
+    	}
+
+    	echo 'Total:'.$total = $name_score + $description_score + $phone_score + $address_score + $guide_score + $location_score;
     }
 
     public function Delete($param){

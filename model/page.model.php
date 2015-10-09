@@ -139,7 +139,7 @@ class PageModel extends Database{
 	}
 
 	public function GetProcess($param){
-		parent::query('SELECT pa_id,pa_name,pa_description,pa_address,pa_guide,pa_phone,pa_latitude,pa_longitude,pa_score,pa_view,pa_read,pa_success,pa_create_time,pa_update_time,pa_visit_time,pa_read,pa_type,pa_status,amphur_id,amphur_name,province_id,province_name,pe_id,pe_fb_id,pe_fname,pe_lname,pe_type 
+		parent::query('SELECT pa_id,pa_name,pa_description,pa_address,pa_guide,pa_phone,pa_latitude,pa_longitude,pa_score,pa_view,pa_read,pa_success,pa_create_time,pa_update_time,pa_visit_time,pa_read,pa_score,pa_type,pa_status,amphur_id,amphur_name,province_id,province_name,pe_id,pe_fb_id,pe_fname,pe_lname,pe_type 
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id 

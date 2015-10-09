@@ -83,6 +83,15 @@ $meta_description = $page->description_metatag;
 		</p>
 	</header>
 
+	<div><?php $page->Score(array(
+	'name' => $page->name,
+	'description' => $page->description,
+	'phone' => $page->phone,
+	'address' => $page->address,
+	'guide' => $page->guide,
+	'location' => $page->amphur_id,
+	));?></div>
+	
 	<div class="entry-content">
 		<?php echo $page->description;?>
 
