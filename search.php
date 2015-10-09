@@ -58,7 +58,7 @@ $meta_description = 'ปราจีนเดลี่ เว็บอันด�
 
 <?php include'header.php';?>
 
-<div class="page result">
+<div class="page-container search-page">
 	<div class="search-form">
 		<form action="search.php" target="_parent" method="get">
 		<input type="text" name="q" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." value="<?php echo $_GET['q'];?>">

@@ -44,7 +44,7 @@ if(!MEMBER_ONLINE){
 
 <?php include'header.php';?>
 
-<div class="page result">
+<div class="page-container">
 	<div class="topic">ธุรกิจของฉัน</div>
 	<div class="result-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>

@@ -40,7 +40,7 @@ include'favicon.php';
 
 <?php include'header.php';?>
 
-<div class="page result">
+<div class="page-container">
 	<div class="topic">คำขอ (<?php echo $page->PendingCount(array('id' => 0));?>)</div>
 	<div class="result-list">
 		<?php $page->PendingPage(array('id' => '0'));?>

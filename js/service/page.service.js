@@ -18,7 +18,7 @@ function UpdateAnalytics(type){
         }
     }).done(function(data){
         console.log('=> '+data.message);
-        $('#process_update').fadeIn(300).html('<i class="fa fa-circle"></i> Updated...').delay(3000).fadeOut(300);
+        $('#process_update').fadeIn(500).html('<i class="fa fa-spinner fa-spin"></i> Updated').delay(2000).fadeOut(500);
     }).error();
 }
 
@@ -82,7 +82,7 @@ function ChartLocation(){
             type: 'pie'
         },
         title: {
-            text: 'ความครอบคลุมของข้อมูล'
+            text: 'ข้อมูลธุรกิจที่ปราจีนเดลี่'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'

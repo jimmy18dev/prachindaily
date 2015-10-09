@@ -2,6 +2,11 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
+if(MEMBER_ONLINE){
+	header("Location: index.php");
+	die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -56,14 +61,10 @@ $meta_description = 'ร่วมเป็นส่วนหนึ่งขอ�
 
 <body>
 <?php include'header.php';?>
-<div class="page">
+<div class="page-container page-margin-top">
 	<div class="login">
 		<p>เข้าระบบสมาชิกของปราจีนเดลี่ด้วย Facebook ของคุณ</p>
-
-		<a href="<?php echo $fbLogin;?>">
-		<div class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</div>
-		</a>
-		
+		<a href="<?php echo $fbLogin;?>"><div class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</div></a>
 		<p class="note">กรุณากดยอมรับการขออีเมลด้วยค่ะ ขอบคุณค่ะ</p>
 	</div>
 </div>

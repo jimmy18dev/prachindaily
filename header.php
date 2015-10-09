@@ -9,7 +9,7 @@
 		</div>
 
 		<a href="page-editor.php">
-		<div class="button">สร้างธุรกิจ</div>
+		<div class="button"><i class="fa fa-plus"></i><span class="caption">สร้างธุรกิจ</span></div>
 		</a>
 		
 		<div class="name"><a href="me.php"><?php echo $me->name;?></a></div>

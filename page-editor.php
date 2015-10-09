@@ -88,7 +88,7 @@ $page->Get(array('page_id' => $_GET['id']));
 			</select>
 		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
-		<div class="score">คุณภาพของข้อมูล <span class="value">98%</span></div>
+		<!-- <div class="score">คุณภาพของข้อมูล <span class="value">98%</span></div> -->
 		<div class="submit">
 			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>
 		</div>

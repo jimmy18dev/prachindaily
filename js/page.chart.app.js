@@ -3,8 +3,12 @@ $(function(){
 	Highcharts.setOptions({
         colors:[
         '#1abc9c',
-        '#f1c40f',
+        '#30c2a5',
+        '#47c9af',
         '#5ed0b9',
+        '#75d6c3',
+        '#8cddcd',
+        '#a3e4d7',
         ]
     });
 

@@ -45,7 +45,7 @@ $meta_description = $page->description_metatag;
 <meta name="description" 			content="<?php echo $meta_description;?>"/>
 <meta property="og:title" 			content="<?php echo $meta_title;?>"/>
 <meta property="og:description" 	content="<?php echo $meta_description;?>"/>
-<meta property="og:url" 			content="<?php echo $meta['domain'];?>/page.phpid=<?php echo $page->id;?>"/>
+<meta property="og:url" 			content="<?php echo $meta['domain'];?>/business-<?php echo $page->id;?>-<?php echo $page->url_friendly;?>.html"/>
 <meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
 <meta property="og:type" 			content="website"/>
 <meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>

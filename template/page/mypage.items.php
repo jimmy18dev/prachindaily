@@ -33,7 +33,7 @@ else{
 ?>
 
 <div class="result-items" id="items-<?php echo $var['pa_id'];?>">
-	<div class="title"><a href="page.php?id=<?php echo $var['pa_id'];?>"><?php echo $var['pa_name'];?></a></div>
+	<div class="title"><a href="business-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
 	<div class="info">
 		<span class="status"><?php echo $status;?></span>
 		 · <span class="location"><?php echo $location;?></span>
@@ -42,7 +42,7 @@ else{
 		<?php }?>
 
 		 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
-		 · <span class="edit"><a href="page-editor.php?id=<?php echo $var['pa_id'];?>">แก้ไข</a></span> 
+		 · <span class="edit"><a href="page-editor-<?php echo $var['pa_id'];?>.html">แก้ไข</a></span> 
 		 · <span class="delete" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'delete_request');"><i class="fa fa-times"></i> Delete</span>
 	</div>
 	<div class="description">

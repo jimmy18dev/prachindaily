@@ -17,9 +17,8 @@ class PageModel extends Database{
 		parent::execute();
 		$data = parent::single();
 
-		$dataset['total'] = $data['count'];
-
 		foreach ($dataset as $k => $var) {
+			$dataset[$k]['url_friendly'] 					= parent::url_friendly_process($var['pa_name']);
 			$dataset[$k]['create_time_facebook_format'] 	= parent::date_facebookformat($var['pa_create_time']);
 			$dataset[$k]['update_time_facebook_format'] 	= parent::date_facebookformat($var['pa_update_time']);
 			$dataset[$k]['visit_time_facebook_format'] 		= parent::date_facebookformat($var['pa_visit_time']);
@@ -27,6 +26,8 @@ class PageModel extends Database{
 			$dataset[$k]['update_time_thai_format'] 		= parent::date_thaiformat($var['pa_update_time']);
 			$dataset[$k]['visit_time_thai_format'] 			= parent::date_thaiformat($var['pa_visit_time']);
 		}
+
+		$dataset['total'] = $data['count'];
 
 		return $dataset;
 	}
@@ -56,6 +57,7 @@ class PageModel extends Database{
 		$dataset = parent::resultset();
 
 		foreach ($dataset as $k => $var) {
+			$dataset[$k]['url_friendly'] 					= parent::url_friendly_process($var['pa_name']);
 			$dataset[$k]['create_time_facebook_format'] 	= parent::date_facebookformat($var['pa_create_time']);
 			$dataset[$k]['update_time_facebook_format'] 	= parent::date_facebookformat($var['pa_update_time']);
 			$dataset[$k]['visit_time_facebook_format'] 		= parent::date_facebookformat($var['pa_visit_time']);
@@ -76,6 +78,7 @@ class PageModel extends Database{
 		$dataset = parent::resultset();
 
 		foreach ($dataset as $k => $var) {
+			$dataset[$k]['url_friendly'] 					= parent::url_friendly_process($var['pa_name']);
 			$dataset[$k]['create_time_facebook_format'] 	= parent::date_facebookformat($var['pa_create_time']);
 			$dataset[$k]['update_time_facebook_format'] 	= parent::date_facebookformat($var['pa_update_time']);
 			$dataset[$k]['visit_time_facebook_format'] 		= parent::date_facebookformat($var['pa_visit_time']);
@@ -118,7 +121,7 @@ class PageModel extends Database{
 	}
 
 	public function UpdateProcess($param){
-		parent::query('UPDATE base_page SET pa_people_id = :people_id,pa_name = :name,pa_description = :description,pa_address = :address,pa_phone = :phone,pa_guide = :guide,pa_latitude = :latitude,pa_longitude = :longitude,pa_district_id = :district_id,pa_city_id = :city_id,pa_province_id = :province_id,pa_update_time = :update_time WHERE pa_id = :page_id');
+		parent::query('UPDATE base_page SET pa_name = :name,pa_description = :description,pa_address = :address,pa_phone = :phone,pa_guide = :guide,pa_latitude = :latitude,pa_longitude = :longitude,pa_district_id = :district_id,pa_city_id = :city_id,pa_province_id = :province_id,pa_update_time = :update_time,pa_status = "pending" WHERE pa_id = :page_id AND pa_people_id = :people_id');
 		parent::bind(':people_id', 		$param['people_id']);
 		parent::bind(':name', 			$param['name']);
 		parent::bind(':description', 	$param['description']);
@@ -146,6 +149,7 @@ class PageModel extends Database{
 		parent::execute();
 		$dataset = parent::single();
 
+		$dataset['url_friendly'] 					= parent::url_friendly_process($dataset['pa_name']);
 		$dataset['create_time_facebook_format'] 	= parent::date_facebookformat($dataset['pa_create_time']);
 		$dataset['update_time_facebook_format'] 	= parent::date_facebookformat($dataset['pa_update_time']);
 		$dataset['visit_time_facebook_format'] 		= parent::date_facebookformat($dataset['pa_visit_time']);

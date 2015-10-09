@@ -3,6 +3,7 @@ class PageController extends PageModel{
 
 	public $id;
 	public $name;
+	public $url_friendly;
 	public $description;
 	public $description_metatag;
 	public $phone;
@@ -42,6 +43,7 @@ class PageController extends PageModel{
 
 		$this->id = $data['pa_id'];
 		$this->name = $data['pa_name'];
+		$this->url_friendly = $data['url_friendly'];
 		$this->description = $data['pa_description'];
 		$this->description_metatag = $this->ConvertStringtoMetatag($data['pa_description']);
 		$this->phone = $data['pa_phone'];
@@ -99,7 +101,7 @@ class PageController extends PageModel{
 	}
 
 	public function Search($param){
-		$per_page = 30;
+		$per_page = 5;
 		$current_page = $param['page'];
 
 		if(empty($param['page']))
@@ -119,7 +121,7 @@ class PageController extends PageModel{
 	}
 
 	public function Pagination($total_feed,$current_page,$q,$mode){
-		$per_page 	= 30;
+		$per_page 	= 5;
 		$total_page = ceil($total_feed/$per_page);
 		$step_down 	= 3;
 		$step_up 	= 2;

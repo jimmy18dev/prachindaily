@@ -55,7 +55,7 @@ $current_page = "index";
 <body>
 <?php include'header.php';?>
 
-<div class="page">
+<div class="page-container page-margin-top">
 	<div class="search-form">
 		<form action="search.php" target="_parent" method="get">
 		<input type="text" name="q" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." autofocus>
@@ -64,20 +64,20 @@ $current_page = "index";
 	</div>
 	<div class="menu">
 		<?php if(MEMBER_ONLINE){?>
-		<a href="page-editor.php" target="_parent">สร้างธุรกิจของคุณ</a>
+		<a href="page-editor.php" target="_parent"><i class="fa fa-plus"></i>สร้างธุรกิจของคุณ</a>
 		<?php }else{?>
-		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ</a>
+		<a href="partner.php" target="_parent"><i class="fa fa-plus"></i>สร้างธุรกิจของคุณ</a>
 		<?php }?>
 	</div>
 
 	<div class="link">
-		<a href="partner.php" target="_parent">ฝากร้าน</a>
-		<a href="agreement.php" target="_parent">ข้อตกลง</a>
-		<a href="stat.php" target="_parent">สถิติ</a>
-		<a href="contact.php" target="_parent">ติดต่อเรา</a>
+		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ<i class="fa fa-commenting-o"></i></a>
+		 · <a href="agreement.php" target="_parent">ข้อตกลง</a>
+		 · <a href="stat.php" target="_parent">สถิติ</a>
+		 · <a href="contact.php" target="_parent">ติดต่อเรา</a>
 
 		<?php if(MEMBER_TYPE == "administrator"){?>
-		<a href="pending.php" target="_parent" class="<?php echo ($page->PendingCount(array('id' => 0))>0?'active':'');?>">Pending (<?php echo $page->PendingCount(array('id' => 0));?>)</a>
+		 · <a href="pending.php" target="_parent" class="<?php echo ($page->PendingCount(array('id' => 0))>0?'active':'');?>">Pending (<?php echo $page->PendingCount(array('id' => 0));?>)</a>
 		<?php }?>
 	</div>
 </div>

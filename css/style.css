@@ -87,7 +87,7 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   color: #555555;
   background: rgba(255, 255, 255, 0.9);
-  border-bottom: 1px solid #F5F5F5;
+  border-bottom: 1px solid #f7f7f7;
 }
 .header .logo {
   float: left;
@@ -116,7 +116,7 @@ Copyright (c) 2015 Daniel Eden
   height: 26px;
   border-radius: 50%;
   display: inline-block;
-  background: #EEEEEE;
+  background: #cccccc;
 }
 .header .account .name {
   float: left;
@@ -134,15 +134,24 @@ Copyright (c) 2015 Daniel Eden
   float: left;
   padding: 6px 10px;
   font-size: 0.8em;
-  border: 1px solid #EEEEEE;
+  border: 1px solid #cccccc;
   border-radius: 20px;
   margin-right: 10px;
-  color: #CCCCCC;
+  color: #cccccc;
+}
+.header .account .button i {
+  margin-right: 5px;
+  font-size: 0.8em;
 }
 .header .account .button:hover {
-  border: 1px solid #57ad68;
-  color: #57ad68;
+  border: 1px solid #1abc9c;
+  color: #1abc9c;
   cursor: pointer;
+}
+.header .account .button:active {
+  background: #1abc9c;
+  border: 1px solid #1abc9c;
+  color: #ffffff;
 }
 .page-container {
   width: 50%;
@@ -150,6 +159,145 @@ Copyright (c) 2015 Daniel Eden
   margin-top: 5%;
   float: left;
   display: inline-block;
+}
+.page-container .login {
+  width: 100%;
+  padding: 5% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  color: #000000;
+}
+.page-container .login p {
+  line-height: 1.5em;
+  color: #555555;
+}
+.page-container .login .facebook-button {
+  margin: 3% 0%;
+  background: #3b5998;
+  color: #ffffff;
+  display: inline-block;
+  padding: 2% 4%;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+.page-container .login .facebook-button i {
+  margin-right: 10px;
+}
+.page-container .login .facebook-button:hover {
+  cursor: pointer;
+  background: #2f4779;
+}
+.page-container .login p.note {
+  font-size: 0.9em;
+  color: #cccccc;
+}
+.page-container .search-form {
+  margin-top: 5%;
+  width: 100%;
+  float: left;
+  display: inline-block;
+  border-bottom: 1px solid #cccccc;
+}
+.page-container .search-form .input-text {
+  width: 92%;
+  padding: 1% 0%;
+  float: left;
+  display: inline-block;
+  border: 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  background: #ffffff;
+  outline: 0;
+  color: #000000;
+}
+.page-container .search-form .button-submit {
+  width: 8%;
+  padding: 1% 0%;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  color: #555555;
+  font-size: 1.2em;
+  line-height: 1.5em;
+  background: #ffffff;
+  border: 0px;
+  color: #000000;
+}
+.page-container .search-form .button-submit:hover {
+  background: #f7f7f7;
+  color: #000000;
+  cursor: pointer;
+}
+.page-container .menu {
+  width: 100%;
+  margin: 10% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+}
+.page-container .menu a {
+  text-decoration: none;
+  border: 1px solid #1abc9c;
+  color: #1abc9c;
+  font-size: 0.9em;
+  padding: 1% 4%;
+  border-radius: 20px;
+}
+.page-container .menu a i {
+  margin-right: 10px;
+  font-size: 0.8em;
+}
+.page-container .menu a:hover {
+  color: #14967c;
+  border: 1px solid #14967c;
+}
+.page-container .menu a:active {
+  background: #14967c;
+  color: #ffffff;
+  border: 1px solid #14967c;
+}
+.page-container .menu a.facebook-button {
+  border: 1px solid #3b5998;
+  background: #3b5998;
+  color: #ffffff;
+}
+.page-container .menu a.facebook-button:hover {
+  background: #2f4779;
+  border: 1px solid #2f4779;
+}
+.page-container .link {
+  width: 100%;
+  padding: 3% 0%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  color: #555555;
+}
+.page-container .link a {
+  color: #555555;
+  text-decoration: none;
+  padding: 1%;
+}
+.page-container .link a i {
+  margin-left: 5px;
+  font-size: 0.8em;
+}
+.page-container .link a:hover {
+  color: #000000;
+  text-decoration: underline;
+}
+.page-container .link a.active {
+  padding: 0.4% 2%;
+  padding-bottom: 0.6%;
+  border-radius: 20px;
+  font-size: 0.7em;
+  background: #f44336;
+  color: #ffffff;
+  margin-left: 1%;
 }
 .page-container header {
   width: 100%;
@@ -161,21 +309,21 @@ Copyright (c) 2015 Daniel Eden
   font-size: 2em;
   line-height: 1.7em;
   font-weight: bold;
+  color: #000000;
 }
 .page-container header p.info {
   font-size: 0.9em;
-  color: #CCCCCC;
-  font-style: italic;
+  color: #cccccc;
   line-height: 1.8em;
 }
 .page-container header p.info .location {
-  color: #57ad68;
+  color: #1abc9c;
 }
 .page-container header p.info .phone {
   color: #555555;
 }
 .page-container header p.info a {
-  color: #3F51B5;
+  color: #3b5998;
   text-decoration: none;
 }
 .page-container header p.info a:hover {
@@ -187,6 +335,18 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   font-size: 1em;
   line-height: 1.8em;
+  color: #555555;
+}
+.page-container .entry-content a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+.page-container .entry-content a:hover {
+  color: #14967c;
+  text-decoration: underline;
+}
+.page-container .entry-content strong {
+  font-weight: bold;
 }
 .page-container .entry-content .infomation {
   width: 100%;
@@ -211,47 +371,35 @@ Copyright (c) 2015 Daniel Eden
   float: right;
   display: inline-block;
 }
+.page-container .entry-content .chart {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.5em;
+}
+.page-container .entry-content .chart .highcharts-title {
+  font-size: 1em !important;
+  color: #555555 !important;
+  font-weight: bold !important;
+}
+.page-container .entry-content .chart tspan {
+  font-size: 1em !important;
+  color: #555555 !important;
+}
 .page-container .entry-content p.poster {
   margin-top: 5%;
-  color: #AAAAAA;
+  color: #cccccc;
   font-size: 0.9em;
 }
 .page-container .entry-content p.poster .poster-name {
-  font-weight: bold;
-  color: #3F51B5;
+  color: #3b5998;
 }
 .page-container h2 {
   font-weight: bold;
-  color: #000000;
+  color: #555555;
   margin-top: 4%;
   font-size: 1.1em;
-}
-.page-container .credit {
-  width: 100%;
-  margin-top: 4%;
-  padding: 4% 0%;
-  float: left;
-  display: inline-block;
-  text-align: right;
-  border-top: 1px dotted #EEEEEE;
-  line-height: 1.5em;
-  font-size: 0.9em;
-  color: #AAAAAA;
-}
-.page-container .credit .thank {
-  float: left;
-  display: inline-block;
-}
-.page-container .credit .thank i {
-  margin-right: 10px;
-}
-.page-container .credit .poster {
-  float: right;
-  display: inline-block;
-  font-style: italic;
-}
-.page-container .credit .poster .poster-name {
-  color: #000000;
 }
 .page-container .page-editor {
   width: 100%;
@@ -264,24 +412,14 @@ Copyright (c) 2015 Daniel Eden
   float: left;
   display: inline-block;
 }
-.page-container .page-editor .editor-items .input-select {
-  width: 100%;
-  padding: 1%;
-  float: left;
-  display: inline-block;
-  border: 1px solid #EEEEEE;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1em;
-  line-height: 2em;
-}
 .page-container .page-editor .editor-items .caption {
   width: 100%;
   padding: 1% 0%;
   float: left;
   display: inline-block;
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.5em;
-  color: #AAAAAA;
+  color: #cccccc;
 }
 .page-container .page-editor .editor-items .input {
   width: 100%;
@@ -312,17 +450,27 @@ Copyright (c) 2015 Daniel Eden
   resize: none;
   outline: 0;
 }
+.page-container .page-editor .editor-items .input-select {
+  width: 100%;
+  padding: 1%;
+  float: left;
+  display: inline-block;
+  border: 1px solid #EEEEEE;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  line-height: 2em;
+}
 .page-container .page-editor .agreement {
   width: 100%;
-  padding: 3% 0%;
+  padding: 5% 0%;
   margin: 2% 0%;
   float: left;
   display: inline-block;
   font-size: 0.9em;
   line-height: 1.5em;
   text-align: center;
-  color: #AAAAAA;
-  background: #FAFAFA;
+  color: #cccccc;
+  background: #f7f7f7;
 }
 .page-container .page-editor .agreement a {
   color: #555555;
@@ -337,12 +485,12 @@ Copyright (c) 2015 Daniel Eden
   padding: 5% 0%;
   float: left;
   display: inline-block;
-  text-align: center;
-  font-size: 1.5em;
+  text-align: right;
+  font-size: 1em;
   color: #555555;
 }
 .page-container .page-editor .score .value {
-  color: #57ad68;
+  color: #1abc9c;
 }
 .page-container .page-editor .submit {
   width: 100%;
@@ -353,15 +501,15 @@ Copyright (c) 2015 Daniel Eden
 .page-container .page-editor .submit .submit-button {
   float: right;
   display: inline-block;
-  width: 100%;
-  padding: 2% 5%;
-  font-size: 1em;
+  width: 30%;
+  padding: 1% 5%;
+  font-size: 0.9em;
   line-height: 1.5em;
   border-radius: 0px;
-  background: #57ad68;
-  color: #57ad68;
+  background: #1abc9c;
+  border-radius: 20px;
   border: 0px;
-  color: #FFFFFF;
+  color: #ffffff;
   font-family: 'Open Sans', sans-serif;
 }
 .page-container .page-editor .submit .submit-button i {
@@ -369,268 +517,155 @@ Copyright (c) 2015 Daniel Eden
 }
 .page-container .page-editor .submit .submit-button:hover {
   cursor: pointer;
+  background: #14967c;
 }
-.page {
-  width: 50%;
-  margin: 0% 25%;
-  margin-top: 17%;
-  float: left;
-  display: inline-block;
-}
-.page .login {
-  width: 100%;
-  padding: 5% 0%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.page .login p {
-  line-height: 1.5em;
-  color: #555555;
-}
-.page .login .facebook-button {
-  margin: 3% 0%;
-  background: #3b5998;
-  color: #FFFFFF;
-  display: inline-block;
-  padding: 2%;
-}
-.page .login .facebook-button i {
-  margin-right: 10px;
-}
-.page .login .facebook-button:hover {
-  cursor: pointer;
-  background: #2f4779;
-}
-.page .login p.note {
-  font-size: 0.8em;
-  color: #AAAAAA;
-}
-.page .search-form {
-  margin-top: 5%;
-  width: 100%;
-  float: left;
-  display: inline-block;
-  border-bottom: 1px solid #AAAAAA;
-}
-.page .search-form .input-text {
-  width: 92%;
-  padding: 1% 0%;
-  float: left;
-  display: inline-block;
-  border: 0px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1em;
-  line-height: 1.5em;
-  background: #FFFFFF;
-  outline: 0;
-}
-.page .search-form .button-submit {
-  width: 8%;
-  padding: 1% 0%;
-  float: right;
-  display: inline-block;
-  text-align: center;
-  color: #555555;
-  font-size: 1.2em;
-  line-height: 1.5em;
-  background: #FFFFFF;
-  border: 0px;
-}
-.page .search-form .button-submit:hover {
-  background: #F5F5F5;
-  color: #000000;
-  cursor: pointer;
-}
-.page .menu {
-  width: 100%;
-  margin: 10% 0%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-}
-.page .menu a {
-  text-decoration: none;
-  border: 1px solid #AAAAAA;
-  color: #AAAAAA;
-  color: #555555;
-  font-size: 0.9em;
-  padding: 1% 2%;
-  border-radius: 20px;
-}
-.page .menu a:hover {
-  color: #57ad68;
-  border: 1px solid #57ad68;
-}
-.page .link {
-  width: 100%;
-  padding: 3% 0%;
-  float: left;
-  display: inline-block;
-  text-align: center;
-  font-size: 0.8em;
-  line-height: 1.5em;
-}
-.page .link a {
-  padding: 1%;
-  color: #555555;
-  text-decoration: none;
-}
-.page .link a:hover {
-  color: #000000;
-  text-decoration: underline;
-}
-.page .link a.active {
-  color: #F44336;
-  font-weight: bold;
-}
-.result {
-  margin-top: 5%;
-}
-.result .search-form {
-  margin-top: 5%;
-}
-.topic {
+.page-container .topic {
   width: 100%;
   padding-top: 2%;
   float: left;
   display: inline-block;
   font-size: 2em;
-  color: #AAAAAA;
+  color: #cccccc;
 }
-.result-list {
+.page-container .result-list {
   width: 100%;
   float: left;
   display: inline-block;
   margin-top: 2%;
 }
-.result-list .result-items {
+.page-container .result-list .result-items {
   width: 100%;
   padding: 3% 0%;
   float: left;
   display: inline-block;
-  background: #FFFFFF;
+  background: #ffffff;
   line-height: 1.5em;
   font-size: 1em;
   margin-bottom: 0.5%;
-  border-bottom: 1px dotted #EEEEEE;
+  border-bottom: 1px dotted #cccccc;
 }
-.result-list .result-items .highlight {
-  color: #e74c3c;
-}
-.result-list .result-items .title {
+.page-container .result-list .result-items .title {
   font-weight: bold;
   font-size: 1.2em;
 }
-.result-list .result-items .title a {
+.page-container .result-list .result-items .title a {
   color: #000000;
   text-decoration: none;
 }
-.result-list .result-items .title a:hover {
+.page-container .result-list .result-items .title a:hover {
   text-decoration: underline;
 }
-.result-list .result-items .info {
+.page-container .result-list .result-items .info {
   font-size: 0.8em;
-  color: #CCCCCC;
+  color: #cccccc;
   font-style: italic;
 }
-.result-list .result-items .info .location {
-  color: #57ad68;
+.page-container .result-list .result-items .info .location {
+  color: #1abc9c;
 }
-.result-list .result-items .info .phone {
+.page-container .result-list .result-items .info .phone {
   color: #555555;
 }
-.result-list .result-items .info a {
-  color: #3F51B5;
+.page-container .result-list .result-items .info a {
+  color: #3b5998;
   text-decoration: none;
 }
-.result-list .result-items .info a:hover {
+.page-container .result-list .result-items .info a:hover {
   text-decoration: underline;
 }
-.result-list .result-items .info .fail {
-  color: #ea6153;
+.page-container .result-list .result-items .info .fail {
+  color: #f44336;
 }
-.result-list .result-items .info .success {
-  color: #57ad68;
+.page-container .result-list .result-items .info .success {
+  color: #14967c;
 }
-.result-list .result-items .info .delete:hover {
+.page-container .result-list .result-items .info .delete:hover {
   cursor: pointer;
-  color: #F44336;
+  color: #f44336;
 }
-.result-list .result-items .description {
-  color: #777777;
+.page-container .result-list .result-items .description {
+  color: #555555;
   font-size: 0.8em;
 }
-.result-list .result-items .description .phone i {
+.page-container .result-list .result-items .description .phone i {
   margin-right: 5px;
 }
-.result-list .result-items .analytic {
+.page-container .result-list .result-items .analytic {
   width: 100%;
   float: left;
   display: inline-block;
   font-size: 0.8em;
   line-height: 1.7em;
-  color: #CCCCCC;
+  color: #cccccc;
 }
-.result-list .result-items .control {
+.page-container .result-list .result-items .control {
   width: 100%;
   float: left;
   display: inline-block;
 }
-.result-list .result-items .control .button {
+.page-container .result-list .result-items .control .button {
   float: right;
   display: inline-block;
-  color: #CCCCCC;
+  color: #cccccc;
   padding: 2% 2.5%;
 }
-.result-list .result-items .control .button:hover {
-  background: #FAFAFA;
+.page-container .result-list .result-items .control .button:hover {
+  background: #f7f7f7;
   cursor: pointer;
 }
-.result-list .result-items .control .success {
-  color: #3F51B5;
+.page-container .result-list .result-items .control .success {
+  color: #14967c;
 }
-.pagination {
+.page-container .pagination {
   width: 100%;
   padding: 3% 0%;
   float: left;
   display: inline-block;
 }
-.pagination .found {
+.page-container .pagination .found {
   width: 100%;
   padding-bottom: 3%;
   float: left;
   display: inline-block;
   line-height: 1.5em;
   font-size: 0.8em;
-  color: #AAAAAA;
+  color: #cccccc;
   font-style: italic;
 }
-.pagination .pagination-items {
+.page-container .pagination .pagination-items {
   width: 7%;
   padding: 2% 0%;
   float: left;
   display: inline-block;
   text-align: center;
-  color: #CCCCCC;
+  color: #cccccc;
   font-size: 0.9em;
 }
-.pagination .pagination-items:hover {
+.page-container .pagination .pagination-items:hover {
   color: #000000;
-  background: #F5F5F5;
+  background: #f7f7f7;
   cursor: pointer;
 }
-.pagination .pagination-active {
-  background: #F5F5F5;
+.page-container .pagination .pagination-active {
+  background: #f7f7f7;
   color: #000000;
   font-weight: bold;
+}
+.page-margin-top {
+  margin-top: 17%;
+}
+.search-page {
+  margin-top: 3%;
+}
+.search-page .search-form {
+  margin-top: 5%;
 }
 .footer {
   width: 50%;
   margin: 5% 25%;
   float: left;
   display: inline-block;
-  color: #AAAAAA;
+  color: #cccccc;
 }
 .footer .menu {
   width: 100%;
@@ -638,8 +673,8 @@ Copyright (c) 2015 Daniel Eden
   margin-bottom: 2%;
   float: left;
   display: inline-block;
-  font-size: 0.8em;
-  border-bottom: 1px dotted #DDDDDD;
+  font-size: 0.9em;
+  border-bottom: 1px dotted #cccccc;
 }
 .footer .menu .menu-items {
   float: left;
@@ -648,8 +683,12 @@ Copyright (c) 2015 Daniel Eden
   margin-right: 2%;
   line-height: 1.5em;
 }
+.footer .menu .menu-items i {
+  margin-right: 5px;
+  font-size: 0.8em;
+}
 .footer .menu .menu-items a {
-  color: #AAAAAA;
+  color: #555555;
   text-decoration: none;
 }
 .footer .menu .menu-items a:hover {
@@ -667,6 +706,14 @@ Copyright (c) 2015 Daniel Eden
   line-height: 1.5em;
   font-size: 0.8em;
 }
+.footer p a {
+  color: #1abc9c;
+  text-decoration: none;
+}
+.footer p a:hover {
+  text-decoration: underline;
+  color: #14967c;
+}
 #filter {
   position: fixed;
   top: 0px;
@@ -675,7 +722,7 @@ Copyright (c) 2015 Daniel Eden
   height: 100%;
   float: left;
   display: none;
-  background: #FFFFFF;
+  background: #ffffff;
 }
 #filter #loading-bar {
   width: 60%;
@@ -683,7 +730,7 @@ Copyright (c) 2015 Daniel Eden
   height: 1px;
   float: left;
   display: inline-block;
-  background: #57ad68;
+  background: #1abc9c;
 }
 #filter #loading-message {
   width: 100%;
@@ -699,7 +746,7 @@ Copyright (c) 2015 Daniel Eden
   margin-right: 10px;
 }
 #filter #loading-message .success {
-  color: #57ad68;
+  color: #14967c;
 }
 #filter .cancel {
   width: 100%;
@@ -711,7 +758,7 @@ Copyright (c) 2015 Daniel Eden
   font-size: 0.8em;
 }
 #filter .cancel a {
-  color: #CCCCCC;
+  color: #cccccc;
 }
 .web-analytics {
   position: fixed;
@@ -723,7 +770,7 @@ Copyright (c) 2015 Daniel Eden
   display: inline-block;
   font-size: 0.7em;
   background: rgba(255, 255, 255, 0.5);
-  color: #AAAAAA;
+  color: #cccccc;
 }
 .web-analytics .left {
   float: left;
@@ -735,6 +782,6 @@ Copyright (c) 2015 Daniel Eden
 }
 .web-analytics span,
 .web-analytics i {
-  color: #57ad68;
+  color: #1abc9c;
 }
 /**** OTHER DEVICE AND SCREEN ****/
