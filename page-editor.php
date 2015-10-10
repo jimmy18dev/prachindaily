@@ -53,14 +53,14 @@ $page->Get(array('page_id' => $_GET['id']));
 		<div class="editor-items">
 			<div class="caption">ชื่อร้านชื่อสถานที่</div>
 			<div class="input">
-				<input type="text" id="name" name="name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();">
+				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();">
 				<span class="length" id="name-length"></span>
 			</div>
 		</div>
 		<div class="editor-items">
 			<div class="caption">เบอร์โทรศัพท์</div>
 			<div class="input">
-				<input type="text" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();">
+				<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();">
 			</div>
 		</div>
 		<div class="editor-items">

@@ -52,9 +52,6 @@ $meta_description = 'ปราจีนเดลี่จะช่วยสร�
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
 
-<!-- JS Lib -->
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
-
 </head>
 
 <body>
