@@ -66,7 +66,6 @@ class PageController extends PageModel{
 		$this->create_time_thai_format = $data['create_time_thai_format'];
 		$this->update_time_thai_format = $data['update_time_thai_format'];
 		$this->visit_time_thai_format = $data['visit_time_thai_format'];
-		$this->score = $data['pa_score'];
 		$this->view = $data['pa_view'];
 		$this->read = $data['pa_read'];
 		$this->score = $data['pa_score'];
@@ -209,8 +208,6 @@ class PageController extends PageModel{
     			$name_score = 12;
     		else if(mb_strlen($param['name'],'utf-8') > 10)
     			$name_score = 7;
-
-    		echo $name_score.': Name('.mb_strlen($param['name']).')...'.$param['name'].'<br>';
     	}
     	if(!empty($param['description'])){
     		$description_score = 5;
@@ -222,8 +219,6 @@ class PageController extends PageModel{
     			$description_score = 14;
     		else if(mb_strlen($param['description'],'utf-8') > 30)
     			$description_score = 8;
-
-    		echo $description_score.': Description('.mb_strlen($param['description']).')<br>';
     	}
     	if(!empty($param['address'])){
     		$address_score = 5;
@@ -235,8 +230,6 @@ class PageController extends PageModel{
     			$address_score = 12;
     		else if(mb_strlen($param['address'],'utf-8') > 10)
     			$address_score = 8;
-
-    		echo $address_score.': Address<br>';
     	}
     	if(!empty($param['guide'])){
     		$guide_score = 5;
@@ -248,23 +241,18 @@ class PageController extends PageModel{
     			$guide_score = 12;
     		else if(mb_strlen($param['guide'],'utf-8') > 10)
     			$guide_score = 7;
-
-    		echo $guide_score.': Guide<br>';
     	}
     	if(!empty($param['phone'])){
     		if(mb_strlen($param['phone'],'utf-8') > 18)
     			$phone_score = 15;
     		else if(mb_strlen($param['phone'],'utf-8') > 9)
     			$phone_score = 13;
-
-    		echo $phone_score.': Phone<br>';
     	}
     	if(!empty($param['location'])){
     		$location_score = 10;
-    		echo $location_score.': Location<br>';
     	}
 
-    	echo 'Total:'.$total = $name_score + $description_score + $phone_score + $address_score + $guide_score + $location_score;
+    	return $total = $name_score + $description_score + $phone_score + $address_score + $guide_score + $location_score;
     }
 
     public function Delete($param){

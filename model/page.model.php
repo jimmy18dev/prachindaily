@@ -98,7 +98,7 @@ class PageModel extends Database{
 	}
 
 	public function CreateProcess($param){
-		parent::query('INSERT INTO base_page(pa_people_id,pa_name,pa_description,pa_address,pa_phone,pa_guide,pa_latitude,pa_longitude,pa_district_id,pa_city_id,pa_province_id,pa_create_time,pa_update_time,pa_visit_time,pa_type) VALUE(:people_id,:name,:description,:address,:phone,:guide,:latitude,:longitude,:district_id,:city_id,:province_id,:create_time,:update_time,:visit_time,:type)');
+		parent::query('INSERT INTO base_page(pa_people_id,pa_name,pa_description,pa_address,pa_phone,pa_guide,pa_latitude,pa_longitude,pa_district_id,pa_city_id,pa_province_id,pa_create_time,pa_update_time,pa_visit_time,pa_score,pa_type) VALUE(:people_id,:name,:description,:address,:phone,:guide,:latitude,:longitude,:district_id,:city_id,:province_id,:create_time,:update_time,:visit_time,:score,:type)');
 
 		parent::bind(':people_id', 		$param['people_id']);
 		parent::bind(':name', 			$param['name']);
@@ -115,13 +115,14 @@ class PageModel extends Database{
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::bind(':visit_time',		date('Y-m-d H:i:s'));
 		parent::bind(':type', 			$param['type']);
+		parent::bind(':score', 		$param['score']);
 
 		parent::execute();
 		return parent::lastInsertId();
 	}
 
 	public function UpdateProcess($param){
-		parent::query('UPDATE base_page SET pa_name = :name,pa_description = :description,pa_address = :address,pa_phone = :phone,pa_guide = :guide,pa_latitude = :latitude,pa_longitude = :longitude,pa_district_id = :district_id,pa_city_id = :city_id,pa_province_id = :province_id,pa_update_time = :update_time,pa_status = "pending" WHERE pa_id = :page_id AND pa_people_id = :people_id');
+		parent::query('UPDATE base_page SET pa_name = :name,pa_description = :description,pa_address = :address,pa_phone = :phone,pa_guide = :guide,pa_latitude = :latitude,pa_longitude = :longitude,pa_district_id = :district_id,pa_city_id = :city_id,pa_province_id = :province_id,pa_update_time = :update_time,pa_status = "pending",pa_score = :score WHERE pa_id = :page_id AND pa_people_id = :people_id');
 		parent::bind(':people_id', 		$param['people_id']);
 		parent::bind(':name', 			$param['name']);
 		parent::bind(':description', 	$param['description']);
@@ -135,6 +136,7 @@ class PageModel extends Database{
 		parent::bind(':province_id', 	$param['province_id']);
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::bind(':page_id', 		$param['page_id']);
+		parent::bind(':score', 			$param['score']);
 		parent::execute();
 	}
 

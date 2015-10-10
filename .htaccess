@@ -3,8 +3,8 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^business-([^_]*)\.html$ /page.php?id=$1 [L]
-RewriteRule ^business-([^_]*)-([^_]*)\.html$ /page.php?id=$1&name=$2 [L]
+RewriteRule ^page-([^_]*)\.html$ /page.php?id=$1 [L]
+RewriteRule ^page-([^_]*)-([^_]*)\.html$ /page.php?id=$1&name=$2 [L]
 
 RewriteRule ^page-editor-([^_]*)\.html$ /page-editor.php?id=$1 [L]
 

@@ -31,7 +31,7 @@ function Score(){
         else if(name.length > 10)
             name_score = 7;
 
-        $('#name-length').html(name.length);
+        //$('#name-length').html(name.length);
         console.log(name_score+' :Name');
     }
     if(description){
@@ -45,8 +45,8 @@ function Score(){
         else if(description.length > 30)
             description_score = 8;
 
-        $('#description-length').html(description.length);
-        // console.log(description_score+' :Description');
+        //$('#description-length').html(description.length);
+        console.log(description_score+' :Description');
     }
     if(address){
         address_score = 5;
@@ -59,8 +59,8 @@ function Score(){
         else if(address.length > 10)
             address_score = 8;
         
-        $('#address-length').html(address.length);
-        // console.log(address_score+' :Address');
+        //$('#address-length').html(address.length);
+        console.log(address_score+' :Address');
     }
     if(guide){
         guide_score = 5;
@@ -74,23 +74,23 @@ function Score(){
         else if(guide.length > 10)
             guide_score = 7;
 
-        $('#guide-length').html(guide.length);
-        // console.log(guide_score+' :Guide');
+        //$('#guide-length').html(guide.length);
+        console.log(guide_score+' :Guide');
     }
     if(phone.length > 9){
         phone_score = 13;
         if(phone.length > 18)
             phone_score = 15;
-        // console.log(phone_score+' :Phone');
+        console.log(phone_score+' :Phone');
     }
     if(location){
         location_score = 10;
-        // console.log(location_score+' :Location');
+        //console.log(location_score+' :Location');
     }
 
     total = name_score+description_score+phone_score+address_score+guide_score+location_score;
 
     $('#score').html(total+'%');
 
-    console.log(total+' :Total Score');
+    //console.log(total+' :Total Score');
 }

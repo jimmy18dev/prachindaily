@@ -33,7 +33,7 @@ else{
 ?>
 
 <div class="result-items" id="items-<?php echo $var['pa_id'];?>">
-	<div class="title"><a href="business-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
+	<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
 	<div class="info">
 		<span class="status"><?php echo $status;?></span>
 		 · <span class="location"><?php echo $location;?></span>

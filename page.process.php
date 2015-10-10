@@ -15,6 +15,14 @@ if(empty($_POST['page_id'])){
         'district_id' => $_POST['district_id'],
         'city_id' => $_POST['city_id'],
         'province_id' => $_POST['province_id'],
+        'score'=> $page->Score(array(
+            'name' => $_POST['name'],
+            'description' => $_POST['description'],
+            'phone' => $_POST['phone'],
+            'address' => $_POST['address'],
+            'guide' => $_POST['guide'],
+            'location' => $_POST['city_id'],
+        )),
         'type' => 'unknow',
     ));
 }
@@ -32,6 +40,14 @@ else{
         'district_id' => $_POST['district_id'],
         'city_id' => $_POST['city_id'],
         'province_id' => $_POST['province_id'],
+        'score'=> $page->Score(array(
+            'name' => $_POST['name'],
+            'description' => $_POST['description'],
+            'phone' => $_POST['phone'],
+            'address' => $_POST['address'],
+            'guide' => $_POST['guide'],
+            'location' => $_POST['city_id'],
+        )),
     ));
 }
 
