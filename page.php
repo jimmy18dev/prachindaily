@@ -109,7 +109,7 @@ $meta_description = $page->description_metatag;
 			<?php }?>
 		</div>
 
-		<p class="poster">ข้อมูลโดยคุณ <span class="poster-name"><?php echo $page->poster_name;?></span></p>
+		<p class="poster">ข้อมูลโดย <span class="poster-name"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></span></p>
 	</div>
 
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">

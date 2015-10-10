@@ -45,7 +45,16 @@ if(!MEMBER_ONLINE){
 <?php include'header.php';?>
 
 <div class="page-container">
-	<div class="topic">ธุรกิจของฉัน</div>
+	<header>
+		<div class="topic">ธุรกิจของฉัน</div>
+	</header>
+	<div class="menu">
+		<?php if(MEMBER_ONLINE){?>
+		<a href="page-editor.php" target="_parent"><i class="fa fa-plus"></i>เพิ่มธุรกิจของคุณ</a>
+		<?php }else{?>
+		<a href="partner.php" target="_parent" class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</a>
+		<?php }?>
+	</div>
 	<div class="result-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
 	</div>

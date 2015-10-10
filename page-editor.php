@@ -92,7 +92,7 @@ $page->Get(array('page_id' => $_GET['id']));
 			</div>
 		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
-		<div class="score">คุณภาพของข้อมูล <span class="value" id="score"><?php echo $page->score;?>%</span></div>
+		<div class="score">สมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>%</span></div>
 		<div class="submit">
 			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>
 		</div>

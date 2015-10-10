@@ -7,6 +7,8 @@ if(MEMBER_ONLINE){
 	header("Location: index.php");
 	die();
 }
+
+$current_page = "login";
 ?>
 
 <!DOCTYPE html>
@@ -63,9 +65,8 @@ $meta_description = 'ร่วมเป็นส่วนหนึ่งขอ�
 <?php include'header.php';?>
 <div class="page-container page-margin-top">
 	<div class="login">
-		<p>เข้าระบบสมาชิกของปราจีนเดลี่ด้วย Facebook ของคุณ</p>
 		<a href="<?php echo $fbLogin;?>"><div class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</div></a>
-		<p class="note">กรุณากดยอมรับการขออีเมลด้วยค่ะ ขอบคุณค่ะ</p>
+		<p class="note">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></p>
 	</div>
 </div>
 <?php include'analytics_bar.php';?>

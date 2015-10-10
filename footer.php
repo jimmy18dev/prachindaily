@@ -1,6 +1,6 @@
 <footer class="footer">
 	<div class="menu">
-		<div class="menu-items <?php echo ($current_page == "index"?'menu-active':'');?>"><i class="fa fa-search"></i><a href="index.php">ค้นหาข้อมูล</a></div>
+		<div class="menu-items <?php echo ($current_page == "index"?'menu-active':'');?>"><i class="fa fa-search"></i><a href="index.php">ค้นหา</a></div>
 		<div class="menu-items <?php echo ($current_page == "partner"?'menu-active':'');?>"><a href="partner.php">ฝากร้าน</a></div>
 		<div class="menu-items <?php echo ($current_page == "agreement"?'menu-active':'');?>"><a href="agreement.php">ข้อตกลง</a></div>
 		<div class="menu-items <?php echo ($current_page == "stat"?'menu-active':'');?>"><i class="fa fa-line-chart"></i><a href="stat.php">สถิติ</a></div>

@@ -51,7 +51,7 @@ class PageModel extends Database{
 		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_read,pa_status,amphur_id,amphur_name,province_id,province_name 
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
-			LEFT JOIN th_province ON pa_province_id = province_id WHERE pa_people_id = :people_id ORDER BY pa_create_time DESC');
+			LEFT JOIN th_province ON pa_province_id = province_id WHERE pa_people_id = :people_id ORDER BY pa_update_time DESC');
 		parent::bind(':people_id', 		$param['people_id']);
 		parent::execute();
 		$dataset = parent::resultset();
@@ -70,7 +70,7 @@ class PageModel extends Database{
 	}
 
 	public function PendingPageProcess($param){
-		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_read,pa_status,amphur_id,amphur_name,province_id,province_name 
+		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_score,pa_status,amphur_id,amphur_name,province_id,province_name 
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id WHERE pa_status = "pending" ORDER BY pa_create_time DESC');

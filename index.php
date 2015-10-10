@@ -56,18 +56,13 @@ $current_page = "index";
 <?php include'header.php';?>
 
 <div class="page-container page-margin-top">
+
+	<h1 class="search-page">ค้นหาร้านอาหาร ที่พัก และอื่นๆ</h1>
 	<div class="search-form">
 		<form action="search.php" target="_parent" method="get">
-		<input type="text" name="q" class="input-text" placeholder="ค้นหาสิ่งที่คุณต้องการ..." autofocus>
+		<input type="text" name="q" class="input-text" placeholder="คำค้นหา..." autofocus>
 		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
 		</form>
-	</div>
-	<div class="menu">
-		<?php if(MEMBER_ONLINE){?>
-		<a href="page-editor.php" target="_parent"><i class="fa fa-plus"></i>สร้างธุรกิจของคุณ</a>
-		<?php }else{?>
-		<a href="partner.php" target="_parent"><i class="fa fa-plus"></i>สร้างธุรกิจของคุณ</a>
-		<?php }?>
 	</div>
 
 	<div class="link">

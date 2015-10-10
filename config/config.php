@@ -54,7 +54,7 @@
 		'fb_app_id' 	=> '218590748331719',
 		'fb_admins' 	=> '1818320188',
 		'author' 		=> 'ปราจีนเดลี่',
-		'generator' 	=> 'DailyPoint (1.0)',
+		'generator' 	=> 'Dailypoint 1.0',
 		'keywords' 		=> 'ปราจีนเดลี่',
 		'domain' 		=> 'http://'.$_SERVER['SERVER_NAME'],
 	);

@@ -22,7 +22,8 @@ else{
 <div class="result-items" id="items-<?php echo $var['pa_id'];?>">
 	<div class="title"><a href="page-<?php echo $var['pa_id'];?>.html"><?php echo $var['pa_name'];?></a></div>
 	<div class="info">
-		<span class="location"><?php echo $location;?></span>
+		<span class="score"><?php echo $var['pa_score'];?>%</span>
+		 · <span class="location"><?php echo $location;?></span>
 
 		<?php if(!empty($var['pa_phone'])){?>
 		 · <span class="phone"><?php echo $phone;?></span>

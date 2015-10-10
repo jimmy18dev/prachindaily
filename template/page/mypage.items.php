@@ -42,7 +42,7 @@ else{
 		<?php }?>
 
 		 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
-		 · <span class="edit"><a href="page-editor-<?php echo $var['pa_id'];?>.html">แก้ไข</a></span> 
+		 · <span class="edit"><a href="editor-<?php echo $var['pa_id'];?>.html">แก้ไข</a></span> 
 		 · <span class="delete" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'delete_request');"><i class="fa fa-times"></i> Delete</span>
 	</div>
 	<div class="description">
