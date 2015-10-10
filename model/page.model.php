@@ -5,14 +5,14 @@ class PageModel extends Database{
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id 
-			WHERE (pa_name LIKE :keyword OR pa_description LIKE :keyword) 
+			WHERE (pa_name LIKE :keyword OR pa_description LIKE :keyword) AND pa_status = "success" 
 			LIMIT '.$param['start'].','.$param['total']);
 		parent::bind(':keyword','%'.$param['keyword'].'%');
 		parent::execute();
 		$dataset = parent::resultset();
 
 		// Get Total Feed
-		parent::query('SELECT COUNT(pa_id) count FROM base_page WHERE (pa_name LIKE :keyword OR pa_description LIKE :keyword)');
+		parent::query('SELECT COUNT(pa_id) count FROM base_page WHERE (pa_name LIKE :keyword OR pa_description LIKE :keyword) AND pa_status = "success"');
 		parent::bind(':keyword','%'.$param['keyword'].'%');
 		parent::execute();
 		$data = parent::single();
@@ -51,7 +51,9 @@ class PageModel extends Database{
 		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_read,pa_status,amphur_id,amphur_name,province_id,province_name 
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
-			LEFT JOIN th_province ON pa_province_id = province_id WHERE pa_people_id = :people_id ORDER BY pa_update_time DESC');
+			LEFT JOIN th_province ON pa_province_id = province_id 
+			WHERE pa_people_id = :people_id 
+			ORDER BY pa_update_time DESC');
 		parent::bind(':people_id', 		$param['people_id']);
 		parent::execute();
 		$dataset = parent::resultset();
