@@ -10,7 +10,7 @@
 		<div class="name"><a href="me.php"><?php echo $me->name;?></a></div>
 		<?php }else{?>
 		<?php if($current_page != "login"){?>
-		<div class="name"><a href="login.php">เข้าสู่ระบบ <i class="fa fa-sign-in"></i></a></div>
+		<div class="login"><a href="login.php">เข้าสู่ระบบ <i class="fa fa-sign-in"></i></a></div>
 		<?php }?>
 		<?php }?>
 	</div>

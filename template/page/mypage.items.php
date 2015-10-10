@@ -8,27 +8,28 @@ else if($var['pa_status'] == "fail"){
 	$status = '<span class="status fail">ไม่ผ่าน <i class="fa fa-exclamation"></i></span>';
 }
 else if($var['pa_status'] == "delete_request"){
-	$status = '<span class="status"><i class="fa fa-trash-o"></i> ขอลบข้อมูล</span>';
+	$status = '<span class="status"><i class="fa fa-trash-o"></i> ลบข้อมูล</span>';
 }
 else{
-	$status = '<span class="status"><i class="fa fa-clock-o"></i> รอตรวจสอบ...</span>';
+	$status = '<span class="status"><i class="fa fa-clock-o"></i> ตรวจสอบ</span>';
 }
 
 
 $timeupdate = $var['create_time_facebook_format'];
 
 if($var['pe_create_time'] != $var['pa_update_time']){
-	$timeupdate = 'อัพเดท '.$var['update_time_facebook_format'];
+	$timeupdate = $var['update_time_facebook_format'];
 }
 
 $phone = $var['pa_phone'];
 
 // Location
 if(empty($var['amphur_name'])){
-	$location = 'จังหวัด'.$var['province_name'];
+	// $location = 'จังหวัด'.$var['province_name'];
 }
 else{
-	$location = 'อำเภอ'.$var['amphur_name'].' จังหวัด'.$var['province_name'];
+	// $location = 'อำเภอ'.$var['amphur_name'].' จังหวัด'.$var['province_name'];
+	$location = $var['amphur_name'];
 }
 ?>
 
@@ -43,7 +44,6 @@ else{
 
 		 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
 		 · <span class="edit"><a href="editor-<?php echo $var['pa_id'];?>.html">แก้ไข</a></span> 
-		 · <span class="delete" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'delete_request');"><i class="fa fa-times"></i> Delete</span>
 	</div>
 	<div class="description">
 		<?php echo $var['pa_description'];?>
@@ -53,5 +53,7 @@ else{
 		<span class="read"><?php echo number_format($var['pa_read']);?> Read · </span>
 		<?php }?>
 		<span class="visit">แสดงล่าสุด <?php echo $var['visit_time_facebook_format'];?></span>
+
+		<span class="delete" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'delete_request');"><i class="fa fa-times"></i> Delete</span>
 	</div>
 </div>

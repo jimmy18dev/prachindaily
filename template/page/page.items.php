@@ -4,17 +4,18 @@ $var['pa_description'] = str_ireplace($keyword,'<span class="highlight">'.$keywo
 
 $timeupdate = $var['create_time_facebook_format'];
 if($var['pa_create_time'] != $var['pa_update_time']){
-	$timeupdate = 'อัพเดท '.$var['update_time_facebook_format'];
+	$timeupdate = $var['update_time_facebook_format'];
 }
 
 $phone = $var['pa_phone'];
 
 // Location
 if(empty($var['amphur_name'])){
-	$location = 'จังหวัด'.$var['province_name'];
+	// $location = 'จังหวัด'.$var['province_name'];
 }
 else{
-	$location = 'อำเภอ'.$var['amphur_name'].' จังหวัด'.$var['province_name'];
+	// $location = 'อำเภอ'.$var['amphur_name'].' จังหวัด'.$var['province_name'];
+	$location = $var['amphur_name'];
 }
 ?>
 
