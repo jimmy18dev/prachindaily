@@ -5,6 +5,7 @@ image/upload/*
 store/image/upload/*
 
 # Windows image file caches
+photothumb.db
 Thumbs.db
 ehthumbs.db
 
