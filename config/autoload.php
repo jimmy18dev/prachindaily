@@ -49,7 +49,7 @@
 	// Device access detact process
 	//include'device.access.php';
 
-	// $_SESSION['facebook_id'] = '1818320188';
+	$_SESSION['facebook_id'] = '1818320188';
 
 	// Device define data
 	define('DEVICE_TYPE',		$deviceType);

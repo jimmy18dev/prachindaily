@@ -1,0 +1,391 @@
+/*!
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Puwadon Sricharoen
+*/
+
+// Font Size Config
+@Fontsize_header    : 1.2em;
+
+@Fontsize_title     : 1em;
+@Fontsize_info      : 0.75em;
+@Fontsize_normal    : 0.9em;
+@Fontsize_mini      : 0.8em;
+@Fontsize_micro     : 0.7em;
+
+// Page Config
+@PageWidth          : 100%;
+
+.header{
+    height: 50px;
+
+    .logo{
+        padding: 14px 3%;
+        font-size: @Fontsize_header;
+    }
+
+    .account{
+        padding: 12px 3%;
+        height: 26px;
+
+        .avatar{
+            margin-left: 10px;
+
+            img{
+                width: 26px;
+                height: 26px;
+            }
+        }
+        .name, .login{
+            padding-top: 6px;
+            font-size: @Fontsize_normal;
+        }
+    }
+}
+
+// Article Style
+.page-container{
+    width: @PageWidth;
+    margin: 0% (100% - @PageWidth) / 2;
+    margin-top: 50px;
+
+    // Login page
+    .login{
+        width: 94%;
+        padding: 5% 3%;
+        font-size: @Fontsize_normal;
+        margin-top: 28%;
+
+        p{
+            line-height: 1.5em;
+        }
+
+        .facebook-button{
+            margin: 3% 0%;
+            padding: 4% 8%;
+            border-radius: 20px;
+            font-size: @Fontsize_normal;
+
+            i{
+                margin-right: 10px;
+            }
+        }
+
+        p.note{
+            font-size: @Fontsize_normal;
+        }
+    }
+
+    // Search Page
+    h1.search-page{
+        line-height: 5em;
+        font-size: @Fontsize_title;
+    }
+    .search-form{
+        width: 94%;
+        margin: 0% 3%;
+
+        .input-text{
+            width: 84%;
+            padding: 3% 2%;
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+        .button-submit{
+            width: 12%;
+            padding: 3% 0%;
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+    }
+
+    .link{
+        padding: 3% 0%;
+        font-size: @Fontsize_normal;
+        line-height: 1.5em;
+        margin-top: 50%;
+
+        a.active{
+            padding: 0.4% 2%;
+            padding-bottom: 0.6%;
+            border-radius: 20px;
+            font-size: @Fontsize_mini;
+            margin-left: 1%;
+        }
+    }
+
+    .menu{
+        margin: 10% 0%;
+
+        a{
+            font-size: @Fontsize_normal;
+            padding: 2% 6%;
+            border-radius: 20px;
+
+            i{
+                margin-right: 10px;
+                font-size: @Fontsize_mini;
+            }
+        }
+    }
+
+    // Article Style
+    header{
+        width: 94%;
+        margin: 5% 3%;
+
+        h1{
+            font-size: @Fontsize_header;
+            line-height: 1.7em;
+        }
+        p.info{
+            font-size: @Fontsize_normal;
+            line-height: 1.8em;
+        }
+    }
+
+    .entry-content{
+        width: 94%;
+        padding: 0% 3%;
+        font-size: @Fontsize_normal;
+        line-height: 1.8em;
+
+        .infomation{
+            width: 100%;
+            margin: 5% 0%;
+            line-height: 1.8em;
+
+            .items{
+                .icon{
+                    width: 7%;
+                    font-size: @Fontsize_mini;
+                }
+                .text{
+                    width: 93%;
+                }
+            }
+        }
+
+        .chart{
+            line-height: 1.5em;
+
+            .highcharts-title{
+                font-size: @Fontsize_normal !important;
+            }
+
+            tspan{
+                font-size: @Fontsize_normal !important;
+            }
+        }
+
+        p.poster{
+            margin-top: 5%;
+        }
+    }
+
+    h2{
+        margin-top: 4%;
+        font-size: @Fontsize_title;
+    }
+
+    .page-editor{
+        width: 94%;
+        padding: 0% 3%;
+
+        .editor-items{
+            width: 100%;
+            padding: 2% 0%;
+
+            .caption{
+                padding: 1% 0%;
+                font-size: @Fontsize_normal;
+                line-height: 1.5em;
+            }
+            .input{
+
+                .input-text{
+                    font-size: @Fontsize_title;
+                    width: 98%;
+                    padding: 2% 1%;
+                    line-height: 1.5em;
+                }
+                .input-textarea{
+                    font-size: @Fontsize_normal;
+                    line-height: 1.5em;
+                    width: 98%;
+                    padding: 2% 1%;
+                    height: 100px;
+                }
+
+                .length{
+                    font-size: 0.5em;
+                    line-height: 2em;
+                }
+            }
+
+            .input-select{
+                padding: 2% 1%;
+                font-size: @Fontsize_normal;
+                line-height: 2em;
+            }
+        }
+
+        .agreement{
+            padding: 5% 0%;
+            margin: 2% 0%;
+            float: left;
+            display: inline-block;
+            font-size: @Fontsize_normal;
+            line-height: 1.5em;
+        }
+
+        .score{
+            width: 50%;
+            padding-top: 9%;
+            font-size: @Fontsize_normal;
+            line-height: 1.5em;
+        }
+
+        .submit{
+            width: 50%;
+            padding: 5% 0%;
+
+            .submit-button{
+                float: right;
+                display: inline-block;
+                width: 90%;
+                padding: 6% 5%;
+                font-size: @Fontsize_normal;
+                line-height: 1.5em;
+                color: @TextLightColor;
+
+                i{
+                    font-size: @Fontsize_mini;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    // Search ana Me page
+    .topic{
+        padding-top: 2%;
+        font-size: @Fontsize_header;
+    }
+
+    .result-list{
+        margin-top: 2%;
+
+        .result-items{
+            width: 94%;
+            padding: 3% 3%;
+            line-height: 1.5em;
+            margin-bottom: 0.5%;
+
+            .title{
+                font-size: @Fontsize_title;
+            }
+            .info{
+                font-size: @Fontsize_info;
+                margin-bottom: 1%;
+            }
+            .description{
+                font-size: @Fontsize_normal;
+            }
+
+            .analytic{
+                font-size: @Fontsize_info;
+                line-height: 1.7em;
+            }
+
+            .control{
+                font-size: @Fontsize_normal;
+
+                .button{
+                    padding: 4% 6%;
+                }
+            }
+        }
+    }
+
+    .pagination{
+        width: 94%;
+        padding: 3% 3%;
+
+        .found{
+            padding-bottom: 3%;
+            line-height: 1.5em;
+            font-size: @Fontsize_info;
+        }
+
+        .pagination-items{
+            width: 16%;
+            padding: 4% 0%;
+            font-size: @Fontsize_normal;
+        }
+    }
+}
+.page-margin-top{
+    margin-top: 20%;
+}
+.search-page{
+    margin-top: 22%;
+}
+
+.footer{
+    width: @PageWidth;
+    margin: 7% (100% - @PageWidth) / 2;
+
+    .menu{
+        width: 94%;
+        padding: 1% 3%;
+        margin-bottom: 2%;
+        font-size: @Fontsize_normal;
+
+        .menu-items{
+            width: 18%;
+            padding: 1% 1%;
+            margin-right: 0%;
+            line-height: 1.5em;
+
+            i{
+                margin-right: 5px;
+                font-size: @Fontsize_mini;
+            }
+        }
+    }
+
+    p{
+        padding: 0% 3%;
+        line-height: 1.5em;
+        font-size: @Fontsize_normal;
+    }
+}
+
+
+#filter{
+    #loading-bar{
+        width: 60%;
+        margin-top: 70%;
+        height: 1px;
+    }
+
+    #loading-message{
+        padding: 5% 0%;
+        line-height: 1.5em;
+        font-size: @Fontsize_normal;
+
+        i{
+            margin-right: 10px;
+        }
+    }
+
+    .cancel{
+        margin-top: 40%;
+        line-height: 1.5em;
+        font-size: @Fontsize_info;
+    }
+}
+
+.web-analytics{
+    display: none;
+}
