@@ -9,7 +9,7 @@ Copyright (c) 2015 Puwadon Sricharoen
 // Font Size Config
 @Fontsize_header    : 1.2em;
 
-@Fontsize_title     : 1em;
+@Fontsize_title     : 1.1em;
 @Fontsize_info      : 0.75em;
 @Fontsize_normal    : 0.9em;
 @Fontsize_mini      : 0.8em;
@@ -195,7 +195,7 @@ Copyright (c) 2015 Puwadon Sricharoen
         font-size: @Fontsize_normal;
         line-height: 1.5em;
         color: @TextSecondaryColor;
-        margin-top: 50%;
+        margin-top: 30%;
 
         a{
             color: @TextSecondaryColor;
@@ -276,7 +276,7 @@ Copyright (c) 2015 Puwadon Sricharoen
         display: inline-block;
 
         h1{
-            font-size: @Fontsize_header;
+            font-size: @Fontsize_header + 0.8em;
             line-height: 1.7em;
             font-weight: bold;
             color: @TextPrimaryColor;
@@ -301,6 +301,19 @@ Copyright (c) 2015 Puwadon Sricharoen
                     text-decoration: underline;
                 }
             }
+        }
+    }
+
+    .entry-cover{
+        width: 100%;
+        float: left;
+        display: inline-block;
+        margin-bottom: 5%;
+
+        img{
+            width: 100%;
+            float: left;
+            display: inline-block;
         }
     }
 
@@ -460,6 +473,30 @@ Copyright (c) 2015 Puwadon Sricharoen
                 font-family: @FontPrimary;
                 font-size: @Fontsize_normal;
                 line-height: 2em;
+            }
+
+            .image-input{
+                width: 100%;
+                background: @BackgroundColorAccent;
+                border: 1px dashed #CCCCCC;
+                float: left;
+                display: inline-block;
+                text-align: center;
+
+                img{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                }
+
+                .icon{
+                    width: 100%;
+                    padding: 5% 0%;
+                }
+
+                .input-file{
+                    display: none;
+                }
             }
         }
 

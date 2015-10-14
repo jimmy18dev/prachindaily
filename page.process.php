@@ -116,16 +116,11 @@ if(isset($_POST) && isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SER
         // Thumbnail size
         $image->crop_image_square($image_res,$save_folder['thumbnail'],$image_type,$photo_size['thumbnail'],$image_width,$image_height,$jpeg_quality);
 
-        $image->CreateImage(array(
-            'product_id'    => $product_id,
-            'transfer_id'   => '',
-            'member_id'     => 'member',
-            'caption'       => 'caption',
-            'thumbnail'     => $save_folder['thumbnail'],
-            'square'        => $save_folder['square'],
-            'mini'          => $save_folder['mini'],
-            'normal'        => $save_folder['normal'],
-            'large'         => $save_folder['large'],
+        $image->Create(array(
+            'page_id'       => $page_id,
+            'people_id'     => MEMBER_ID,
+            'caption'       => '',
+            'filename'      => $new_file_name,
             'format'        => $image_format,
             'type'          => 'cover',
             'status'        => 'active',

@@ -91,6 +91,16 @@ $page->Get(array('page_id' => $_GET['id']));
 				<span class="length" id="guide-length"></span>
 			</div>
 		</div>
+
+		<div class="editor-items">
+			<div class="image-input">
+				<span id="photo_files_div"></span>
+				<span id="photo_thumbnail">
+					<div class="icon"><i class="fa fa-camera"></i> เลือกภาพ</div>
+				</span>
+				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
+			</div>
+		</div>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
 		<div class="score">สมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>%</span></div>
 		<div class="submit">
@@ -113,6 +123,7 @@ $page->Get(array('page_id' => $_GET['id']));
 <?php include'analytics_bar.php';?>
 
 <script type="text/javascript" src="js/page.editor.js"></script>
+<script type="text/javascript" src="js/page.editor.thumbnail.js"></script>
 <script type="text/javascript" src="js/page.score.js"></script>
 
 </body>

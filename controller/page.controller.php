@@ -80,11 +80,12 @@ class PageController extends PageModel{
 	}
 
 	public function Create($param){
-		parent::CreateProcess($param);
+		return parent::CreateProcess($param);
 	}
 
 	public function Update($param){
 		parent::UpdateProcess($param);
+		return $param['page_id'];
 	}
 
 	public function MyPage($param){
