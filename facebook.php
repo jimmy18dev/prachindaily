@@ -15,7 +15,7 @@ if(!MEMBER_ONLINE){
 	// Initialize application by Application ID and Secret
 	FacebookSession::setDefaultApplication(APP_ID,APP_SECRET);
 	// Login Healper with reditect URI
-	$helper = new FacebookRedirectLoginHelper('http://'.$_SERVER['SERVER_NAME'].'/demo/index.php');
+	$helper = new FacebookRedirectLoginHelper('http://'.$_SERVER['SERVER_NAME'].'/index.php');
 
 	try{
 		$session = $helper->getSessionFromRedirect();
@@ -29,7 +29,7 @@ if(!MEMBER_ONLINE){
 
 	// Checking Session
 	if(isset($session)){
-  		$user_profile 		= (new FacebookRequest($session, 'GET','/me'))->execute()->getGraphObject(GraphUser::className());
+  		$user_profile 		= (new FacebookRequest($session,'GET','/me'))->execute()->getGraphObject(GraphUser::className());
 
   		// Create New or Update Member info
 		$me->Register(array(
@@ -48,7 +48,7 @@ if(!MEMBER_ONLINE){
 		// Set session
 		$_SESSION['facebook_id'] = $user_profile->getProperty('id');
 		// Set Cookie (1 year)
-		setcookie('facebook_id', $user_profile->getProperty('id'), COOKIE_TIME);
+		setcookie('facebook_id',$user_profile->getProperty('id'), COOKIE_TIME);
 
 		// Redirect page after Login.
 		header('Location: index.php');

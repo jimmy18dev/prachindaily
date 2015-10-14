@@ -5,6 +5,10 @@ class ImageController extends ImageModel{
         parent::CreateProcess($param);
 	}
 
+    public function ClearCover($param){
+        parent::ClearCoverProcess($param);
+    }
+
     private function Render($mode,$data){
         foreach ($data as $var){
             include'template/product/product.items.php';

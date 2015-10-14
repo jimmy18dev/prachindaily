@@ -21,23 +21,31 @@ else{
 ?>
 
 <div class="result-items" id="items-<?php echo $var['pa_id'];?>">
-	<div class="title"><a href="page-<?php echo $var['pa_id'];?>.html"><?php echo $var['pa_name'];?></a></div>
-	<div class="info">
-		<span class="score"><?php echo $var['pa_score'];?>%</span>
-		 · <span class="location"><?php echo $location;?></span>
+	<div class="detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
+		<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
+		<div class="info">
+			<span class="score"><?php echo $var['pa_score'];?>%</span>
+		 	· <span class="location"><?php echo $location;?></span>
+			<?php if(!empty($var['pa_phone'])){?>
+			 · <span class="phone"><?php echo $phone;?></span>
+			<?php }?>
 
-		<?php if(!empty($var['pa_phone'])){?>
-		 · <span class="phone"><?php echo $phone;?></span>
-		<?php }?>
+			 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
+		</div>
+		<div class="description">
+			<?php echo $var['pa_description'];?>
+		</div>
 
-		 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
-		 · <span class="edit"><a href="page-editor.php?id=<?php echo $var['pa_id'];?>">แก้ไข</a></span>
+		<div class="control">
+			<div class="button success" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'success');"><i class="fa fa-check"></i></div>
+			<div class="button fail" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'fail');"><i class="fa fa-times"></i></div>
+		</div>
 	</div>
-	<div class="description">
-		<?php echo $var['pa_description'];?>
+	<?php if(!empty($var['im_id'])){?>
+	<div class="thumbnail">
+		<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html">
+		<img src="image/upload/thumbnail/<?php echo $var['im_filename'];?>" alt="">
+		</a>
 	</div>
-	<div class="control">
-		<div class="button success" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'success');"><i class="fa fa-check"></i></div>
-		<div class="button fail" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'fail');"><i class="fa fa-times"></i></div>
-	</div>
+	<?php }?>
 </div>

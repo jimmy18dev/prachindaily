@@ -28,7 +28,7 @@ $page->Get(array('page_id' => $_GET['id']));
 
 <?php include'favicon.php';?>
 
-<title>Editor</title>
+<title><?php echo (empty($page->id)?'Editor':'แก้ไข '.$page->name);?></title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -50,17 +50,38 @@ $page->Get(array('page_id' => $_GET['id']));
 
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
+
+		<?php if(empty($page->id)){?>
+		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
+		<?php }?>
+
 		<div class="editor-items">
 			<div class="caption">ชื่อร้านชื่อสถานที่</div>
 			<div class="input">
-				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();">
+				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();" required>
 				<span class="length" id="name-length"></span>
 			</div>
 		</div>
+
+		<div class="editor-items">
+			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ</div>
+			<div class="image-input">
+				<span id="photo_files_div"></span>
+				<span id="photo_thumbnail">
+					<?php if(empty($page->cover_id)){?>
+					<div class="icon"><i class="fa fa-camera"></i> เลือกภาพ</div>
+					<?php }else{?>
+					<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="">
+					<?php }?>
+				</span>
+				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
+			</div>
+		</div>
+
 		<div class="editor-items">
 			<div class="caption">เบอร์โทรศัพท์</div>
 			<div class="input">
-				<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();">
+				<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required>
 			</div>
 		</div>
 		<div class="editor-items">
@@ -92,16 +113,6 @@ $page->Get(array('page_id' => $_GET['id']));
 			</div>
 		</div>
 
-		<div class="editor-items">
-			<div class="image-input">
-				<span id="photo_files_div"></span>
-				<span id="photo_thumbnail">
-					<div class="icon"><i class="fa fa-camera"></i> เลือกภาพ</div>
-				</span>
-				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
-			</div>
-		</div>
-		<div class="agreement">กรุณาอ่าน <a href="agreement.php">ข้อตกลงในการใช้บริการ</a></div>
 		<div class="score">สมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>%</span></div>
 		<div class="submit">
 			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>

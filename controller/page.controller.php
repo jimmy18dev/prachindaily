@@ -79,7 +79,7 @@ class PageController extends PageModel{
 		$this->status = $data['pa_status'];
 
 		// Poster or Owner
-		$this->poster_id = $data['pe_id'];
+		$this->poster_id = $data['pe_fb_id'];
 		$this->poster_name = $data['pe_fname'].' '.$data['pe_lname'];
 		$this->poster_type = $data['pe_type'];
 
@@ -162,6 +162,7 @@ class PageController extends PageModel{
 
 	private function RenderPage($mode,$data,$keyword){
         foreach ($data as $var){
+        	$var['pa_description'] = $this->ConvertStringtoMetatag($var['pa_description']);
         	if($mode == "mypage" && !empty($var['pa_id'])){
         		include'template/page/mypage.items.php';
         	}

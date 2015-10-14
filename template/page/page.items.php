@@ -20,17 +20,25 @@ else{
 ?>
 
 <div class="result-items" id="items-<?php echo $var['pa_id'];?>">
-	<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
-	<div class="info">
-		<span class="location"><?php echo $location;?></span>
+	<div class="detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
+		<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
+		<div class="info">
+			<span class="location"><?php echo $location;?></span>
+			<?php if(!empty($var['pa_phone'])){?>
+			 · <span class="phone"><?php echo $phone;?></span>
+			<?php }?>
 
-		<?php if(!empty($var['pa_phone'])){?>
-		 · <span class="phone"><?php echo $phone;?></span>
-		<?php }?>
-
-		 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
+			 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
+		</div>
+		<div class="description">
+			<?php echo $var['pa_description'];?>
+		</div>
 	</div>
-	<div class="description">
-		<?php echo $var['pa_description'];?>
+	<?php if(!empty($var['im_id'])){?>
+	<div class="thumbnail">
+		<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html">
+		<img src="image/upload/thumbnail/<?php echo $var['im_filename'];?>" alt="">
+		</a>
 	</div>
+	<?php }?>
 </div>

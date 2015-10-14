@@ -19,8 +19,8 @@
 	include_once'model/database.class.php';
 
 	// Mobile Detect is a lightweight PHP
-	// include_once'plugin/mobile-detect/mobile_detect.php';
-	// include_once'plugin/mobile-detect/desktop_detect.php';
+	include_once'plugin/mobile-detect/mobile_detect.php';
+	include_once'plugin/mobile-detect/desktop_detect.php';
 
 	// Site Setting include /////////////
 	// Model ////////////////////////////
@@ -42,6 +42,7 @@
 
 	// Object of Controller
 	$site 			= new SiteController;
+	$detect 		= new Mobile_Detect;
 	$api 			= new ApiController;
 	$me 			= new MeController;
 	$image 			= new ImageController;
@@ -50,7 +51,7 @@
 	$location 		= new LocationController;
 
 	// Device access detact process
-	//include'device.access.php';
+	include'device.access.php';
 
 	$_SESSION['facebook_id'] = '1818320188';
 

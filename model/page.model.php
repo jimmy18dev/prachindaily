@@ -5,7 +5,7 @@ class PageModel extends Database{
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id 
-			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" 
+			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" AND im_status = "active" 
 			WHERE (pa_name LIKE :keyword OR pa_description LIKE :keyword) AND pa_status = "success" 
 			LIMIT '.$param['start'].','.$param['total']);
 		parent::bind(':keyword','%'.$param['keyword'].'%');
@@ -53,7 +53,7 @@ class PageModel extends Database{
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id 
-			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" 
+			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" AND im_status = "active" 
 			WHERE pa_people_id = :people_id 
 			ORDER BY pa_update_time DESC');
 		parent::bind(':people_id', 		$param['people_id']);
@@ -74,10 +74,13 @@ class PageModel extends Database{
 	}
 
 	public function PendingPageProcess($param){
-		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_score,pa_status,amphur_id,amphur_name,province_id,province_name 
+		parent::query('SELECT pa_id,pa_name,pa_description,pa_phone,pa_create_time,pa_update_time,pa_visit_time,pa_score,pa_status,amphur_id,amphur_name,province_id,province_name,im_id,im_filename,im_format 
 			FROM base_page 
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
-			LEFT JOIN th_province ON pa_province_id = province_id WHERE pa_status = "pending" ORDER BY pa_create_time DESC');
+			LEFT JOIN th_province ON pa_province_id = province_id 
+			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" AND im_status = "active" 
+			WHERE pa_status = "pending" 
+			ORDER BY pa_create_time DESC');
 		parent::execute();
 		$dataset = parent::resultset();
 
@@ -150,7 +153,7 @@ class PageModel extends Database{
 			LEFT JOIN th_amphur ON pa_city_id = amphur_id 
 			LEFT JOIN th_province ON pa_province_id = province_id 
 			LEFT JOIN base_people ON pa_people_id = pe_fb_id 
-			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" 
+			LEFT JOIN base_image ON pa_id = im_page_id AND im_type = "cover" AND im_status = "active" 
 			WHERE pa_id = :page_id');
 		parent::bind(':page_id', $param['page_id']);
 		parent::execute();

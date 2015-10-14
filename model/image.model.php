@@ -19,12 +19,10 @@ class ImageModel extends Database{
 		return parent::lastInsertId();
 	}
 
-	// public function UpdateProcess($param){
-	// 	parent::query('SELECT * FROM dd_product');
-	// 	parent::execute();
-	// 	parent::execute();
-	// 	$dataset = parent::resultset();
-	// 	return $dataset;
-	// }
+	public function ClearCoverProcess($param){
+		parent::query('UPDATE base_image SET im_type = "normal" WHERE im_page_id = :page_id');
+		parent::bind(':page_id', 		$param['page_id']);
+		parent::execute();
+	}
 }
 ?>

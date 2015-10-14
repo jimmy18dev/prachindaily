@@ -8,13 +8,13 @@ $page->UpdateAnalytics(array('page_id' => $page->id,'type'=>'view'));
 
 // Location
 if(empty($page->amphur_name)){
-	$location = 'จังหวัด'.$page->province_name;
+	$location = $page->province_name;
 }
 else{
-	$location = 'อำเภอ'.$page->amphur_name.' จังหวัด'.$page->province_name;
+	$location = $page->amphur_name.' '.$page->province_name;
 }
 
-$timeupdate = 'อัพเดท '.$page->update_time_facebook_format;
+$timeupdate = $page->update_time_facebook_format;
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +45,7 @@ $meta_description = $page->description_metatag;
 <meta name="description" 			content="<?php echo $meta_description;?>"/>
 <meta property="og:title" 			content="<?php echo $meta_title;?>"/>
 <meta property="og:description" 	content="<?php echo $meta_description;?>"/>
-<meta property="og:url" 			content="<?php echo $meta['domain'];?>/business-<?php echo $page->id;?>-<?php echo $page->url_friendly;?>.html"/>
+<meta property="og:url" 			content="<?php echo $meta['domain'];?>/page-<?php echo $page->id;?>-<?php echo $page->url_friendly;?>.html"/>
 <meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
 <meta property="og:type" 			content="website"/>
 <meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
@@ -79,13 +79,15 @@ $meta_description = $page->description_metatag;
 		<p class="info">
 			<span class="location"><?php echo $location;?></span>
 			 · <span class="timeupdate" title="<?php echo $page->update_time_thai_format;?>"><?php echo $timeupdate;?></span>
+			 <?php if(MEMBER_ID == $page->poster_id){?>
 			 · <span class="edit"><a href="page-editor.php?id=<?php echo $page->id;?>">แก้ไข</a></span>
+			 <?php }?>
 		</p>
 	</header>
 
 	<?php if(!empty($page->cover_id)){?>
 	<figure class="entry-cover">
-		<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="">
+		<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
 	</figure>
 	<?php }?>
 
@@ -95,7 +97,7 @@ $meta_description = $page->description_metatag;
 		<div class="infomation">
 			<?php if(!empty($page->phone)){?>
 			<div class="items">
-				<div class="icon"><i class="fa fa-phone"></i></div>
+				<div class="icon"><i class="fa fa-phone-square"></i></div>
 				<div class="text"><?php echo $page->phone;?></div>
 			</div>
 			<?php }?>
@@ -113,9 +115,21 @@ $meta_description = $page->description_metatag;
 				<div class="text"><?php echo $page->address;?></div>
 			</div>
 			<?php }?>
+
+			<div class="items">
+				<div class="icon"><i class="fa fa-user"></i></div>
+				<div class="text"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></div>
+			</div>
 		</div>
 
-		<p class="poster">ข้อมูลโดย <span class="poster-name"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></span></p>
+		<?php if(MEMBER_ID == $page->poster_id){?>
+		<div class="url">
+			<div class="caption"><i class="fa fa-link"></i> โพสต์ลิ้งนี้ลงใน Facebook ของคุณ</div>
+			<div class="input">
+				<input type="text" class="input-url" value="<?php echo $meta['domain'];?>/page-<?php echo $page->id;?>.html">
+			</div>
+		</div>
+		<?php }?>
 	</div>
 
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">

@@ -36,7 +36,7 @@ $meta_description = 'ทำความเข้าใจเพื่อปร�
 <meta property="og:title" 			content="<?php echo $meta_title;?>"/>
 <meta property="og:description" 	content="<?php echo $meta_description;?>"/>
 <meta property="og:url" 			content="<?php echo $meta['domain'];?>/agreement.php"/>
-<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
+<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/site/agreement.jpg"/>
 <meta property="og:type" 			content="website"/>
 <meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
 <meta property="fb:app_id" 			content="<?php echo $meta['fb_app_id'];?>"/>

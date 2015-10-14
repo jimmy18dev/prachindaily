@@ -36,7 +36,7 @@ $meta_description = 'หากต้องการติดต่อทีม�
 <meta property="og:title" 			content="<?php echo $meta_title;?>"/>
 <meta property="og:description" 	content="<?php echo $meta_description;?>"/>
 <meta property="og:url" 			content="<?php echo $meta['domain'];?>/contact.php"/>
-<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/favicon/banner.jpg"/>
+<meta property="og:image" 			content="<?php echo $meta['domain'];?>/image/site/contact.jpg"/>
 <meta property="og:type" 			content="website"/>
 <meta property="og:site_name" 		content="<?php echo $meta['fb_app_id'];?>"/>
 <meta property="fb:app_id" 			content="<?php echo $meta['fb_app_id'];?>"/>
@@ -76,7 +76,7 @@ $meta_description = 'หากต้องการติดต่อทีม�
 		<h2>ติดต่อ</h2>
 		<p><strong>Email: </strong>prachindaily@gmail.com</p>
 		<p><strong>Twitter: </strong> <a href="https://twitter.com/prachindaily">https://twitter.com/prachindaily</a></p>
-		<p><strong>Facebook Page: </strong> <a href="https://facebook.com/prachindaily">https://facebook.com/prachindaily</a></p>
+		<p><strong>Fanpage: </strong> <a href="https://facebook.com/prachindaily">https://facebook.com/prachindaily</a></p>
 	</div>
 </div>
 

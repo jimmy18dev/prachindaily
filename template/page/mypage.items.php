@@ -44,7 +44,6 @@ else{
 			<?php }?>
 
 			 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
-			 · <span class="edit"><a href="editor-<?php echo $var['pa_id'];?>.html">แก้ไข</a></span> 
 		</div>
 		<div class="description">
 			<?php echo $var['pa_description'];?>
@@ -53,14 +52,16 @@ else{
 			<?php if($var['pa_read'] > 10){?>
 			<span class="read"><?php echo number_format($var['pa_read']);?> Read · </span>
 			<?php }?>
-			<span class="visit">แสดงล่าสุด <?php echo $var['visit_time_facebook_format'];?></span>
+			<span class="visit">ดูล่าสุด <?php echo $var['visit_time_facebook_format'];?></span>
 
 			<span class="delete" onclick="javascript:UpdateStatus(<?php echo $var['pa_id'];?>,'delete_request');"><i class="fa fa-times"></i> Delete</span>
 		</div>
 	</div>
 	<?php if(!empty($var['im_id'])){?>
 	<div class="thumbnail">
+		<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html">
 		<img src="image/upload/thumbnail/<?php echo $var['im_filename'];?>" alt="">
+		</a>
 	</div>
 	<?php }?>
 </div>

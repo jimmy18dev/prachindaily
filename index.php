@@ -67,8 +67,6 @@ $current_page = "index";
 
 	<div class="link">
 		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ<i class="fa fa-commenting-o"></i></a>
-		 · <a href="agreement.php" target="_parent">ข้อตกลง</a>
-		 · <a href="stat.php" target="_parent">สถิติ</a>
 		 · <a href="contact.php" target="_parent">ติดต่อเรา</a>
 
 		<?php if(MEMBER_TYPE == "administrator"){?>
