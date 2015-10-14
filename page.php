@@ -83,6 +83,12 @@ $meta_description = $page->description_metatag;
 		</p>
 	</header>
 
+	<?php if(!empty($page->cover_id)){?>
+	<figure class="entry-cover">
+		<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="">
+	</figure>
+	<?php }?>
+
 	<div class="entry-content">
 		<?php echo $page->description;?>
 

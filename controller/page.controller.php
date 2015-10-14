@@ -38,6 +38,11 @@ class PageController extends PageModel{
 	public $poster_name;
 	public $poster_type;
 
+	// Photo Cover
+	public $cover_id;
+	public $cover_filename;
+	public $cover_format;
+
 	public function Get($param){
 		$data = parent::GetProcess($param);
 
@@ -77,6 +82,11 @@ class PageController extends PageModel{
 		$this->poster_id = $data['pe_id'];
 		$this->poster_name = $data['pe_fname'].' '.$data['pe_lname'];
 		$this->poster_type = $data['pe_type'];
+
+		// Photo Cover
+		$this->cover_id = $data['im_id'];
+		$this->cover_filename = $data['im_filename'];
+		$this->cover_format = $data['im_format'];
 	}
 
 	public function Create($param){

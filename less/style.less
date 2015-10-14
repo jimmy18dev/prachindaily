@@ -590,106 +590,130 @@ Copyright (c) 2015 Puwadon Sricharoen
 
         .result-items{
             width: 100%;
-            padding: 3% 0%;
             float: left;
             display: inline-block;
             background: @BackgroundColor;
             line-height: 1.5em;
-            margin-bottom: 0.5%;
-            border-bottom: 1px dotted @TextThirdColor;
+            border-bottom: 1px solid @BackgroundColorAccent;
+
+            &:first-child{
+                border-top: 1px solid @BackgroundColorAccent;
+            }
+            .detail{
+                width: 83%;
+                margin-right: 2%;
+                padding: 2% 0%;
+                float: left;
+                display: inline-block;
+
+                .title{
+                    font-weight: bold;
+                    font-size: @Fontsize_title;
+
+                    a{
+                        color: @TextPrimaryColor;
+                        text-decoration: none;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .info{
+                    font-size: @Fontsize_info;
+                    color: @TextThirdColor;
+                    font-style: italic;
+                    margin-bottom: 1%;
+                    
+                    .location{color: @PrimaryColor;}
+                    .phone{color: @TextSecondaryColor;}
+
+                    a{
+                        color: @SecondaryColor;
+                        text-decoration: none;
+
+                        &:hover{
+                            text-decoration: underline;
+                        }
+                    }
+
+                    .score{
+                        color: @SecondaryColor;
+                        font-size: @Fontsize_mini;
+                        font-weight: bold;
+                    }
+
+                    .fail{color: @ThirdColor;}
+                    .success{color: @PrimaryColorDark;}
+                }
+                .description{
+                    color: @TextSecondaryColor;
+                    font-size: @Fontsize_normal;
+
+                    .phone{
+                        i{
+                            margin-right: 5px;
+                        }
+                    }
+                }
+
+                .analytic{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                    font-size: @Fontsize_info;
+                    line-height: 1.7em;
+                    color: @TextThirdColor;
+
+                    .delete{
+                        margin-left: 10px;
+                        &:hover{
+                            cursor: pointer;
+                            color: @ThirdColor;
+                        }
+                    }
+                }
+
+                .control{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                    font-size: @Fontsize_normal;
+
+                    .button{
+                        float: right;
+                        display: inline-block;
+                        color: @TextThirdColor;
+                        padding: 2% 2.5%;
+
+                        &:hover{
+                            background: @BackgroundColorAccent;
+                            cursor: pointer;
+                        }
+                    }
+                    .success{
+                        color: @PrimaryColorDark;
+                    }
+                }
+            }
+            .thumbnail{
+                width: 15%;
+                float: right;
+                display: inline-block;
+
+                img{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                }
+            }
 
             .highlight{
                 color: @ThirdColor;
             }
-
-            .title{
-                font-weight: bold;
-                font-size: @Fontsize_title;
-
-                a{
-                    color: @TextPrimaryColor;
-                    text-decoration: none;
-
-                    &:hover{
-                        text-decoration: underline;
-                    }
-                }
-            }
-            .info{
-                font-size: @Fontsize_info;
-                color: @TextThirdColor;
-                font-style: italic;
-                margin-bottom: 1%;
-                
-                .location{color: @PrimaryColor;}
-                .phone{color: @TextSecondaryColor;}
-
-                a{
-                    color: @SecondaryColor;
-                    text-decoration: none;
-
-                    &:hover{
-                        text-decoration: underline;
-                    }
-                }
-
-                .score{
-                    color: @SecondaryColor;
-                    font-size: @Fontsize_mini;
-                    font-weight: bold;
-                }
-
-                .fail{color: @ThirdColor;}
-                .success{color: @PrimaryColorDark;}
-            }
-            .description{
-                color: @TextSecondaryColor;
-                font-size: @Fontsize_normal;
-
-                .phone{
-                    i{
-                        margin-right: 5px;
-                    }
-                }
-            }
-
-            .analytic{
+            .detail-fullsize{
                 width: 100%;
-                float: left;
-                display: inline-block;
-                font-size: @Fontsize_info;
-                line-height: 1.7em;
-                color: @TextThirdColor;
-
-                .delete{
-                    float: right;
-                    &:hover{
-                        cursor: pointer;
-                        color: @ThirdColor;
-                    }
-                }
-            }
-
-            .control{
-                width: 100%;
-                float: left;
-                display: inline-block;
-                font-size: @Fontsize_normal;
-
-                .button{
-                    float: right;
-                    display: inline-block;
-                    color: @TextThirdColor;
-                    padding: 2% 2.5%;
-
-                    &:hover{
-                        background: @BackgroundColorAccent;
-                        cursor: pointer;
-                    }
-                }
-                .success{
-                    color: @PrimaryColorDark;
-                }
+                margin-right: 2%;
             }
         }
     }
