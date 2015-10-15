@@ -20,7 +20,7 @@ class ImageModel extends Database{
 	}
 
 	public function ClearCoverProcess($param){
-		parent::query('UPDATE base_image SET im_type = "normal" WHERE im_page_id = :page_id');
+		parent::query('UPDATE base_image SET im_status = "second" WHERE im_page_id = :page_id');
 		parent::bind(':page_id', 		$param['page_id']);
 		parent::execute();
 	}

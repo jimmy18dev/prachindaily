@@ -89,7 +89,7 @@ class MeController extends MeModel{
         $this->update_time      = $dataset['pe_update_time'];
         $this->visit_time       = $dataset['pe_visit_time'];
 
-        $this->token = $dataset_token['tk_token'];
+        $this->token            = $dataset_token['tk_token'];
 
         setcookie('token_key'   ,$this->token, COOKIE_TIME);
         setcookie('facebook_id' ,$this->facebook_id, COOKIE_TIME);

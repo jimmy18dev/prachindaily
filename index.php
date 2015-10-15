@@ -56,7 +56,6 @@ $current_page = "index";
 <?php include'header.php';?>
 <div class="page-container page-margin-top">
 	<h1 class="advertise">Comming soon!</h1>
-	<p>Authentication >> <?php echo ($me->Authentication()?'success!':'fail!');?></p>
 	<?php if(MEMBER_ONLINE){?>
 	<h1 class="search-page">ค้นหาร้านอาหาร ที่พัก และอื่นๆ</h1>
 	<div class="search-form">

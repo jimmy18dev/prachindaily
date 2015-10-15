@@ -1,53 +1,53 @@
 <?php
 require_once'config/autoload.php';
 
-if(!empty($_POST['page_name']) && !empty($_POST['phone'])){
+if(!empty($_POST['page_name']) && !empty($_POST['phone']) && $me->Authentication()){
     if(empty($_POST['page_id'])){
         $page_id = $page->Create(array(
-            'people_id' => MEMBER_ID,
-            'page_id' => $_POST['page_id'],
-            'name' => $_POST['page_name'],
-            'description' => $_POST['description'],
-            'address' => $_POST['address'],
-            'phone' => $_POST['phone'],
-            'guide' => $_POST['guide'],
-            'latitude' => $_POST['latitude'],
-            'longitude' => $_POST['longitude'],
-            'district_id' => $_POST['district_id'],
-            'city_id' => $_POST['city_id'],
-            'province_id' => $_POST['province_id'],
-            'score'=> $page->Score(array(
-                'name' => $_POST['name'],
-                'description' => $_POST['description'],
-                'phone' => $_POST['phone'],
-                'address' => $_POST['address'],
-                'guide' => $_POST['guide'],
-                'location' => $_POST['city_id'],
+            'people_id'     => MEMBER_ID,
+            'page_id'       => $_POST['page_id'],
+            'name'          => $_POST['page_name'],
+            'description'   => $_POST['description'],
+            'address'       => $_POST['address'],
+            'phone'         => $_POST['phone'],
+            'guide'         => $_POST['guide'],
+            'latitude'      => $_POST['latitude'],
+            'longitude'     => $_POST['longitude'],
+            'district_id'   => $_POST['district_id'],
+            'city_id'       => $_POST['city_id'],
+            'province_id'   => $_POST['province_id'],
+            'score'         => $page->Score(array(
+                'name'          => $_POST['name'],
+                'description'   => $_POST['description'],
+                'phone'         => $_POST['phone'],
+                'address'       => $_POST['address'],
+                'guide'         => $_POST['guide'],
+                'location'      => $_POST['city_id'],
             )),
-            'type' => 'unknow',
+            'type'          => 'unknow',
         ));
     }
     else{
         $page_id = $page->Update(array(
-            'people_id' => MEMBER_ID,
-            'page_id' => $_POST['page_id'],
-            'name' => $_POST['page_name'],
-            'description' => $_POST['description'],
-            'address' => $_POST['address'],
-            'phone' => $_POST['phone'],
-            'guide' => $_POST['guide'],
-            'latitude' => $_POST['latitude'],
-            'longitude' => $_POST['longitude'],
-            'district_id' => $_POST['district_id'],
-            'city_id' => $_POST['city_id'],
-            'province_id' => $_POST['province_id'],
-            'score'=> $page->Score(array(
-                'name' => $_POST['name'],
-                'description' => $_POST['description'],
-                'phone' => $_POST['phone'],
-                'address' => $_POST['address'],
-                'guide' => $_POST['guide'],
-                'location' => $_POST['city_id'],
+            'people_id'     => MEMBER_ID,
+            'page_id'       => $_POST['page_id'],
+            'name'          => $_POST['page_name'],
+            'description'   => $_POST['description'],
+            'address'       => $_POST['address'],
+            'phone'         => $_POST['phone'],
+            'guide'         => $_POST['guide'],
+            'latitude'      => $_POST['latitude'],
+            'longitude'     => $_POST['longitude'],
+            'district_id'   => $_POST['district_id'],
+            'city_id'       => $_POST['city_id'],
+            'province_id'   => $_POST['province_id'],
+            'score'         => $page->Score(array(
+                'name'          => $_POST['name'],
+                'description'   => $_POST['description'],
+                'phone'         => $_POST['phone'],
+                'address'       => $_POST['address'],
+                'guide'         => $_POST['guide'],
+                'location'      => $_POST['city_id'],
             )),
         ));
     }
