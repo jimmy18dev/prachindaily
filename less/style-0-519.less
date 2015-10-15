@@ -23,6 +23,15 @@ Copyright (c) 2015 Puwadon Sricharoen
         font-size: @Fontsize_header;
     }
 
+    .submit-button{
+        padding: 16px 3%;
+        height: 18px;
+
+        i{
+            margin-right: 5px;
+        }
+    }
+
     .account{
         padding: 12px 3%;
         height: 26px;
@@ -216,7 +225,7 @@ Copyright (c) 2015 Puwadon Sricharoen
 
         .editor-items{
             width: 100%;
-            padding: 2% 0%;
+            padding: 4% 0%;
 
             .caption{
                 padding: 1% 0%;
@@ -227,15 +236,15 @@ Copyright (c) 2015 Puwadon Sricharoen
 
                 .input-text{
                     font-size: @Fontsize_title;
-                    width: 98%;
-                    padding: 2% 1%;
+                    width: 96%;
+                    padding: 3% 2%;
                     line-height: 1.5em;
                 }
                 .input-textarea{
                     font-size: @Fontsize_normal;
                     line-height: 1.5em;
-                    width: 98%;
-                    padding: 2% 1%;
+                    width: 96%;
+                    padding: 3% 2%;
                     height: 100px;
                 }
 
@@ -246,7 +255,7 @@ Copyright (c) 2015 Puwadon Sricharoen
             }
 
             .input-select{
-                padding: 2% 1%;
+                padding: 3% 2%;
                 font-size: @Fontsize_normal;
                 line-height: 2em;
             }
@@ -268,30 +277,13 @@ Copyright (c) 2015 Puwadon Sricharoen
         }
 
         .score{
-            width: 50%;
-            padding-top: 9%;
+            padding: 5% 0%;
             font-size: @Fontsize_normal;
             line-height: 1.5em;
         }
 
         .submit{
-            width: 50%;
-            padding: 5% 0%;
-
-            .submit-button{
-                float: right;
-                display: inline-block;
-                width: 90%;
-                padding: 6% 5%;
-                font-size: @Fontsize_normal;
-                line-height: 1.5em;
-                color: @TextLightColor;
-
-                i{
-                    font-size: @Fontsize_mini;
-                    margin-right: 10px;
-                }
-            }
+            display: none;
         }
     }
 

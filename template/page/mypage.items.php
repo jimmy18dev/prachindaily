@@ -2,7 +2,7 @@
 // $var['pa_name'] = str_ireplace($keyword,'<span class="highlight">'.$keyword.'</span>',$var['pa_name']);
 // $var['pa_description'] = str_ireplace($keyword,'<span class="highlight">'.$keyword.'</span>',$var['pa_description']);
 if($var['pa_status'] == "success"){
-	$status = '<span class="status success"><i class="fa fa-check"></i> ทำงาน</span>';
+	$status = '<span class="status success"><i class="fa fa-check"></i></span>';
 }
 else if($var['pa_status'] == "fail"){
 	$status = '<span class="status fail">ไม่ผ่าน <i class="fa fa-exclamation"></i></span>';

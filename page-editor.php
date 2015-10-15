@@ -8,6 +8,8 @@ if(!MEMBER_ONLINE){
 }
 
 $page->Get(array('page_id' => $_GET['id']));
+
+$current_page = "editor";
 ?>
 
 <!DOCTYPE html>
@@ -51,12 +53,8 @@ $page->Get(array('page_id' => $_GET['id']));
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
 
-		<?php if(empty($page->id)){?>
-		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
-		<?php }?>
-
 		<div class="editor-items">
-			<div class="caption">ชื่อร้านชื่อสถานที่</div>
+			<div class="caption">ชื่อร้าน</div>
 			<div class="input">
 				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();" required>
 				<span class="length" id="name-length"></span>
@@ -92,14 +90,14 @@ $page->Get(array('page_id' => $_GET['id']));
 			</select>
 		</div>
 		<div class="editor-items">
-			<div class="caption">รายละเอียด</div>
+			<div class="caption">อธิบายว่าเป็นธุรกิจอะไร</div>
 			<div class="input">
 				<textarea name="description" id="description" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
 				<span class="length" id="description-length"></span>
 			</div>
 		</div>
 		<div class="editor-items">
-			<div class="caption">ที่อยู่</div>
+			<div class="caption">ที่อยู่จริง</div>
 			<div class="input">
 				<textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea>
 				<span class="length" id="address-length"></span>
@@ -113,9 +111,14 @@ $page->Get(array('page_id' => $_GET['id']));
 			</div>
 		</div>
 
-		<div class="score">สมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>%</span></div>
+		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
+
+		<?php if(empty($page->id)){?>
+		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
+		<?php }?>
+
 		<div class="submit">
-			<button type="submit"class="submit-button"><i class="fa fa-check"></i>บันทึกข้อมูล</button>
+			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>
 		</div>
 		<input type="hidden" name="province_id" value="16">
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">

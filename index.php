@@ -54,9 +54,10 @@ $current_page = "index";
 
 <body>
 <?php include'header.php';?>
-
 <div class="page-container page-margin-top">
-
+	<h1 class="advertise">Comming soon!</h1>
+	<p>Authentication >> <?php echo ($me->Authentication()?'success!':'fail!');?></p>
+	<?php if(MEMBER_ONLINE){?>
 	<h1 class="search-page">ค้นหาร้านอาหาร ที่พัก และอื่นๆ</h1>
 	<div class="search-form">
 		<form action="search.php" target="_parent" method="get">
@@ -64,6 +65,7 @@ $current_page = "index";
 		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
 		</form>
 	</div>
+	<?php }?>
 
 	<div class="link">
 		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ<i class="fa fa-commenting-o"></i></a>

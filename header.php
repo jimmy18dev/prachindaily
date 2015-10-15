@@ -1,5 +1,9 @@
 <header class="header">
 	<div class="logo"><a href="index.php">Prachindaily</a></div>
+
+	<?php if(DEVICE_TYPE != "Desktop" && $current_page == "editor"){?>
+	<div class="submit-button" id="header-submit-button"><i class="fa fa-check"></i>บันทึก</div>
+	<?php }else{?>
 	<div class="account">
 		<?php if(MEMBER_ONLINE){?>
 		<div class="avatar">
@@ -14,4 +18,5 @@
 		<?php }?>
 		<?php }?>
 	</div>
+	<?php }?>
 </header>

@@ -23,6 +23,9 @@ class MeController extends MeModel{
     public $update_time;
     public $visit_time;
 
+    // Token
+    public $token;
+
     public function CookieChecking(){
         if(!empty($_COOKIE['facebook_id']))
             return true;
@@ -47,7 +50,22 @@ class MeController extends MeModel{
     }
 
     public function Get($param){
-        $dataset = parent::GetProcess($param);
+        // Setup
+        $param['device']        = DEVICE_TYPE;
+        $param['model']         = DEVICE_MODEL;
+        $param['os']            = DEVICE_OS;
+        $param['browser']       = DEVICE_BROWSER;
+        $param['user_agent']    = htmlentities($_SERVER['HTTP_USER_AGENT']);
+        $param['expired']       = time() + (60*60*24*7);  // 1 Week.
+
+        $dataset                = parent::GetProcess($param);
+        $dataset_token          = parent::GetTokenProcess($param);
+
+        if(empty($dataset_token['tk_token'])){
+            $param['new_token'] = $this->GenerateMemberKey($param);
+            parent::CreateTokenProcess($param);
+            $dataset_token = parent::GetTokenProcess($param);
+        }
 
         $this->member_id        = $dataset['pe_id'];
         $this->email            = $dataset['pe_email'];
@@ -70,22 +88,71 @@ class MeController extends MeModel{
         $this->register_time    = $dataset['pe_register_time'];
         $this->update_time      = $dataset['pe_update_time'];
         $this->visit_time       = $dataset['pe_visit_time'];
+
+        $this->token = $dataset_token['tk_token'];
+
+        setcookie('token_key'   ,$this->token, COOKIE_TIME);
+        setcookie('facebook_id' ,$this->facebook_id, COOKIE_TIME);
     }
 
-    public function Authentication_token($param){
+    public function Authentication(){
+        $param['facebook_id']   = MEMBER_ID;
         $param['device']        = DEVICE_TYPE;
-        $param['model']         = DEVICE_MODEL;
         $param['user_agent']    = htmlentities($_SERVER['HTTP_USER_AGENT']);
 
-        $user_id                = $param['member_id'];
-        $user_token             = $param['token'];
+        $dataset = parent::GetTokenProcess($param);
+        
+        $token_key_cookie       = $_COOKIE['token_key'];
 
-        $tokenData              = parent::GetTokenProcess($param);
-
-        if($user_id == $tokenData['member_id'] && $user_token == $tokenData['token'])
+        if($token_key_cookie == $dataset['tk_token'] && !empty(MEMBER_ID)){
             return true;
-        else
+        }
+        else{
             return false;
+        }
+    }
+
+    private function GenerateMemberKey($param){
+        return md5(time().$_SERVER['HTTP_USER_AGENT']);
+    }
+
+    public function VerifiedMemberKey($param){
+        $param['key'] = $this->decrypt($param['key']);
+        $param['member_id'] = $this->decrypt($param['member_id']);
+
+        $key_ori = parent::GetKeyMemberProcess(array('member_id' => $param['member_id']));
+        if($key_ori == $param['key']){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public function UpdateMemberKey($param){
+        // decrypt member_id
+        $param['member_id'] = $this->decrypt($param['member_id']);
+        $param['key'] = $this->decrypt($param['key']);
+
+        $new_key = $this->GenerateMemberKey(array(
+            'member_id' => $param['member_id']
+        ));
+
+        if($param['key'] == '' && $param['member_id'] != ''){
+            parent::UpdateMemberFirstKeyProcess(array(
+                'member_id' => $param['member_id'],
+                'new_key' => $new_key,
+            ));
+        }
+        else{
+            parent::UpdateMemberKeyProcess(array(
+                'member_id' => $param['member_id'],
+                'key' => $param['key'],
+                'new_key' => $new_key,
+            ));
+        }
+
+        return true;
     }
 }
 ?>

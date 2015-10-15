@@ -122,7 +122,7 @@ class PageModel extends Database{
 		parent::bind(':update_time',	date('Y-m-d H:i:s'));
 		parent::bind(':visit_time',		date('Y-m-d H:i:s'));
 		parent::bind(':type', 			$param['type']);
-		parent::bind(':score', 		$param['score']);
+		parent::bind(':score', 			$param['score']);
 
 		parent::execute();
 		return parent::lastInsertId();

@@ -44,6 +44,11 @@ $(document).ready(function(){
         resetForm:true
     };
 
+    $('#header-submit-button').click(function(e) {
+        e.preventDefault();
+        $("#page_editor").submit();
+    });
+
     $('#page_editor').submit(function() {
         if(!BeforePostSubmit()){
             return false;

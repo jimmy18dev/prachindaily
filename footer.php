@@ -9,4 +9,10 @@
 	<p>Copyright @<?php echo date("Y");?> prachindaily.com All right reserved. | Powered by DailyPoint 1.0</p>
 	<p>Prachindaily Attribution-NonCommercial-NoDerivatives 4.0 International</p>
 	<p><a href="https://www.facebook.com/prachindaily">Facebook</a> · <a href="https://twitter.com/PrachinDaily">Twitter</a> · prachindaily@gmail.com</p>
+
+	<?php if(DEVICE_TYPE != "Desktop"){?>
+	<p class="device"><?php echo DEVICE_TYPE.', Model:'.DEVICE_MODEL.', OS:'.DEVICE_OS.', Browser:'.DEVICE_BROWSER;?></p>
+	<?php }?>
+
+	<p><?php echo'Token: '.$_COOKIE['token_key'].' | FacebookID:'.$_COOKIE['facebook_id'];?></p>
 </footer>

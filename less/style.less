@@ -44,6 +44,27 @@ Copyright (c) 2015 Puwadon Sricharoen
         }
     }
 
+    .submit-button{
+        float: right;
+        padding: 16px 3%;
+        height: 18px;
+        display: inline-block;
+        color: @PrimaryColor;
+
+        i{
+            margin-right: 5px;
+        }
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        &:active{
+            background: @PrimaryColorDark;
+            color: @TextLightColor;
+        }
+    }
+
     .account{
         float: right;
         padding: 12px 1%;
@@ -145,6 +166,16 @@ Copyright (c) 2015 Puwadon Sricharoen
         line-height: 3em;
         font-size: @Fontsize_title;
         color: @TextThirdColor;
+        font-weight: normal;
+    }
+    h1.advertise{
+        width: 100%;
+        float: left;
+        display: inline-block;
+        text-align: center;
+        line-height: 3em;
+        font-size: @Fontsize_title;
+        color: @TextSecondaryColor;
         font-weight: normal;
     }
     .search-form{
@@ -558,23 +589,18 @@ Copyright (c) 2015 Puwadon Sricharoen
         }
 
         .score{
-            width: 50%;
-            padding-top: 8%;
+            width: 100%;
+            padding: 5% 0%;
             float: left;
             display: inline-block;
             text-align: center;
             font-size: @Fontsize_normal;
             color: @TextSecondaryColor;
             line-height: 1.5em;
-
-            .value{
-                color: @PrimaryColor;
-                font-weight: bold;
-            }
         }
 
         .submit{
-            width: 50%;
+            width: 100%;
             padding: 5% 0%;
             float: left;
             display: inline-block;
@@ -582,11 +608,9 @@ Copyright (c) 2015 Puwadon Sricharoen
             .submit-button{
                 float: right;
                 display: inline-block;
-                width: 90%;
-                padding: 5% 5%;
+                padding: 2% 4%;
                 font-size: @Fontsize_normal;
                 line-height: 1.5em;
-                border-radius: 0px;
                 background: @PrimaryColor;
                 border-radius: 2px;
                 border: 0px;

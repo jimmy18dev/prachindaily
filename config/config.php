@@ -38,11 +38,11 @@
 	// *******************************************************
 
 	// Facebook App Setting
-	define("APP_ID", 		"218590748331719");
-	define("APP_SECRET",	"d422f1972741a31b74691304889079ff");
+	define("APP_ID" 		,"218590748331719");
+	define("APP_SECRET" 	,"d422f1972741a31b74691304889079ff");
 
 	// Cookie Time (1 year)
-	define('COOKIE_TIME', time() + 3600 * 24 * 12);
+	define('COOKIE_TIME'	,time() + 3600 * 24 * 12);
 
 
 	// Metatag setup

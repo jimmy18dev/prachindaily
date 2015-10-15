@@ -62,5 +62,68 @@ class MeModel extends Database{
 		else
 			return false;
 	}
+
+
+
+
+	// TOKEN CONTROL
+	// Create token
+	public function CreateTokenProcess($param){
+		parent::query('INSERT INTO base_token(tk_people_id,tk_token,tk_device,tk_model,tk_os,tk_browser,tk_user_agent,tk_ip,tk_create_time,tk_update_time,tk_expired) VALUE(:people_id,:token,:device,:model,:os,:browser,:user_agent,:ip,:create_time,:update_time,:expired)');
+
+		parent::bind(':people_id',		$param['facebook_id']);
+		parent::bind(':token',			$param['new_token']);
+		parent::bind(':device',			$param['device']);
+		parent::bind(':model',			$param['model']);
+		parent::bind(':os',				$param['os']);
+		parent::bind(':browser',		$param['browser']);
+		parent::bind(':user_agent',		$param['user_agent']);
+		parent::bind(':ip',				parent::GetIpAddress());
+		parent::bind(':create_time',	date('Y-m-d H:i:s'));
+		parent::bind(':update_time',	date('Y-m-d H:i:s'));
+		parent::bind(':expired',		$param['expired']);
+
+		parent::execute();
+		return parent::lastInsertId();
+	}
+
+	// Update token
+	// public function UpdateTokenProcess($param){
+	// 	parent::query('UPDATE base_token SET tk_token = :new_token WHERE (tk_people_id = :people_id AND tk_token = :old_token AND tk_device = :device AND tk_model = :model AND tk_os  = :os)');
+
+	// 	parent::bind(':new_token',		$param['new_token']);
+	// 	parent::bind(':old_token',		$param['old_token']);
+	// 	parent::bind(':people_id',		$param['people_id']);
+	// 	parent::bind(':device',			$param['device']);
+	// 	parent::bind(':model',			$param['model']);
+	// 	parent::bind(':os',				$param['os']);
+
+	// 	parent::execute();
+	// }
+
+	// Get token
+	public function GetTokenProcess($param){
+		parent::query('SELECT tk_people_id,tk_token,tk_device,tk_model,tk_os,tk_browser,tk_user_agent,tk_ip,tk_create_time,tk_update_time,tk_expired FROM base_token WHERE (tk_people_id = :people_id AND tk_device = :device AND tk_user_agent = :user_agent)');
+
+		parent::bind(':people_id',		$param['facebook_id']);
+		parent::bind(':device',			$param['device']);
+		parent::bind(':user_agent',		$param['user_agent']);
+
+		parent::execute();
+		return parent::single();
+	}
+
+	// Delete token
+	public function DeleteTokenKeyProcess($param){
+		parent::query('DELETE FROM dy_token WHERE (tk_id = :member_id AND tk_token = :old_token AND tk_device = :device AND tk_model = :model AND tk_os  = :os)');
+
+		parent::bind(':old_token',		$param['old_token']);
+		parent::bind(':member_id',		$param['member_id']);
+		parent::bind(':device',			$param['device']);
+		parent::bind(':model',			$param['model']);
+		parent::bind(':os',				$param['os']);
+
+		parent::execute();
+	}
 }
 ?>

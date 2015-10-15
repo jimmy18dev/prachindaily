@@ -90,7 +90,7 @@ function Score(){
 
     total = name_score+description_score+phone_score+address_score+guide_score+location_score;
 
-    $('#score').html(total+'%');
+    $('#score').html(total+'/100');
 
     //console.log(total+' :Total Score');
 }
