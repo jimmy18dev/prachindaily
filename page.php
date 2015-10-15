@@ -122,6 +122,15 @@ $meta_description = $page->description_metatag;
 			</div>
 		</div>
 
+		<div class="gallery">
+			<?php for($i=0;$i<5;$i++){?>
+			<figure class="gallery-items">
+				<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
+				<figcaption class="caption"><?php echo $page->name;?></figcaption>
+			</figure>
+			<?php }?>
+		</div>
+
 		<?php if(MEMBER_ID == $page->poster_id){?>
 		<div class="url">
 			<div class="caption"><i class="fa fa-link"></i> โพสต์ลิ้งนี้ลงใน Facebook ของคุณ</div>
