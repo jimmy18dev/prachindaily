@@ -2,12 +2,18 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
 if(!MEMBER_ONLINE){
-	header("Location: partner.php");
+	header("Location: login.php");
 	die();
 }
-
-$page->Get(array('page_id' => $_GET['id']));
+if(!empty($_GET['id'])){
+	$page->Get(array('page_id' => $_GET['id']));
+}
+if($page->poster_id != MEMBER_ID){
+	header("Location: me.php");
+	die();
+}
 
 $current_page = "editor";
 ?>
@@ -53,7 +59,7 @@ $current_page = "editor";
 	<form id="page_editor" action="gallery.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
 		<div class="editor-items">
-			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ</div>
+			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ (<?php echo $page->poster_id;?>)</div>
 			<div class="image-input">
 				<span id="photo_files_div"></span>
 				<span id="photo_thumbnail">

@@ -79,7 +79,7 @@ class PageController extends PageModel{
 		$this->status = $data['pa_status'];
 
 		// Poster or Owner
-		$this->poster_id = $data['pe_fb_id'];
+		$this->poster_id 	= $data['pe_fb_id'];
 		$this->poster_name = $data['pe_fname'].' '.$data['pe_lname'];
 		$this->poster_type = $data['pe_type'];
 

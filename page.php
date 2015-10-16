@@ -123,11 +123,11 @@ $meta_description = $page->description_metatag;
 		</div>
 
 		<div class="gallery">
+			<?php if(MEMBER_ID == $page->poster_id){?>
 			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
-			<div class="gallery-button">
-				<i class="fa fa-camera"></i> เลือกภาพ
-			</div>
+			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
 			</a>
+			<?php }?>
 
 			<?php $page->ListGallery(array('page_id' => $page->id));?>
 		</div>

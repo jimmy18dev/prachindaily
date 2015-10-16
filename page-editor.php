@@ -2,12 +2,18 @@
 require_once'config/autoload.php';
 include'sdk/facebook-sdk/autoload.php';
 include'facebook.php';
+
 if(!MEMBER_ONLINE){
-	header("Location: partner.php");
+	header("Location: login.php");
 	die();
 }
+if(!empty($_GET['id'])){
+	$page->Get(array('page_id' => $_GET['id']));
 
-$page->Get(array('page_id' => $_GET['id']));
+	if($page->poster_id != MEMBER_ID){
+		header("Location: me.php");
+	}
+}
 
 $current_page = "editor";
 ?>

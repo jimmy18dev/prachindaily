@@ -20,7 +20,7 @@ include'facebook.php';
 <meta name="viewport" content="user-scalable=no">
 <meta name="viewport" content="initial-scale=1,maximum-scale=1">	
 
-<title>404 ERROR!</title>
+<title>คุณไม่ได้รับอนุญาติให้เข้าถึงหน้าดังกล่าว!</title>
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
@@ -34,10 +34,10 @@ include'facebook.php';
 
 <div class="page-container error-page">
 	<header>
-		<h1>404 ERROR</h1>
+		<h1>คุณไม่ได้รับอนุญาติให้เข้าถึงหน้าดังกล่าว!</h1>
 	</header>
 	<div class="entry-content">
-		<p>ไม่พบหน้าที่คุณต้องการ หากพบปัญหาในการใช้งาน กรุณาติดต่อทีมงานค่ะ</p>
+		<p>หากพบปัญหาในการใช้งานกรุณาติดต่อทีมงานค่ะ</p>
 	</div>
 </div>
 </body>
