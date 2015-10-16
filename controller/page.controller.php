@@ -103,6 +103,11 @@ class PageController extends PageModel{
 		$this->RenderPage('mypage',$dataset,'null');
 	}
 
+	public function ListGallery($param){
+		$dataset = parent::ListGalleryProcess($param);
+		$this->RenderPage('gallery',$dataset,'null');
+	}
+
 	public function PendingPage($param){
 		$dataset = parent::PendingPageProcess($param);
 		$this->RenderPage('pendingpage',$dataset,'null');
@@ -172,6 +177,10 @@ class PageController extends PageModel{
         	else if($mode == "pendingpage" && !empty($var['pa_id'])){
         		include'template/page/pending.items.php';
         	}
+        	else if($mode == "gallery" && !empty($var['im_id'])){
+        		include'template/page/gallery.items.php';
+        	}
+
         }
         unset($data);
     }

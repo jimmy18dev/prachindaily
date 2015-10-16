@@ -123,12 +123,13 @@ $meta_description = $page->description_metatag;
 		</div>
 
 		<div class="gallery">
-			<?php for($i=0;$i<5;$i++){?>
-			<figure class="gallery-items">
-				<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
-				<figcaption class="caption"><?php echo $page->name;?></figcaption>
-			</figure>
-			<?php }?>
+			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
+			<div class="gallery-button">
+				<i class="fa fa-camera"></i> เลือกภาพ
+			</div>
+			</a>
+
+			<?php $page->ListGallery(array('page_id' => $page->id));?>
 		</div>
 
 		<?php if(MEMBER_ID == $page->poster_id){?>
