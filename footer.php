@@ -14,5 +14,5 @@
 	<p class="device"><?php echo DEVICE_TYPE.', Model:'.DEVICE_MODEL.', OS:'.DEVICE_OS.', Browser:'.DEVICE_BROWSER;?></p>
 	<?php }?>
 
-	<p><?php echo'Token: '.$_COOKIE['token_key'].' | FacebookID:'.$_COOKIE['facebook_id'];?></p>
+	<p><?php echo'Token: '.$_COOKIE['token_key'].' | FacebookID: '.$_COOKIE['facebook_id'].'| MemberID: '.MEMBER_ID;?></p>
 </footer>

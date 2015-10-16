@@ -11,7 +11,7 @@ Copyright (c) 2015 Puwadon Sricharoen
 
 @Fontsize_title     : 1.1em;
 @Fontsize_info      : 0.75em;
-@Fontsize_normal    : 0.9em;
+@Fontsize_normal    : 0.95em;
 @Fontsize_mini      : 0.8em;
 @Fontsize_micro     : 0.7em;
 
@@ -97,6 +97,14 @@ Copyright (c) 2015 Puwadon Sricharoen
                 }
             }
         }
+    }
+}
+
+.error-page{
+    text-align: center;
+
+    header{
+        margin-top: 25% !important;
     }
 }
 
@@ -309,7 +317,7 @@ Copyright (c) 2015 Puwadon Sricharoen
 
         h1{
             font-size: @Fontsize_header + 0.8em;
-            line-height: 1.7em;
+            line-height: 1.5em;
             font-weight: bold;
             color: @TextPrimaryColor;
         }
@@ -318,9 +326,6 @@ Copyright (c) 2015 Puwadon Sricharoen
             color: @TextThirdColor;
             line-height: 1.8em;
             
-            .location{
-                color: @PrimaryColor;
-            }
             .phone{
                 color: @TextSecondaryColor;
             }
@@ -354,7 +359,7 @@ Copyright (c) 2015 Puwadon Sricharoen
         float: left;
         display: inline-block;
         font-size: @Fontsize_normal;
-        line-height: 1.8em;
+        line-height: 1.6em;
         color: @TextSecondaryColor;
 
         a{
@@ -398,8 +403,8 @@ Copyright (c) 2015 Puwadon Sricharoen
         }
 
         .url{
-            width: 50%;
-            margin: 0% 25%;
+            width: 60%;
+            margin: 0% 20%;
             float: left;
             display: inline-block;
             text-align: center;
@@ -447,6 +452,53 @@ Copyright (c) 2015 Puwadon Sricharoen
             tspan{
                 font-size: @Fontsize_normal !important;
                 color: @TextSecondaryColor !important;
+            }
+        }
+
+        .gallery{
+            width: 100%;
+            padding: 10% 0%;
+            float: left;
+            display: inline-block;
+
+            .gallery-button{
+                width: 100%;
+                padding: 4% 0%;
+                background: @BackgroundColorAccent;
+                border: 1px dashed @TextThirdColor;
+                float: left;
+                display: inline-block;
+                text-align: center;
+                color: @TextSecondaryColor;
+                margin-bottom: 3%;
+
+                i{
+                    margin-right: 5px;
+                }
+            }
+
+            .gallery-items{
+                width: 100%;
+                float: left;
+                display: inline-block;
+                margin-bottom: 5%;
+
+                img{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                }
+
+                figcaption.caption{
+                    width: 100%;
+                    padding: 1% 0%;
+                    float: left;
+                    display: inline-block;
+
+                    i{
+                        margin-right: 10px;
+                    }
+                }
             }
         }
     }

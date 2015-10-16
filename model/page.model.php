@@ -226,6 +226,14 @@ class PageModel extends Database{
 		parent::execute();
 	}
 
+	public function ListGalleryProcess($param){
+		parent::query('SELECT * FROM base_image WHERE im_page_id = :page_id');
+		parent::bind(':page_id', 		$param['page_id']);
+		parent::execute();
+		$dataset = parent::resultset();
+		return $dataset;
+	}
+
 	// Administrator
 	public function UpdateStatusProcess($param){
 		parent::query('UPDATE base_page SET pa_status = :status,pa_update_time = :update_time WHERE pa_id = :page_id');

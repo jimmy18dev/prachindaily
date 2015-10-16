@@ -79,7 +79,7 @@ class PageController extends PageModel{
 		$this->status = $data['pa_status'];
 
 		// Poster or Owner
-		$this->poster_id = $data['pe_fb_id'];
+		$this->poster_id 	= $data['pe_fb_id'];
 		$this->poster_name = $data['pe_fname'].' '.$data['pe_lname'];
 		$this->poster_type = $data['pe_type'];
 
@@ -101,6 +101,11 @@ class PageController extends PageModel{
 	public function MyPage($param){
 		$dataset = parent::MyPageProcess($param);
 		$this->RenderPage('mypage',$dataset,'null');
+	}
+
+	public function ListGallery($param){
+		$dataset = parent::ListGalleryProcess($param);
+		$this->RenderPage('gallery',$dataset,'null');
 	}
 
 	public function PendingPage($param){
@@ -172,6 +177,10 @@ class PageController extends PageModel{
         	else if($mode == "pendingpage" && !empty($var['pa_id'])){
         		include'template/page/pending.items.php';
         	}
+        	else if($mode == "gallery" && !empty($var['im_id'])){
+        		include'template/page/gallery.items.php';
+        	}
+
         }
         unset($data);
     }

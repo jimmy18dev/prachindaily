@@ -122,6 +122,16 @@ $meta_description = $page->description_metatag;
 			</div>
 		</div>
 
+		<div class="gallery">
+			<?php if(MEMBER_ID == $page->poster_id && $page->status == "success"){?>
+			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
+			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
+			</a>
+			<?php }?>
+
+			<?php $page->ListGallery(array('page_id' => $page->id));?>
+		</div>
+
 		<?php if(MEMBER_ID == $page->poster_id){?>
 		<div class="url">
 			<div class="caption"><i class="fa fa-link"></i> โพสต์ลิ้งนี้ลงใน Facebook ของคุณ</div>

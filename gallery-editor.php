@@ -9,10 +9,10 @@ if(!MEMBER_ONLINE){
 }
 if(!empty($_GET['id'])){
 	$page->Get(array('page_id' => $_GET['id']));
-
-	if($page->poster_id != MEMBER_ID){
-		header("Location: me.php");
-	}
+}
+if($page->poster_id != MEMBER_ID){
+	header("Location: me.php");
+	die();
 }
 
 $current_page = "editor";
@@ -56,19 +56,10 @@ $current_page = "editor";
 
 <div class="page-container">
 
-	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
+	<form id="page_editor" action="gallery.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
-
 		<div class="editor-items">
-			<div class="caption">ชื่อร้าน</div>
-			<div class="input">
-				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();" required>
-				<span class="length" id="name-length"></span>
-			</div>
-		</div>
-
-		<div class="editor-items">
-			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ</div>
+			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ (<?php echo $page->poster_id;?>)</div>
 			<div class="image-input">
 				<span id="photo_files_div"></span>
 				<span id="photo_thumbnail">
@@ -81,52 +72,17 @@ $current_page = "editor";
 				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
 			</div>
 		</div>
-
 		<div class="editor-items">
-			<div class="caption">เบอร์โทรศัพท์</div>
+			<div class="caption">Caption</div>
 			<div class="input">
-				<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required>
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อำเภอ</div>
-			<select name="city_id" id="city_id" class="input-select" onblur="javascript:Score();">
-				<option value="">เลือกอำเภอ...</option>
-				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
-			</select>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อธิบายว่าเป็นธุรกิจอะไร</div>
-			<div class="input">
-				<textarea name="description" id="description" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
+				<textarea name="caption" class="input-textarea animated"></textarea>
 				<span class="length" id="description-length"></span>
 			</div>
 		</div>
-		<div class="editor-items">
-			<div class="caption">ที่อยู่จริง</div>
-			<div class="input">
-				<textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea>
-				<span class="length" id="address-length"></span>
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อธิบายเส้นทางไปร้านหรือสถานที่นี้</div>
-			<div class="input">
-				<textarea name="guide" id="guide" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->guide;?></textarea>
-				<span class="length" id="guide-length"></span>
-			</div>
-		</div>
-
-		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
-
-		<?php if(empty($page->id)){?>
-		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
-		<?php }?>
 
 		<div class="submit">
 			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>
 		</div>
-		<input type="hidden" name="province_id" value="16">
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>
@@ -144,7 +100,6 @@ $current_page = "editor";
 
 <script type="text/javascript" src="js/page.editor.js"></script>
 <script type="text/javascript" src="js/page.editor.thumbnail.js"></script>
-<script type="text/javascript" src="js/page.score.js"></script>
 
 </body>
 </html>

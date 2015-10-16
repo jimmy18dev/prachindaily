@@ -25,10 +25,6 @@ include'facebook.php';
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
-<link rel="stylesheet" type="text/css" href="plugin/font-awesome/css/font-awesome.min.css"/>
-
-<!-- JS Lib -->
-<script type="text/javascript" src="js/lib/jquery-1.11.1.min.js"></script>
 
 </head>
 
@@ -36,12 +32,12 @@ include'facebook.php';
 
 <?php include'header.php';?>
 
-<div class="page-container">
+<div class="page-container error-page">
 	<header>
 		<h1>500 ERROR</h1>
 	</header>
 	<div class="entry-content">
-		<p>เกิดข้อผิดพลาดกับระบบ! ทีมงานกำลังแก้ไขปัญหา</p>
+		<p>ขออภัยค่ะ ตอนนี้เกิดข้อผิดพลาดกับระบบ! ทีมงานกำลังแก้ไขปัญหา</p>
 	</div>
 </div>
 </body>
