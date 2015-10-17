@@ -227,7 +227,7 @@ class PageModel extends Database{
 	}
 
 	public function ListGalleryProcess($param){
-		parent::query('SELECT * FROM base_image WHERE im_page_id = :page_id');
+		parent::query('SELECT * FROM base_image WHERE im_page_id = :page_id AND im_type = "gallery" ORDER BY im_create_time DESC');
 		parent::bind(':page_id', 		$param['page_id']);
 		parent::execute();
 		$dataset = parent::resultset();
