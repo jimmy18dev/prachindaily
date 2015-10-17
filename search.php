@@ -65,7 +65,7 @@ $meta_description = 'ปราจีนเดลี่ เว็บอันด�
 		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
 		</form>
 	</div>
-	<div class="page-list">
+	<div class="result-list">
 		<?php
 		$total_feed = $page->Search(array(
 			'keyword' 	=> $_GET['q'],

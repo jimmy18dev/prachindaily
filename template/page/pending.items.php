@@ -20,7 +20,7 @@ else{
 }
 ?>
 
-<div class="page-items" id="items-<?php echo $var['pa_id'];?>">
+<div class="result-items" id="items-<?php echo $var['pa_id'];?>">
 	<div class="detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
 		<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
 		<div class="info">

@@ -55,7 +55,7 @@ if(!MEMBER_ONLINE){
 		<a href="partner.php" target="_parent" class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</a>
 		<?php }?>
 	</div>
-	<div class="page-list">
+	<div class="result-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
 	</div>
 </div>

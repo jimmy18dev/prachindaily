@@ -143,8 +143,8 @@ $current_page = "editor";
 <?php include'analytics_bar.php';?>
 
 <script type="text/javascript" src="js/page.editor.js"></script>
-<script type="text/javascript" src="js/editor.thumbnail.js"></script>
-<script type="text/javascript" src="js/score.js"></script>
+<script type="text/javascript" src="js/page.editor.thumbnail.js"></script>
+<script type="text/javascript" src="js/page.score.js"></script>
 
 </body>
 </html>

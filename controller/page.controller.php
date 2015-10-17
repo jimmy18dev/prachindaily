@@ -167,16 +167,14 @@ class PageController extends PageModel{
 
 	private function RenderPage($mode,$data,$keyword){
         foreach ($data as $var){
+        	$var['pa_description'] = $this->ConvertStringtoMetatag($var['pa_description']);
         	if($mode == "mypage" && !empty($var['pa_id'])){
-        		$var['pa_description'] = $this->ConvertStringtoMetatag($var['pa_description']);
         		include'template/page/mypage.items.php';
         	}
         	else if($mode == "page" && !empty($var['pa_id'])){
-        		$var['pa_description'] = $this->ConvertStringtoMetatag($var['pa_description']);
         		include'template/page/page.items.php';
         	}
         	else if($mode == "pendingpage" && !empty($var['pa_id'])){
-        		$var['pa_description'] = $this->ConvertStringtoMetatag($var['pa_description']);
         		include'template/page/pending.items.php';
         	}
         	else if($mode == "gallery" && !empty($var['im_id'])){
