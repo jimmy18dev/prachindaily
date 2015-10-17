@@ -1,0 +1,146 @@
+@charset "UTF-8";
+//////////////////////////////////////////////
+// SETTING ///////////////////////////////////
+//////////////////////////////////////////////
+@font-face {
+    font-family: 'oswald';
+    src: url('../font/oswald.eot');
+    src: url('../font/oswald.eot?#iefix') format('embedded-opentype'),
+         url('../font/oswald.woff') format('woff'),
+         url('../font/oswald.ttf') format('truetype'),
+         url('../font/oswald.svg#oswald') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// FONT STYLE
+@FontLogo: 'oswald';
+// Google Font
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@FontPrimary: 'Open Sans', sans-serif;
+
+// Default Color
+@PrimaryColor       :#1abc9c;
+@PrimaryColorDark   :#14967c;
+@SecondaryColor     :#3b5998; // Facebook Color
+@SecondaryColorDark :#2f4779;
+@ThirdColor         :#F44336;
+
+@AccentColor        :#ff4081;
+@AccentColor        :#3498db;
+
+@TextPrimaryColor   :#000000;
+@TextSecondaryColor :#555555;
+@TextThirdColor     :#CCCCCC;
+@TextLightColor     :#FFFFFF;
+
+@BackgroundColor    :#FFFFFF;
+@BackgroundColorAccent:#F7F7F7;
+/////////////////////////////////////
+
+.transitionAnimation(@s){
+    transition:all @s ease-in-out;
+    -moz-transition:all @s ease-in-out;
+    -webkit-transition:all @s ease-in-out;
+    -o-transition:all @s ease-in-out;
+}
+
+// Rotate Animation
+.transformRotate(){
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+// Scale Animation
+.transformScale(@v){
+    -ms-transform: scale(@v);
+    -webkit-transform: scale(@v);
+    transform: scale(@v);
+}
+
+.shadow(@v){
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, @v);
+}
+.shadow-inset(@v){
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, @v);
+}
+.text-shadow(@v){
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, @v);
+}
+
+html {
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+}
+
+a[href], button {
+    -ms-touch-action: none; /* IE10 */
+    touch-action: none;     /* IE11 */
+}
+
+body{
+  font-family: @FontPrimary;
+  background: @BackgroundColor;
+  overflow-y:scroll;
+  overflow-x:hidden;
+}
+
+// Animation of Textarea
+.animated{
+    -webkit-transition: height 0.2s;
+    -moz-transition: height 0.2s;
+    transition: height 0.2s;
+}
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Daniel Eden
+*/
+.animated{
+  -webkit-animation-duration: .3s;
+  animation-duration: .3s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+@-webkit-keyframes pulse{
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.2, 1.2, 1.2);
+    transform: scale3d(1.2, 1.2, 1.2);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
