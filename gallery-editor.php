@@ -63,11 +63,7 @@ $current_page = "editor";
 			<div class="image-input">
 				<span id="photo_files_div"></span>
 				<span id="photo_thumbnail">
-					<?php if(empty($page->cover_id)){?>
 					<div class="icon"><i class="fa fa-camera"></i> เลือกภาพ</div>
-					<?php }else{?>
-					<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="">
-					<?php }?>
 				</span>
 				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
 			</div>
@@ -83,7 +79,7 @@ $current_page = "editor";
 		<div class="submit">
 			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>
 		</div>
-		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
+		<input type="hidden" id="page_id" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>
 </div>
@@ -98,8 +94,8 @@ $current_page = "editor";
 <?php include'footer.php';?>
 <?php include'analytics_bar.php';?>
 
-<script type="text/javascript" src="js/page.editor.js"></script>
-<script type="text/javascript" src="js/page.editor.thumbnail.js"></script>
+<script type="text/javascript" src="js/gallery.editor.js"></script>
+<script type="text/javascript" src="js/editor.thumbnail.js"></script>
 
 </body>
 </html>

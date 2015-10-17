@@ -41,15 +41,11 @@ else{
 			<?php if(!empty($var['pa_phone'])){?>
 			 · <span class="phone"><?php echo $phone;?></span>
 			<?php }?>
+			 · <span class="read">เปิดอ่าน <?php echo number_format($var['pa_read']);?> ครั้ง</span>
 			 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
 		</div>
 		<div class="description">
 			<?php echo $var['pa_description'];?>
-		</div>
-		<div class="analytic">
-			<?php if($var['pa_read'] > 10){?>
-			<span class="read">เปิดอ่าน <?php echo number_format($var['pa_read']);?> ครั้ง</span>
-			<?php }?>
 		</div>
 	</div>
 	<?php if(!empty($var['im_id'])){?>

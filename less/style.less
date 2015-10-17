@@ -190,32 +190,32 @@ Copyright (c) 2015 Puwadon Sricharoen
         width: 100%;
         float: left;
         display: inline-block;
-        border: 1px solid @TextThirdColor;
         border-radius: 2px;
+        background: @BackgroundColorAccent;
 
         .input-text{
             width: 90%;
-            padding: 1% 1%;
+            padding: 2% 1%;
             float: left;
             display: inline-block;
             border: 0px;
             font-family: @FontPrimary;
             font-size: 1em;
             line-height: 1.5em;
-            background: @BackgroundColor;
+            background: @BackgroundColorAccent;
             outline: 0;
             color: @TextPrimaryColor;
         }
         .button-submit{
             width: 8%;
-            padding: 1% 0%;
+            padding: 2% 0%;
             float: right;
             display: inline-block;
             text-align: center;
             color: @TextSecondaryColor;
             font-size: 1em;
             line-height: 1.5em;
-            background: @BackgroundColor;
+            background: @BackgroundColorAccent;
             border: 0px;
             color: @TextPrimaryColor;
 
@@ -316,14 +316,14 @@ Copyright (c) 2015 Puwadon Sricharoen
         display: inline-block;
 
         h1{
-            font-size: @Fontsize_header + 0.8em;
+            font-size: 1.6em;
             line-height: 1.5em;
             font-weight: bold;
             color: @TextPrimaryColor;
         }
         p.info{
-            font-size: @Fontsize_normal;
-            color: @TextThirdColor;
+            font-size: 1em;
+            color: @TextSecondaryColor;
             line-height: 1.8em;
             
             .phone{
@@ -339,6 +339,22 @@ Copyright (c) 2015 Puwadon Sricharoen
                 }
             }
         }
+    }
+
+    h2{
+        font-weight: bold;
+        color: @TextPrimaryColor;
+        margin-top: 4%;
+        font-size: 1.3em;
+        margin-bottom: 1%;
+    }
+
+    h3{
+        font-weight: bold;
+        margin-top: 4%;
+        font-size: 1.1em;
+        margin-bottom: 1%;
+        color: @TextPrimaryColor;
     }
 
     .entry-cover{
@@ -358,8 +374,8 @@ Copyright (c) 2015 Puwadon Sricharoen
         width: 100%;
         float: left;
         display: inline-block;
-        font-size: @Fontsize_normal;
-        line-height: 1.6em;
+        font-size: 1em;
+        line-height: 1.7em;
         color: @TextSecondaryColor;
 
         a{
@@ -389,13 +405,14 @@ Copyright (c) 2015 Puwadon Sricharoen
                 display: inline-block;
 
                 .icon{
-                    width: 3%;
+                    width: 4%;
                     float: left;
                     display: inline-block;
                     font-size: @Fontsize_mini;
+                    color: @TextThirdColor;
                 }
                 .text{
-                    width: 97%;
+                    width: 96%;
                     float: right;
                     display: inline-block;
                 }
@@ -501,13 +518,6 @@ Copyright (c) 2015 Puwadon Sricharoen
                 }
             }
         }
-    }
-
-    h2{
-        font-weight: bold;
-        color: @TextSecondaryColor;
-        margin-top: 4%;
-        font-size: @Fontsize_title;
     }
 
     .page-editor{
@@ -696,17 +706,16 @@ Copyright (c) 2015 Puwadon Sricharoen
         width: 100%;
         float: left;
         display: inline-block;
-        margin-top: 2%;
 
         .page-items{
             width: 100%;
             float: left;
             display: inline-block;
             background: @BackgroundColor;
-            border-bottom: 1px solid @BackgroundColorAccent;
+            border-bottom: 2px solid @BackgroundColorAccent;
 
             &:first-child{
-                border-top: 1px solid @BackgroundColorAccent;
+                border-top: 2px solid @BackgroundColorAccent;
             }
 
             .detail{
@@ -717,12 +726,11 @@ Copyright (c) 2015 Puwadon Sricharoen
                 display: inline-block;
 
                 .title{
-                    font-weight: bold;
                     font-size: @Fontsize_title;
                     line-height: 1.5em;
 
                     a{
-                        color: @SecondaryColorDark;
+                        color: @TextPrimaryColor;
                         text-decoration: none;
 
                         &:hover{
@@ -742,7 +750,7 @@ Copyright (c) 2015 Puwadon Sricharoen
                     color: @TextThirdColor;
                     font-style: italic;
                     line-height: 1.5em;
-                    margin-bottom: 1%;
+                    padding: 1% 0%;
 
                     a{
                         color: @SecondaryColor;
