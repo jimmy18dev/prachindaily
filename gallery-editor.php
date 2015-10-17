@@ -59,7 +59,7 @@ $current_page = "editor";
 	<form id="page_editor" action="gallery.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
 		<div class="editor-items">
-			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ (<?php echo $page->poster_id;?>)</div>
+			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ</div>
 			<div class="image-input">
 				<span id="photo_files_div"></span>
 				<span id="photo_thumbnail">
@@ -73,7 +73,7 @@ $current_page = "editor";
 			</div>
 		</div>
 		<div class="editor-items">
-			<div class="caption">Caption</div>
+			<div class="caption">บรรยายภาพ</div>
 			<div class="input">
 				<textarea name="caption" class="input-textarea animated"></textarea>
 				<span class="length" id="description-length"></span>

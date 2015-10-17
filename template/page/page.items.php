@@ -1,5 +1,5 @@
 <?php
-// $var['pa_name'] = str_ireplace($keyword,'<span class="highlight">'.$keyword.'</span>',$var['pa_name']);
+$var['pa_name'] = str_ireplace($keyword,'<span class="highlight">'.$keyword.'</span>',$var['pa_name']);
 $var['pa_description'] = str_ireplace($keyword,'<span class="highlight">'.$keyword.'</span>',$var['pa_description']);
 
 $timeupdate = $var['create_time_facebook_format'];
@@ -19,7 +19,7 @@ else{
 }
 ?>
 
-<div class="result-items" id="items-<?php echo $var['pa_id'];?>">
+<div class="page-items" id="items-<?php echo $var['pa_id'];?>">
 	<div class="detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
 		<div class="title"><a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
 		<div class="info">
