@@ -132,12 +132,14 @@ $meta_description = $page->description_metatag;
 			<?php $page->ListGallery(array('page_id' => $page->id));?>
 		</div>
 
-		<div class="sharing">
-			<div class="sharing-items">LINE</div>
-			<div class="sharing-items">Twitter</div>
-			<div class="sharing-items">Facebook</div>
-			<div class="sharing-items sharing-caption"><i class="fa fa-share"></i> แชร์</div>
+		<?php if(MEMBER_ID == $page->poster_id){?>
+		<div class="url">
+			<div class="caption"><i class="fa fa-link"></i> โพสต์ลิ้งนี้ลงใน Facebook ของคุณ</div>
+			<div class="input">
+				<input type="text" class="input-url" value="<?php echo $meta['domain'];?>/page-<?php echo $page->id;?>.html">
+			</div>
 		</div>
+		<?php }?>
 	</div>
 
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
