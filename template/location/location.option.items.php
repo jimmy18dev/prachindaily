@@ -1,1 +1,0 @@
-<option value="<?php echo $var['amphur_id'];?>" <?php echo ($var['amphur_id'] == $current?'selected':'');?>><?php echo $var['amphur_name'];?></option>
