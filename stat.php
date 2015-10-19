@@ -78,6 +78,5 @@ $meta_description = 'ปราจีนเดลี่ยินดีแบ่�
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>

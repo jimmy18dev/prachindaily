@@ -83,6 +83,5 @@ $meta_description = 'หากต้องการติดต่อทีม�
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>

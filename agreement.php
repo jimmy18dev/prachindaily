@@ -120,6 +120,5 @@ $meta_description = 'ทำความเข้าใจเพื่อปร�
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>

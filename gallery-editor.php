@@ -92,7 +92,6 @@ $current_page = "editor";
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 
 <script type="text/javascript" src="js/gallery.editor.js"></script>
 <script type="text/javascript" src="js/editor.thumbnail.js"></script>

@@ -80,7 +80,6 @@ $meta_description = 'ปราจีนเดลี่ เว็บอันด�
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>
 

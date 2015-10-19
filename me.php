@@ -45,15 +45,11 @@ if(!MEMBER_ONLINE){
 <?php include'header.php';?>
 
 <div class="page-container">
-	<header>
-		<div class="topic">ธุรกิจของฉัน</div>
-	</header>
-	<div class="menu">
-		<?php if(MEMBER_ONLINE){?>
-		<a href="page-editor.php" target="_parent"><i class="fa fa-plus"></i>เพิ่มธุรกิจของคุณ</a>
-		<?php }else{?>
-		<a href="partner.php" target="_parent" class="facebook-button"><i class="fa fa-facebook"></i> เข้าระบบด้วย Facebook</a>
-		<?php }?>
+	<div class="head">
+		<div class="caption">ธุรกิจของฉัน (3)</div>
+		<a href="page-editor.php" target="_parent">
+		<div class="button-create"><i class="fa fa-plus"></i>เพิ่มธุรกิจของคุณ</div>
+		</a>
 	</div>
 	<div class="page-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
@@ -61,6 +57,5 @@ if(!MEMBER_ONLINE){
 </div>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>
