@@ -367,6 +367,41 @@ Copyright (c) 2015 Puwadon Sricharoen
             font-size: 2em;
             outline: 0;
         }
+
+        .image-input{
+                width: 100%;
+                background: @BackgroundColorAccent;
+                border: 1px dashed @TextThirdColor;
+                float: left;
+                display: inline-block;
+                text-align: center;
+
+                &:hover{
+                    cursor: pointer;
+                    border: 1px solid @TextThirdColor;
+                    opacity: 0.6;
+                }
+
+                img{
+                    width: 100%;
+                    float: left;
+                    display: inline-block;
+                }
+
+                .icon{
+                    width: 100%;
+                    padding: 10% 0%;
+
+                    i{
+                        margin-right: 5px;
+                    }
+                }
+
+                .input-file{
+                    display: none;
+                }
+            }
+
         .input-page-select{
             width: 100%;
             padding: 2% 1%;
@@ -393,13 +428,75 @@ Copyright (c) 2015 Puwadon Sricharoen
             outline: 0;
         }
 
-        .score{
+        .input-text{
+            font-family: @FontPrimary;
+            font-size: @Fontsize_title;
+            width: 98%;
+            padding: 1%;
             float: left;
             display: inline-block;
+            border: 1px solid #EEEEEE;
+            line-height: 1.5em;
+            outline: 0;
+        }
+        .input-textarea{
+            font-family: @FontPrimary;
+            font-size: @Fontsize_normal;
+            line-height: 1.5em;
+            width: 98%;
+            padding: 1%;
+            height: 100px;
+            float: left;
+            display: inline-block;
+            border: 1px solid #EEEEEE;
+            resize: none;
+            outline: 0;
+        }
+
+        .agreement{
+            width: 100%;
+            padding: 2% 0%;
+            float: left;
+            display: inline-block;
+            font-size: @Fontsize_normal;
+            line-height: 1.5em;
+            text-align: center;
+            color: @TextThirdColor;
+
+            a{
+                color: @TextSecondaryColor;
+                text-decoration: none;
+
+                &:hover{
+                    color: @TextPrimaryColor;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .score{
+            width: 45%;
+            float: left;
+            display: inline-block;
+            margin-left: 5%;
         }
         .submit{
+            width: 45%;
+            margin-right: 5%;
             float: right;
             display: inline-block;
+
+            .submit-button{
+                float: right;
+                display: inline-block;
+                background: @PrimaryColor;
+                color: #FFFFFF;
+                border: 0px;
+                font-family: @FontPrimary;
+                padding: 2% 4%;
+                line-height: 1.5em;
+                font-size: 0.8em;
+            }
         }
     } // End page style. /////////////
 
@@ -550,178 +647,6 @@ Copyright (c) 2015 Puwadon Sricharoen
             background: @ThirdColor;
             color: @TextLightColor;
             margin-left: 1%;
-        }
-    }
-
-    .page-editor{
-        width: 100%;
-        float: left;
-        display: inline-block;
-
-        .editor-items{
-            width: 100%;
-            padding: 2% 0%;
-            float: left;
-            display: inline-block;
-
-            .caption{
-                width: 100%;
-                padding: 1% 0%;
-                float: left;
-                display: inline-block;
-                font-size: @Fontsize_normal;
-                line-height: 1.5em;
-                color: @TextThirdColor;
-            }
-            .input{
-                width: 100%;
-                float: left;
-                display: inline-block;
-
-                .input-text{
-                    font-family: @FontPrimary;
-                    font-size: @Fontsize_title;
-                    width: 98%;
-                    padding: 1%;
-                    float: left;
-                    display: inline-block;
-                    border: 1px solid #EEEEEE;
-                    line-height: 1.5em;
-                    outline: 0;
-                }
-                .input-textarea{
-                    font-family: @FontPrimary;
-                    font-size: @Fontsize_normal;
-                    line-height: 1.5em;
-                    width: 98%;
-                    padding: 1%;
-                    height: 100px;
-                    float: left;
-                    display: inline-block;
-                    border: 1px solid #EEEEEE;
-                    resize: none;
-                    outline: 0;
-                }
-
-                .length{
-                    font-size: 0.5em;
-                    width: 100%;
-                    float: left;
-                    display: inline-block;
-                    text-align: right;
-                    line-height: 2em;
-                    color: @TextThirdColor;
-                }
-            }
-
-            .input-select{
-                width: 100%;
-                padding: 2% 1%;
-                float: left;
-                display: inline-block;
-                border: 1px solid #EEEEEE;
-                font-family: @FontPrimary;
-                font-size: @Fontsize_normal;
-                line-height: 2em;
-            }
-
-            .image-input{
-                width: 100%;
-                background: @BackgroundColorAccent;
-                border: 1px dashed @TextThirdColor;
-                float: left;
-                display: inline-block;
-                text-align: center;
-
-                &:hover{
-                    cursor: pointer;
-                    border: 1px solid @TextThirdColor;
-                    opacity: 0.6;
-                }
-
-                img{
-                    width: 100%;
-                    float: left;
-                    display: inline-block;
-                }
-
-                .icon{
-                    width: 100%;
-                    padding: 10% 0%;
-
-                    i{
-                        margin-right: 5px;
-                    }
-                }
-
-                .input-file{
-                    display: none;
-                }
-            }
-        }
-
-        .agreement{
-            width: 100%;
-            padding: 2% 0%;
-            margin: 2% 0%;
-            float: left;
-            display: inline-block;
-            font-size: @Fontsize_normal;
-            line-height: 1.5em;
-            text-align: center;
-            color: @TextThirdColor;
-            background: @BackgroundColorAccent;
-
-            a{
-                color: @TextSecondaryColor;
-                text-decoration: none;
-
-                &:hover{
-                    color: @TextPrimaryColor;
-                    text-decoration: underline;
-                }
-            }
-        }
-
-        .score{
-            width: 100%;
-            padding: 5% 0%;
-            float: left;
-            display: inline-block;
-            text-align: center;
-            font-size: @Fontsize_normal;
-            color: @TextSecondaryColor;
-            line-height: 1.5em;
-        }
-
-        .submit{
-            width: 100%;
-            padding: 5% 0%;
-            float: left;
-            display: inline-block;
-
-            .submit-button{
-                float: right;
-                display: inline-block;
-                padding: 2% 4%;
-                font-size: @Fontsize_normal;
-                line-height: 1.5em;
-                background: @PrimaryColor;
-                border-radius: 2px;
-                border: 0px;
-                color: @TextLightColor;
-                font-family: @FontPrimary;
-
-                i{
-                    font-size: @Fontsize_mini;
-                    margin-right: 10px;
-                }
-
-                &:hover{
-                    cursor: pointer;
-                    background: @PrimaryColorDark;
-                }
-            }
         }
     }
 

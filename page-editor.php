@@ -16,6 +16,7 @@ if(!empty($_GET['id'])){
 }
 
 $current_page = "editor";
+
 ?>
 
 <!DOCTYPE html>
@@ -54,22 +55,22 @@ $current_page = "editor";
 
 <?php include'header.php';?>
 
-<div class="page-container">
-
+<article class="page-container">
 	<!-- Start form -->
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
-	<div class="page-editor">
+	<div class="page">
+		<header>
+			<input type="text" id="name" name="page_name" class="input-page-name" value="<?php echo $page->name;?>" onblur="javascript:Score();" required placeholder="ชื่อร้าน...">
+		</header>
 
-		<div class="editor-items">
-			<div class="caption">ชื่อร้าน</div>
-			<div class="input">
-				<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();" required>
-				<span class="length" id="name-length"></span>
-			</div>
+		<div class="info">
+			<select name="city_id" id="city_id" class="input-page-select" onblur="javascript:Score();">
+				<option value="">เลือกอำเภอ...</option>
+				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
+			</select>
 		</div>
 
-		<div class="editor-items">
-			<div class="caption">ภาพถ่ายหน้าร้านหรือภาพบรรยากาศ</div>
+		<figure class="entry-cover">
 			<div class="image-input">
 				<span id="photo_files_div"></span>
 				<span id="photo_thumbnail">
@@ -81,48 +82,43 @@ $current_page = "editor";
 				</span>
 				<input type="file" class="input-file" id="photo_files" name="image_file" accept="image/*">
 			</div>
-		</div>
+		</figure>
 
-		<div class="editor-items">
-			<div class="caption">เบอร์โทรศัพท์</div>
-			<div class="input">
-				<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required>
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อำเภอ</div>
-			<select name="city_id" id="city_id" class="input-select" onblur="javascript:Score();">
-				<option value="">เลือกอำเภอ...</option>
-				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
-			</select>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อธิบายว่าเป็นธุรกิจอะไร</div>
-			<div class="input">
-				<textarea name="description" id="description" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
-				<span class="length" id="description-length"></span>
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">ที่อยู่จริง</div>
-			<div class="input">
-				<textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea>
-				<span class="length" id="address-length"></span>
-			</div>
-		</div>
-		<div class="editor-items">
-			<div class="caption">อธิบายเส้นทางไปร้านหรือสถานที่นี้</div>
-			<div class="input">
-				<textarea name="guide" id="guide" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->guide;?></textarea>
-				<span class="length" id="guide-length"></span>
-			</div>
-		</div>
+		<section class="entry-content">
+			<h2>รายละเอียด<?php echo $page->name;?></h2>
+			<textarea name="description" id="description" class="input-page-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
+		</section>
 
-		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
+		<section class="gallery" id="gallery">
+			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
+			<?php $page->ListGallery(array('page_id' => $page->id));?>
+		</section>
+
+		<section class="entry-content">
+			<h2>ติดต่อ<?php echo $page->name;?></h2>
+			<div class="infomation">
+				<div class="items">
+					<div class="icon"><i class="fa fa-phone-square"></i></div>
+					<div class="text"><input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required></div>
+				</div>
+
+				<div class="items">
+					<div class="icon"><i class="fa fa-map"></i></div>
+					<div class="text"><textarea name="guide" id="guide" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->guide;?></textarea></div>
+				</div>
+
+				<div class="items">
+					<div class="icon"><i class="fa fa-map-pin"></i></div>
+					<div class="text"><textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea></div>
+				</div>
+			</div>
+		</section>
 
 		<?php if(empty($page->id)){?>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
 		<?php }?>
+
+		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
 
 		<div class="submit">
 			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>
@@ -131,7 +127,9 @@ $current_page = "editor";
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>
-</div>
+	<!-- End form -->
+</article>
+
 
 <!-- Loading process submit photo to uploading. -->
 <div id="filter">
