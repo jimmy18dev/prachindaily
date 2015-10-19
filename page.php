@@ -75,11 +75,18 @@ $meta_description = $page->description_metatag;
 
 <article class="page-container">
 	<div class="page">
+
+		<?php if(MEMBER_ID == $page->poster_id){?>
 		<div class="control">
-			<div class="button-control"><i class="fa fa-trash"></i></div>
+			<div class="button-control delete"><i class="fa fa-trash"></i></div>
+
+			<a href="page-editor.php?id=<?php echo $page->id;?>">
 			<div class="button-control">แก้ไข</div>
-			<div class="button-control caption-control">แก้ไขล่าสุด <?php echo $timeupdate;?></div>
+			</a>
+
+			<div class="button-control caption"><?php echo $timeupdate;?> <i class="fa fa-clock-o"></i></div>
 		</div>
+		<?php }?>
 
 		<header>
 			<h1><?php echo $page->name;?></h1>
@@ -88,9 +95,6 @@ $meta_description = $page->description_metatag;
 		<p class="info">
 			<span class="location"><?php echo $location;?></span>
 			 · <span class="timeupdate" title="<?php echo $page->update_time_thai_format;?>"><?php echo $timeupdate;?></span>
-			 <?php if(MEMBER_ID == $page->poster_id){?>
-			 · <span class="edit"><a href="page-editor.php?id=<?php echo $page->id;?>">แก้ไข</a></span>
-			 <?php }?>
 		</p>
 
 		<?php if(!empty($page->cover_id)){?>

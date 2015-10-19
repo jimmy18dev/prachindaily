@@ -124,7 +124,7 @@ Copyright (c) 2015 Puwadon Sricharoen
         display: inline-block;
         background: #FFFFFF;
         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-        font-size: 1.2em;
+        font-size: 1em;
         line-height: 1.5em;
 
         .control{
@@ -132,16 +132,32 @@ Copyright (c) 2015 Puwadon Sricharoen
             float: left;
             display: inline-block;
             font-size: 0.8em;
+            border-bottom: 1px dashed #FAFAFA;
 
             .button-control{
                 float: right;
                 display: inline-block;
-                background: #FAFAFA;
-                padding: 2%;
+                padding: 1% 2%;
+                color: #AAAAAA;
+
+                &:hover{
+                    background: #FAFAFA;
+                    cursor: pointer;
+                }
             }
-            .caption-control{
-                background: #FFFFFF;
-                color: #CCCCCC;
+            .delete{
+                &:hover{
+                    background: @ThirdColor;
+                    color: #FFFFFF;
+                }
+            }
+            .caption{
+                color: #DDDDDD;
+                float: left;
+                margin-left: 3%;
+                &:hover{
+                    background: #FFFFFF;
+                }
             }
         }
 
@@ -184,7 +200,6 @@ Copyright (c) 2015 Puwadon Sricharoen
 
         h2{
             color: @TextPrimaryColor;
-            font-size: 1.2em;
             margin-bottom: 2%;
             color: #CCCCCC;
         }
