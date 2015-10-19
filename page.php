@@ -75,7 +75,6 @@ $meta_description = $page->description_metatag;
 
 <article class="page-container">
 	<div class="page">
-
 		<div class="control">
 			<div class="button-control"><i class="fa fa-trash"></i></div>
 			<div class="button-control">แก้ไข</div>
@@ -158,6 +157,5 @@ $meta_description = $page->description_metatag;
 </article>
 
 <?php include'footer.php';?>
-<?php include'analytics_bar.php';?>
 </body>
 </html>

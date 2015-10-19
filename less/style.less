@@ -157,6 +157,7 @@ Copyright (c) 2015 Puwadon Sricharoen
             h1{
                 font-size: 2em;
                 color: @TextPrimaryColor;
+                line-height: 1.5em;
             }
         }
 
@@ -315,6 +316,51 @@ Copyright (c) 2015 Puwadon Sricharoen
                 font-size: 0.8em;
             }
         }
+
+        .menu{
+            width: 100%;
+            padding: 5% 0%;
+            float: left;
+            display: inline-block;
+            text-align: center;
+            border-top: 1px solid #EEEEEE;
+
+            a{
+                text-decoration: none;
+                border: 1px solid @PrimaryColor;
+                color: @PrimaryColor;
+                font-size: 0.8em;
+                padding: 2% 4%;
+                border-radius: 3px;
+
+                i{
+                    margin-right: 10px;
+                    font-size: @Fontsize_mini;
+                }
+
+                &:hover{
+                    color: @PrimaryColorDark;
+                    border: 1px solid @PrimaryColorDark;
+                }
+
+                &:active{
+                    background: @PrimaryColorDark;
+                    color: @TextLightColor;
+                    border: 1px solid @PrimaryColorDark;
+                }
+            }
+
+            a.facebook-button{
+                border: 1px solid @SecondaryColor;
+                background: @SecondaryColor;
+                color: @TextLightColor;
+
+                &:hover{
+                    background: @SecondaryColorDark;
+                    border: 1px solid @SecondaryColorDark;
+                }
+            }
+        }
     } // End page style. /////////////
 
     // Login page
@@ -338,8 +384,9 @@ Copyright (c) 2015 Puwadon Sricharoen
             color: @TextLightColor;
             display: inline-block;
             padding: 2% 4%;
-            border-radius: 20px;
+            border-radius: 2px;
             font-size: @Fontsize_normal;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 
             i{
                 margin-right: 10px;
@@ -462,50 +509,6 @@ Copyright (c) 2015 Puwadon Sricharoen
             background: @ThirdColor;
             color: @TextLightColor;
             margin-left: 1%;
-        }
-    }
-
-    .menu{
-        width: 100%;
-        margin: 10% 0%;
-        float: left;
-        display: inline-block;
-        text-align: center;
-
-        a{
-            text-decoration: none;
-            border: 1px solid @PrimaryColor;
-            color: @PrimaryColor;
-            font-size: @Fontsize_normal;
-            padding: 1% 4%;
-            border-radius: 20px;
-
-            i{
-                margin-right: 10px;
-                font-size: @Fontsize_mini;
-            }
-
-            &:hover{
-                color: @PrimaryColorDark;
-                border: 1px solid @PrimaryColorDark;
-            }
-
-            &:active{
-                background: @PrimaryColorDark;
-                color: @TextLightColor;
-                border: 1px solid @PrimaryColorDark;
-            }
-        }
-
-        a.facebook-button{
-            border: 1px solid @SecondaryColor;
-            background: @SecondaryColor;
-            color: @TextLightColor;
-
-            &:hover{
-                background: @SecondaryColorDark;
-                border: 1px solid @SecondaryColorDark;
-            }
         }
     }
 
@@ -885,7 +888,6 @@ Copyright (c) 2015 Puwadon Sricharoen
     width: @PageWidth;
     margin: 0% (100% - @PageWidth) / 2;
     padding: 6% 0%;
-    margin-top: 2%;
     float: left;
     display: inline-block;
     color: @TextThirdColor;

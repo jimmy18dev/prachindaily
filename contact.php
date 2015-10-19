@@ -62,21 +62,23 @@ $meta_description = 'หากต้องการติดต่อทีม�
 <?php include'header.php';?>
 
 <div class="page-container">
-	<header>
-		<h1>ติดต่อทีมงานปราจีนเดลี่</h1>
-	</header>
+	<div class="page">
+		<header>
+			<h1>ติดต่อทีมงานปราจีนเดลี่</h1>
+		</header>
 
-	<figure class="entry-cover">
-		<img src="image/site/contact.jpg" alt="">
-		<figcaption></figcaption>
-	</figure>
+		<figure class="entry-cover">
+			<img src="image/site/contact.jpg" alt="">
+			<figcaption></figcaption>
+		</figure>
 
-	<div class="entry-content">
-		<p>หากต้องการติดต่อทีมงานปราจีนเดลี่ กรุณาใช้ช่องทางด้านล่าง เนื่องจากเรามีทีมงานหลายท่านจึงไม่มีนโยบายการให้เบอร์โทรศัพท์ส่วนตัวของท่านใดท่านหนึ่ง</p>
-		<h2>ติดต่อ</h2>
-		<p><strong>Email: </strong>prachindaily@gmail.com</p>
-		<p><strong>Twitter: </strong> <a href="https://twitter.com/prachindaily">https://twitter.com/prachindaily</a></p>
-		<p><strong>Fanpage: </strong> <a href="https://facebook.com/prachindaily">https://facebook.com/prachindaily</a></p>
+		<div class="entry-content">
+			<p>หากต้องการติดต่อทีมงานปราจีนเดลี่ กรุณาใช้ช่องทางด้านล่าง เนื่องจากเรามีทีมงานหลายท่านจึงไม่มีนโยบายการให้เบอร์โทรศัพท์ส่วนตัวของท่านใดท่านหนึ่ง</p><br>
+			<h2>ติดต่อ</h2>
+			<p><strong>Email: </strong>prachindaily@gmail.com</p>
+			<p><strong>Twitter: </strong> <a href="https://twitter.com/prachindaily">https://twitter.com/prachindaily</a></p>
+			<p><strong>Fanpage: </strong> <a href="https://facebook.com/prachindaily">https://facebook.com/prachindaily</a></p>
+		</div>
 	</div>
 </div>
 

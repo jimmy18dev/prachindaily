@@ -75,6 +75,5 @@ $current_page = "index";
 		<?php }?>
 	</div>
 </div>
-<?php include'analytics_bar.php';?>
 </body>
 </html>

@@ -64,12 +64,16 @@ $meta_description = 'ปราจีนเดลี่ยินดีแบ่�
 <?php include'header.php';?>
 
 <div class="page-container">
-	<header>
-		<h1>สถิติการใช้งานปราจีนเดลี่</h1>
+	<div class="page">
+		<header>
+			<h1>สถิติการใช้งานปราจีนเดลี่</h1>
+		</header>
+
 		<p class="info">เรายินดีแบ่งปันข้อมูลที่มีประโยชน์ในด้านการศึกษา</p>
-	</header>
-	<div class="entry-content">
-		<div class="chart" id="location"></div>
+		
+		<div class="entry-content">
+			<div class="chart" id="location"></div>
+		</div>
 	</div>
 </div>
 

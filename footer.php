@@ -15,4 +15,5 @@
 	<?php }?>
 
 	<p><?php echo'Token: '.$_COOKIE['token_key'].' | FacebookID: '.$_COOKIE['facebook_id'].'| MemberID: '.MEMBER_ID;?></p>
+	<p><?php echo number_format($site->people_cout);?> People · Page loading <span><?php echo round(microtime(true) - $_SERVER["REQUEST_TIME_FLOAT"],4);?>s</span> <span id="process_update"></span> · <?php echo number_format($site->search_cout);?> Searching</p>
 </footer>
