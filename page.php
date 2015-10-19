@@ -74,8 +74,18 @@ $meta_description = $page->description_metatag;
 <?php include'header.php';?>
 
 <article class="page-container">
-	<header>
-		<h1><?php echo $page->name;?></h1>
+	<div class="page">
+
+		<div class="control">
+			<div class="button-control"><i class="fa fa-trash"></i></div>
+			<div class="button-control">แก้ไข</div>
+			<div class="button-control caption-control">แก้ไขล่าสุด <?php echo $timeupdate;?></div>
+		</div>
+
+		<header>
+			<h1><?php echo $page->name;?></h1>
+		</header>
+
 		<p class="info">
 			<span class="location"><?php echo $location;?></span>
 			 · <span class="timeupdate" title="<?php echo $page->update_time_thai_format;?>"><?php echo $timeupdate;?></span>
@@ -83,46 +93,20 @@ $meta_description = $page->description_metatag;
 			 · <span class="edit"><a href="page-editor.php?id=<?php echo $page->id;?>">แก้ไข</a></span>
 			 <?php }?>
 		</p>
-	</header>
 
-	<?php if(!empty($page->cover_id)){?>
-	<figure class="entry-cover">
-		<img src="<?php echo $destination_folder['normal'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
-	</figure>
-	<?php }?>
+		<?php if(!empty($page->cover_id)){?>
+		<figure class="entry-cover">
+			<img src="<?php echo $destination_folder['mini'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
+		</figure>
+		<?php }?>
 
-	<div class="entry-content">
-		<?php echo $page->description;?>
+		<section class="entry-content">
+			<h2>รายละเอียด<?php echo $page->name;?></h2>
+			<?php echo $page->description;?>
+		</section>
 
-		<div class="infomation">
-			<?php if(!empty($page->phone)){?>
-			<div class="items">
-				<div class="icon"><i class="fa fa-phone-square"></i></div>
-				<div class="text"><?php echo $page->phone;?></div>
-			</div>
-			<?php }?>
-
-			<?php if(!empty($page->guide)){?>
-			<div class="items">
-				<div class="icon"><i class="fa fa-map"></i></div>
-				<div class="text"><?php echo $page->guide;?></div>
-			</div>
-			<?php }?>
-
-			<?php if(!empty($page->address)){?>
-			<div class="items">
-				<div class="icon"><i class="fa fa-map-pin"></i></div>
-				<div class="text"><?php echo $page->address;?></div>
-			</div>
-			<?php }?>
-
-			<div class="items">
-				<div class="icon"><i class="fa fa-user"></i></div>
-				<div class="text"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></div>
-			</div>
-		</div>
-
-		<div class="gallery" id="gallery">
+		<section class="gallery" id="gallery">
+			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
 			<?php if(MEMBER_ID == $page->poster_id && $page->status == "success"){?>
 			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
 			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
@@ -130,16 +114,46 @@ $meta_description = $page->description_metatag;
 			<?php }?>
 
 			<?php $page->ListGallery(array('page_id' => $page->id));?>
-		</div>
+		</section>
 
-		<div class="sharing">
+		<section class="entry-content">
+			<h2>ติดต่อ<?php echo $page->name;?></h2>
+			<div class="infomation">
+				<?php if(!empty($page->phone)){?>
+				<div class="items">
+					<div class="icon"><i class="fa fa-phone-square"></i></div>
+					<div class="text"><?php echo $page->phone;?></div>
+				</div>
+				<?php }?>
+
+				<?php if(!empty($page->guide)){?>
+				<div class="items">
+					<div class="icon"><i class="fa fa-map"></i></div>
+					<div class="text"><?php echo $page->guide;?></div>
+				</div>
+				<?php }?>
+
+				<?php if(!empty($page->address)){?>
+				<div class="items">
+					<div class="icon"><i class="fa fa-map-pin"></i></div>
+					<div class="text"><?php echo $page->address;?></div>
+				</div>
+				<?php }?>
+
+				<div class="items">
+					<div class="icon"><i class="fa fa-user"></i></div>
+					<div class="text"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="sharing">
+			<h2>แชร์<?php echo $page->name;?></h2>
 			<div class="sharing-items">LINE</div>
 			<div class="sharing-items">Twitter</div>
 			<div class="sharing-items">Facebook</div>
-			<div class="sharing-items sharing-caption"><i class="fa fa-share"></i> แชร์</div>
-		</div>
+		</section>	
 	</div>
-
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
 </article>
 
