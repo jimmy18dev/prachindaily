@@ -56,6 +56,7 @@ $current_page = "editor";
 
 <div class="page-container">
 
+	<!-- Start form -->
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
 	<div class="page-editor">
 

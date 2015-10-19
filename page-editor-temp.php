@@ -56,18 +56,19 @@ $current_page = "editor";
 <?php include'header.php';?>
 
 <article class="page-container">
+	<!-- Start form -->
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
 	<div class="page">
 		<header>
-			<input type="text" id="name" name="page_name" class="input-text" value="<?php echo $page->name;?>" onblur="javascript:Score();" required>
+			<input type="text" id="name" name="page_name" class="input-page-name" value="<?php echo $page->name;?>" onblur="javascript:Score();" required placeholder="ชื่อร้าน...">
 		</header>
 
-		<p class="info">
-			<select name="city_id" id="city_id" class="input-select" onblur="javascript:Score();">
+		<div class="info">
+			<select name="city_id" id="city_id" class="input-page-select" onblur="javascript:Score();">
 				<option value="">เลือกอำเภอ...</option>
 				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
 			</select>
-		</p>
+		</div>
 
 		<figure class="entry-cover">
 			<div class="image-input">
@@ -85,7 +86,7 @@ $current_page = "editor";
 
 		<section class="entry-content">
 			<h2>รายละเอียด<?php echo $page->name;?></h2>
-			<textarea name="description" id="description" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
+			<textarea name="description" id="description" class="input-page-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
 		</section>
 
 		<section class="gallery" id="gallery">
@@ -113,11 +114,11 @@ $current_page = "editor";
 			</div>
 		</section>
 
-		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
-
 		<?php if(empty($page->id)){?>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
 		<?php }?>
+
+		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
 
 		<div class="submit">
 			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>
@@ -126,6 +127,7 @@ $current_page = "editor";
 		<input type="hidden" name="page_id" value="<?php echo $page->id;?>">
 	</div>
 	</form>
+	<!-- End form -->
 </article>
 
 
