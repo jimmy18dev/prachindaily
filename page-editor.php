@@ -59,12 +59,13 @@ $current_page = "editor";
 	<!-- Start form -->
 	<form id="page_editor" action="page.process.php" method="post" enctype="multipart/form-data">
 	<div class="page">
+		<div class="score">คะแนน: <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
 		<header>
 			<input type="text" id="name" name="page_name" class="input-page-name" value="<?php echo $page->name;?>" onblur="javascript:Score();" required placeholder="ชื่อร้าน...">
 		</header>
 
 		<div class="info">
-			<select name="city_id" id="city_id" class="input-page-select" onblur="javascript:Score();">
+			<select name="city_id" id="city_id" class="input-text input-select" onblur="javascript:Score();">
 				<option value="">เลือกอำเภอ...</option>
 				<?php $location->ListAmphur(array('province_id' => 16,'current' => $page->amphur_id));?>
 			</select>
@@ -85,31 +86,30 @@ $current_page = "editor";
 		</figure>
 
 		<section class="entry-content">
-			<h2>รายละเอียด<?php echo $page->name;?></h2>
-			<textarea name="description" id="description" class="input-page-textarea animated" onblur="javascript:Score();"><?php echo $page->description;?></textarea>
-		</section>
-
-		<section class="gallery" id="gallery">
-			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
-			<?php $page->ListGallery(array('page_id' => $page->id));?>
+			<textarea name="description" id="description" class="input-text input-textarea animated" onblur="javascript:Score();" placeholder="อธิบายรายละเอียดร้าน..."><?php echo $page->description;?></textarea>
 		</section>
 
 		<section class="entry-content">
-			<h2>ติดต่อ<?php echo $page->name;?></h2>
 			<div class="infomation">
 				<div class="items">
 					<div class="icon"><i class="fa fa-phone-square"></i></div>
-					<div class="text"><input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required></div>
+					<div class="text">
+						<input type="phone" name="phone" id="phone" class="input-text" value="<?php echo $page->phone;?>" onblur="javascript:Score();" required placeholder="เบอร์โทรศัพท์...">
+					</div>
 				</div>
 
 				<div class="items">
 					<div class="icon"><i class="fa fa-map"></i></div>
-					<div class="text"><textarea name="guide" id="guide" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->guide;?></textarea></div>
+					<div class="text">
+						<textarea name="guide" id="guide" class="input-text input-textarea animated" onblur="javascript:Score();" placeholder="ร้านของคุณอยู่ตรงไหน..."><?php echo $page->guide;?></textarea>
+					</div>
 				</div>
 
 				<div class="items">
 					<div class="icon"><i class="fa fa-map-pin"></i></div>
-					<div class="text"><textarea name="address" id="address" class="input-textarea animated" onblur="javascript:Score();"><?php echo $page->address;?></textarea></div>
+					<div class="text">
+						<textarea name="address" id="address" class="input-text input-textarea animated" onblur="javascript:Score();" placeholder="ที่อยู่จริง..."><?php echo $page->address;?></textarea>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -117,8 +117,6 @@ $current_page = "editor";
 		<?php if(empty($page->id)){?>
 		<div class="agreement">กรุณาอ่าน <a href="agreement.php" target="_blank">ข้อตกลงในการใช้บริการ</a></div>
 		<?php }?>
-
-		<div class="score">คะแนนความสมบูรณ์ <span class="value" id="score"><?php echo $page->score;?>/100</span></div>
 
 		<div class="submit">
 			<button type="submit" class="submit-button"><i class="fa fa-check"></i>บันทึก</button>

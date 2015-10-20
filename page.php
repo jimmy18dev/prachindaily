@@ -103,23 +103,10 @@ $meta_description = $page->description_metatag;
 		<?php }?>
 
 		<section class="entry-content">
-			<h2>รายละเอียด<?php echo $page->name;?></h2>
 			<?php echo $page->description;?>
 		</section>
 
-		<section class="gallery" id="gallery">
-			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
-			<?php if(MEMBER_ID == $page->poster_id && $page->status == "success"){?>
-			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
-			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
-			</a>
-			<?php }?>
-
-			<?php $page->ListGallery(array('page_id' => $page->id));?>
-		</section>
-
 		<section class="entry-content">
-			<h2>ติดต่อ<?php echo $page->name;?></h2>
 			<div class="infomation">
 				<?php if(!empty($page->phone)){?>
 				<div class="items">
@@ -149,12 +136,20 @@ $meta_description = $page->description_metatag;
 			</div>
 		</section>
 
-		<section class="sharing">
-			<h2>แชร์<?php echo $page->name;?></h2>
-			<div class="sharing-items">LINE</div>
-			<div class="sharing-items">Twitter</div>
-			<div class="sharing-items">Facebook</div>
-		</section>	
+		<section class="gallery" id="gallery">
+			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
+			<?php if(MEMBER_ID == $page->poster_id && $page->status == "success"){?>
+			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
+			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
+			</a>
+			<?php }?>
+
+			<?php $page->ListGallery(array('page_id' => $page->id));?>
+		</section>
+
+		<section class="like">
+			<span class="like-button liked-button"><i class="fa fa-heart-o"></i>Thanks</span>
+		</section>
 	</div>
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
 </article>
