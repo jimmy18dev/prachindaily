@@ -75,7 +75,6 @@ $meta_description = $page->description_metatag;
 
 <article class="page-container">
 	<div class="page">
-
 		<?php if(MEMBER_ID == $page->poster_id){?>
 		<div class="control">
 			<div class="button-control delete"><i class="fa fa-trash"></i></div>
