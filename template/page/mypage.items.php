@@ -34,25 +34,22 @@ else{
 ?>
 
 <div class="page-items" id="items-<?php echo $var['pa_id'];?>">
-	<div class="detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
-		<div class="title"><span class="status"><?php echo $status;?></span> <a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html"><?php echo $var['pa_name'];?></a></div>
-		<div class="info">
-			<span class="location"><?php echo $location;?></span>
-			<?php if(!empty($var['pa_phone'])){?>
-			 · <span class="phone"><?php echo $phone;?></span>
-			<?php }?>
-			 · <span class="read">เปิดอ่าน <?php echo number_format($var['pa_read']);?> ครั้ง</span>
-			 · <span class="timeupdate" title="<?php echo $var['update_time_thai_format'];?>"><?php echo $timeupdate;?></span>
-		</div>
-		<div class="description">
-			<?php echo $var['pa_description'];?>
-		</div>
-	</div>
 	<?php if(!empty($var['im_id'])){?>
-	<div class="thumbnail">
-		<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html">
+	<figure class="page-items-thumbnail">
+		<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html#article">
 		<img src="image/upload/thumbnail/<?php echo $var['im_filename'];?>" alt="">
 		</a>
-	</div>
+	</figure>
 	<?php }?>
+	<div class="page-items-detail <?php echo (empty($var['im_id'])?'detail-fullsize':'');?>">
+		<h2>
+			<a href="page-<?php echo $var['pa_id'];?>-<?php echo $var['url_friendly'];?>.html#article"><?php echo $var['pa_name'];?></a>
+		</h2>
+		<p><?php echo $var['pa_description'];?></p>
+	</div>
+
+	<div class="page-items-footer">
+		<div class="btn"><i class="fa fa-star"></i> ร้านโปรด</div>
+		<div class="tag"><span class="location"><?php echo $location;?></span></div>
+	</div>
 </div>

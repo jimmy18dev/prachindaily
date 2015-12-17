@@ -1,0 +1,96 @@
+/*!
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+Copyright (c) 2015 Puwadon Sricharoen
+*/
+
+// IMPORT Other Lib
+@import "default";
+
+
+.page{
+    width: 50%;
+    margin: 10% 25%;
+    float: left;
+    display: inline-block;
+
+    .form{
+        width: 100%;
+        float: left;
+        display: inline-block;
+
+        p.caption{
+            font-size: 1.2em;
+            color: #FFFFFF;
+            line-height: 2em;
+
+            .progress{
+                float: right;
+            }
+        }
+
+        .input-text{
+            width: 100%;
+            float: left;
+            display: inline-block;
+            font-size: 2em;
+            line-height: 1.5em;
+            background: #1abc9c;
+            border: 0px;
+            border-bottom: 2px solid #EEEEEE;
+            color: #FFFFFF;
+            outline: 0;
+            margin-bottom: 5%;
+
+            &:focus{
+                border-bottom: 2px solid #FFFFFF;
+            }
+        }
+    }
+
+    .control{
+        width: 100%;
+        float: left;
+        display: inline-block;
+
+        .btn{
+            float: right;
+            display: inline-block;
+            font-size: 0.9em;
+            padding: 2% 5%;
+            background: #1abc9c;
+            color: #FFFFFF;
+            margin-left: 10px;
+            font-weight: bold;
+            border: 2px solid #FFFFFF;
+
+            &:hover{
+                cursor: pointer;
+                background: #17a98c;
+            }
+
+            &:active{
+                background: #FFFFFF;
+                color: #1abc9c;
+            }
+        }
+
+        .btn-prev{
+            border: 2px solid transparent;
+
+            &:hover{
+                background: #1abc9c;
+            }
+
+            &:active{
+                color: #FFFFFF;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/**** OTHER DEVICE AND SCREEN ****/
+@media only screen and (min-width:1024px) and (max-width:1365px){@import "style-1024-1366";}
+@media only screen and (min-width:760px) and (max-width:1023px){@import "style-760-1023";}
+@media only screen and (min-width:520px) and (max-width:759px){@import "style-520-759";}
+@media only screen and (min-width:0px) and (max-width :519px){@import "style-0-519";}

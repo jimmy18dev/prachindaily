@@ -5,6 +5,7 @@ include'facebook.php';
 
 $page->Get(array('page_id' => $_GET['id']));
 $current_page = "stat";
+$current_page = "page";
 ?>
 
 <!DOCTYPE html>
@@ -63,17 +64,14 @@ $meta_description = 'ปราจีนเดลี่ยินดีแบ่�
 
 <?php include'header.php';?>
 
-<div class="page-container">
-	<div class="page">
-		<header>
-			<h1>สถิติการใช้งานปราจีนเดลี่</h1>
-		</header>
-
+<div class="article">
+	<header class="article-header">
+		<h1>สถิติการใช้งาน....</h1>
 		<p class="info">เรายินดีแบ่งปันข้อมูลที่มีประโยชน์ในด้านการศึกษา</p>
+	</header>
 		
-		<div class="entry-content">
-			<div class="chart" id="location"></div>
-		</div>
+	<div class="article-content">
+		<div class="chart" id="location"></div>
 	</div>
 </div>
 

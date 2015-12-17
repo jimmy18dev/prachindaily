@@ -43,16 +43,24 @@ if(!MEMBER_ONLINE){
 <body>
 
 <?php include'header.php';?>
-
 <div class="page-container">
-	<div class="head">
-		<div class="caption">ธุรกิจของฉัน (3)</div>
-		<a href="page-editor.php" target="_parent">
-		<div class="button-create"><i class="fa fa-plus"></i>เพิ่มธุรกิจของคุณ</div>
-		</a>
-	</div>
 	<div class="page-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+
 	</div>
 </div>
 

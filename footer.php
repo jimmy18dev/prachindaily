@@ -1,9 +1,9 @@
 <footer class="footer">
 	<div class="menu">
-		<div class="menu-items <?php echo ($current_page == "partner"?'menu-active':'');?>"><a href="partner.php">ฝากร้าน</a></div>
-		<div class="menu-items <?php echo ($current_page == "agreement"?'menu-active':'');?>"><a href="agreement.php">ข้อตกลง</a></div>
-		<div class="menu-items <?php echo ($current_page == "stat"?'menu-active':'');?>"><i class="fa fa-pie-chart"></i><a href="stat.php">สถิติ</a></div>
-		<div class="menu-items <?php echo ($current_page == "contact"?'menu-active':'');?>"><a href="contact.php">ติดต่อเรา</a></div>
+		<div class="menu-items <?php echo ($current_page == "partner"?'menu-active':'');?>"><a href="partner.php#start">ฝากร้าน</a></div>
+		<div class="menu-items <?php echo ($current_page == "agreement"?'menu-active':'');?>"><a href="agreement.php#start">ข้อตกลง</a></div>
+		<div class="menu-items <?php echo ($current_page == "stat"?'menu-active':'');?>"><i class="fa fa-pie-chart"></i><a href="stat.php#start">สถิติ</a></div>
+		<div class="menu-items <?php echo ($current_page == "contact"?'menu-active':'');?>"><a href="contact.php#start">ติดต่อเรา</a></div>
 	</div>
 
 	<p>Copyright @<?php echo date("Y");?> prachindaily.com All right reserved. | Powered by DailyPoint 1.0</p>

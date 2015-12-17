@@ -5,6 +5,7 @@ include'facebook.php';
 
 $page->Get(array('page_id' => $_GET['id']));
 $current_page = "contact";
+$current_page = "page";
 ?>
 
 <!DOCTYPE html>
@@ -61,18 +62,17 @@ $meta_description = 'หากต้องการติดต่อทีม�
 
 <?php include'header.php';?>
 
-<div class="page-container">
-	<div class="page">
-		<header>
+<div class="article">
+		<header class="article-header">
 			<h1>ติดต่อทีมงานปราจีนเดลี่</h1>
 		</header>
 
-		<figure class="entry-cover">
+		<figure class="article-cover">
 			<img src="image/site/contact.jpg" alt="">
 			<figcaption></figcaption>
 		</figure>
 
-		<div class="entry-content">
+		<div class="article-content">
 			<p>หากต้องการติดต่อทีมงานปราจีนเดลี่ กรุณาใช้ช่องทางด้านล่าง เนื่องจากเรามีทีมงานหลายท่านจึงไม่มีนโยบายการให้เบอร์โทรศัพท์ส่วนตัวของท่านใดท่านหนึ่ง</p><br>
 			<h2>ติดต่อ</h2>
 			<p><strong>Email: </strong>prachindaily@gmail.com</p>
@@ -80,7 +80,6 @@ $meta_description = 'หากต้องการติดต่อทีม�
 			<p><strong>Fanpage: </strong> <a href="https://facebook.com/prachindaily">https://facebook.com/prachindaily</a></p>
 		</div>
 	</div>
-</div>
 
 <?php include'footer.php';?>
 </body>

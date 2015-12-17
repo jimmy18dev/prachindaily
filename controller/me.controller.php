@@ -129,30 +129,30 @@ class MeController extends MeModel{
         }
     }
 
-    public function UpdateMemberKey($param){
-        // decrypt member_id
-        $param['member_id'] = $this->decrypt($param['member_id']);
-        $param['key'] = $this->decrypt($param['key']);
+    // public function UpdateMemberKey($param){
+    //     // decrypt member_id
+    //     $param['member_id'] = $this->decrypt($param['member_id']);
+    //     $param['key'] = $this->decrypt($param['key']);
 
-        $new_key = $this->GenerateMemberKey(array(
-            'member_id' => $param['member_id']
-        ));
+    //     $new_key = $this->GenerateMemberKey(array(
+    //         'member_id' => $param['member_id']
+    //     ));
 
-        if($param['key'] == '' && $param['member_id'] != ''){
-            parent::UpdateMemberFirstKeyProcess(array(
-                'member_id' => $param['member_id'],
-                'new_key' => $new_key,
-            ));
-        }
-        else{
-            parent::UpdateMemberKeyProcess(array(
-                'member_id' => $param['member_id'],
-                'key' => $param['key'],
-                'new_key' => $new_key,
-            ));
-        }
+    //     if($param['key'] == '' && $param['member_id'] != ''){
+    //         parent::UpdateMemberFirstKeyProcess(array(
+    //             'member_id' => $param['member_id'],
+    //             'new_key' => $new_key,
+    //         ));
+    //     }
+    //     else{
+    //         parent::UpdateMemberKeyProcess(array(
+    //             'member_id' => $param['member_id'],
+    //             'key' => $param['key'],
+    //             'new_key' => $new_key,
+    //         ));
+    //     }
 
-        return true;
-    }
+    //     return true;
+    // }
 }
 ?>

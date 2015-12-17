@@ -15,6 +15,7 @@ else{
 }
 
 $timeupdate = $page->update_time_facebook_format;
+$current_page = "page";
 ?>
 
 <!DOCTYPE html>
@@ -73,84 +74,61 @@ $meta_description = $page->description_metatag;
 
 <?php include'header.php';?>
 
-<article class="page-container">
-	<div class="page">
-		<?php if(MEMBER_ID == $page->poster_id){?>
-		<div class="control">
-			<div class="button-control delete"><i class="fa fa-trash"></i></div>
+<article class="article-page">
+	<?php if(!empty($page->cover_id)){?>
+	<figure class="page-cover" id="article">
+		<!-- <img src="<?php echo $destination_folder['mini'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>"> -->
+		<img src="https://scontent-kul1-1.xx.fbcdn.net/hphotos-xla1/v/t1.0-9/12243071_10153314938397773_4595236392144964420_n.jpg?oh=44b4867dea5cb6106dcab1c39236236d&oe=56E63D43" alt="">
 
-			<a href="page-editor.php?id=<?php echo $page->id;?>">
-			<div class="button-control">แก้ไข</div>
-			</a>
+		<figcaption>
+			<p><?php echo $page->name;?></p>
+			<p class="mini"><?php echo $location;?></p>
+		</figcaption>
+	</figure>
+	<?php }?>
 
-			<div class="button-control caption"><?php echo $timeupdate;?> <i class="fa fa-clock-o"></i></div>
+	<header class="article-header">
+		<h1><?php echo $page->name;?></h1>
+		<p><span class="location"><?php echo $location;?></span></p>
+	</header>
+
+	<section class="article-content">
+		<?php echo $page->description;?>
+	</section>
+
+	<!-- Infomation -->
+	<section class="article-content">
+		<h2>เบอร์ติดต่อ</h2>
+		<p><?php echo $page->phone;?></p>
+	</section>
+	<section class="article-content">
+		<h2>ที่ตั้ง</h2>
+		<p><?php echo $page->guide;?> – <?php echo $page->address;?></p>
+	</section>
+
+	<section class="article-content article-gallery" id="gallery">
+		<h2>ภาพ<?php echo $page->name;?> (23)</h2>
+		<?php if(MEMBER_ID == $page->poster_id && $page->status == "success" || true){?>
+		<a href="gallery-editor.php?id=<?php echo $page->id;?>">
+		<div class="gallery-button">
+			<i class="fa fa-camera"></i>
+			เพิ่มภาพใหม่
 		</div>
+		</a>
 		<?php }?>
+		<?php $page->ListGallery(array('page_id' => $page->id));?>
+	</section>
 
-		<header>
-			<h1><?php echo $page->name;?></h1>
-		</header>
 
-		<p class="info">
-			<span class="location"><?php echo $location;?></span>
-			 · <span class="timeupdate" title="<?php echo $page->update_time_thai_format;?>"><?php echo $timeupdate;?></span>
-		</p>
+	<section class="article-content">
+		<p class="name">Puwadon Sricharoen</p>
+		<p class="time">12 December 2016 12:40PM</p>
+	</section>
 
-		<?php if(!empty($page->cover_id)){?>
-		<figure class="entry-cover">
-			<img src="<?php echo $destination_folder['mini'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>">
-		</figure>
-		<?php }?>
+	<section class="save-btn">
+		<span class="like-button liked-button"><i class="fa fa-star"></i>บันทึกเป็นร้านโปรด</span>
+	</section>
 
-		<section class="entry-content">
-			<?php echo $page->description;?>
-		</section>
-
-		<section class="entry-content">
-			<div class="infomation">
-				<?php if(!empty($page->phone)){?>
-				<div class="items">
-					<div class="icon"><i class="fa fa-phone-square"></i></div>
-					<div class="text"><?php echo $page->phone;?></div>
-				</div>
-				<?php }?>
-
-				<?php if(!empty($page->guide)){?>
-				<div class="items">
-					<div class="icon"><i class="fa fa-map"></i></div>
-					<div class="text"><?php echo $page->guide;?></div>
-				</div>
-				<?php }?>
-
-				<?php if(!empty($page->address)){?>
-				<div class="items">
-					<div class="icon"><i class="fa fa-map-pin"></i></div>
-					<div class="text"><?php echo $page->address;?></div>
-				</div>
-				<?php }?>
-
-				<div class="items">
-					<div class="icon"><i class="fa fa-user"></i></div>
-					<div class="text"><?php echo ($page->poster_type == "administrator"?'ทีมงานปราจีนเดลี่':$page->poster_name);?></div>
-				</div>
-			</div>
-		</section>
-
-		<section class="gallery" id="gallery">
-			<h2>ภาพ<?php echo $page->name;?> (23)</h2>
-			<?php if(MEMBER_ID == $page->poster_id && $page->status == "success"){?>
-			<a href="gallery-editor.php?id=<?php echo $page->id;?>">
-			<div class="gallery-button"><i class="fa fa-camera"></i> เพิ่มภาพใหม่</div>
-			</a>
-			<?php }?>
-
-			<?php $page->ListGallery(array('page_id' => $page->id));?>
-		</section>
-
-		<section class="like">
-			<span class="like-button liked-button"><i class="fa fa-heart-o"></i>Thanks</span>
-		</section>
-	</div>
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
 </article>
 

@@ -54,26 +54,39 @@ $current_page = "index";
 
 <body>
 <?php include'header.php';?>
-<div class="page-container page-margin-top">
-	<h1 class="advertise">Comming soon!</h1>
-	<?php if(MEMBER_ONLINE){?>
-	<h1 class="search-page">ค้นหาร้านอาหาร ที่พัก และอื่นๆ</h1>
-	<div class="search-form">
-		<form action="search.php" target="_parent" method="get">
-		<input type="text" name="q" class="input-text" placeholder="คำค้นหา..." autofocus>
-		<button type="submit" class="button-submit"><i class="fa fa-search"></i></button>
-		</form>
+<div class="page-container">
+	<div class="page-list">
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
+		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>
 	</div>
-	<?php }?>
 
-	<div class="link">
-		<a href="partner.php" target="_parent">สร้างธุรกิจของคุณ<i class="fa fa-commenting-o"></i></a>
-		 · <a href="contact.php" target="_parent">ติดต่อเรา</a>
+	<div class="pagination">
+		<div class="found">ค้นหาพบ <?php echo $total_feed;?>343 รายการ</div>
+		<?php $page->Pagination($total_feed,$_GET['page'],$_GET['q'],'search');?>
 
-		<?php if(MEMBER_TYPE == "administrator"){?>
-		 · <a href="pending.php" target="_parent" class="<?php echo ($page->PendingCount(array('id' => 0))>0?'active':'');?>">Pending (<?php echo $page->PendingCount(array('id' => 0));?>)</a>
-		<?php }?>
+		<div class="pagination-items pagination-active">1</div>
+		<div class="pagination-items">2</div>
+		<div class="pagination-items">3</div>
+		<div class="pagination-items">4</div>
+		<div class="pagination-items">5</div>
+		<div class="pagination-items">6</div>
+		<div class="pagination-items">7</div>
 	</div>
 </div>
+
+<?php include'footer.php';?>
 </body>
 </html>
