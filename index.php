@@ -54,6 +54,14 @@ $current_page = "index";
 
 <body>
 <?php include'header.php';?>
+<div class="cover">
+	<img src="image/cover.jpg" alt="">
+	<figcaption>
+		<h1>ปราจีนเดลี่</h1>
+		<p>เรามีมากกว่าร้อยการค้นหาที่ไม่มีคำตอบ</p>
+		<a href="#" class="btn">Starter</a>
+	</figcaption>
+</div>
 <div class="page-container">
 	<div class="page-list">
 		<?php $page->MyPage(array('people_id' => $me->facebook_id));?>

@@ -48,8 +48,5 @@ else{
 		<p><?php echo $var['pa_description'];?></p>
 	</div>
 
-	<div class="page-items-footer">
-		<div class="btn"><i class="fa fa-star"></i> ร้านโปรด</div>
-		<div class="tag"><span class="location"><?php echo $location;?></span></div>
-	</div>
+	<div class="page-items-footer"><span class="location"><?php echo $location;?></span></div>
 </div>

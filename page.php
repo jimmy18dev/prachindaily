@@ -74,64 +74,70 @@ $meta_description = $page->description_metatag;
 
 <?php include'header.php';?>
 
-<article class="article-page">
+<article class="article-page" id="article">
 	<?php if(!empty($page->cover_id)){?>
-	<figure class="page-cover" id="article">
+	<figure class="page-cover">
 		<!-- <img src="<?php echo $destination_folder['mini'].$page->cover_filename;?>" alt="<?php echo $meta_title;?>"> -->
-		<img src="https://scontent-kul1-1.xx.fbcdn.net/hphotos-xla1/v/t1.0-9/12243071_10153314938397773_4595236392144964420_n.jpg?oh=44b4867dea5cb6106dcab1c39236236d&oe=56E63D43" alt="">
-
-		<figcaption>
-			<p><?php echo $page->name;?></p>
-			<p class="mini"><?php echo $location;?></p>
-		</figcaption>
+		<img src="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-xfp1/t31.0-8/11174309_1116212725063318_3321640511877751974_o.jpg" alt="">
 	</figure>
 	<?php }?>
 
 	<header class="article-header">
+		<p class="time">12 November 2016</p>
 		<h1><?php echo $page->name;?></h1>
-		<p><span class="location"><?php echo $location;?></span></p>
+		<p><?php echo $location;?></p>
 	</header>
 
-	<section class="article-content">
+	<div class="article-content">
 		<?php echo $page->description;?>
-	</section>
+	</div>
 
-	<!-- Infomation -->
-	<section class="article-content">
-		<h2>เบอร์ติดต่อ</h2>
+	<section class="article-content article-info">
+		<h2><i class="fa fa-phone"></i>เบอร์ติดต่อ</h2>
 		<p><?php echo $page->phone;?></p>
 	</section>
-	<section class="article-content">
-		<h2>ที่ตั้ง</h2>
+
+	<section class="article-content article-info">
+		<h2><i class="fa fa-map"></i>ที่อยู่ <?php echo $page->name;?></h2>
 		<p><?php echo $page->guide;?> – <?php echo $page->address;?></p>
 	</section>
 
-	<section class="article-content article-gallery" id="gallery">
-		<h2>ภาพ<?php echo $page->name;?> (23)</h2>
+	<section class="article-content article-info">
+		<h2><i class="fa fa-camera"></i>ภาพ<?php echo $page->name;?> (23)</h2>
+
 		<?php if(MEMBER_ID == $page->poster_id && $page->status == "success" || true){?>
-		<a href="gallery-editor.php?id=<?php echo $page->id;?>">
-		<div class="gallery-button">
-			<i class="fa fa-camera"></i>
-			เพิ่มภาพใหม่
-		</div>
-		</a>
+		<a href="gallery-editor.php?id=<?php echo $page->id;?>" class="photo-btn">เพิ่มภาพใหม่<i class="fa fa-plus"></i></a>
 		<?php }?>
-		<?php $page->ListGallery(array('page_id' => $page->id));?>
+
+		<div class="gallery-container">
+			<?php $page->ListGallery(array('page_id' => $page->id));?>
+		</div>
 	</section>
 
-
-	<section class="article-content">
-		<p class="name">Puwadon Sricharoen</p>
-		<p class="time">12 December 2016 12:40PM</p>
-	</section>
-
-	<section class="save-btn">
-		<span class="like-button liked-button"><i class="fa fa-star"></i>บันทึกเป็นร้านโปรด</span>
+	<section class="article-content article-info">
+		<h2><i class="fa fa-map"></i>แผนที่ <?php echo $page->name;?></h2>
+		<div id="map">Google Map API</div>
 	</section>
 
 	<input type="hidden" id="page_id" value="<?php echo $page->id;?>">
 </article>
 
 <?php include'footer.php';?>
+
+
+    <script>
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 8
+  });
+}
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDXkAfuTeoH8cWbgRpvurxyjeo1wVvVXXg&callback=initMap"
+        async defer></script>
+
 </body>
 </html>
